@@ -5,6 +5,8 @@
  <head>
      <?php include TEMPLATE . LAYOUT . "head.php"; ?>
      <?php include TEMPLATE . LAYOUT . "css.php"; ?>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
      <style>
          /* thêm style chung cho tiêu đề (kiểu chữ và màu chữ) */
          .roboto-slab,
@@ -46,7 +48,7 @@
              border: 2px solid #C50608;
              transform: rotate(45deg);
              position: relative;
-             margin: 50px;
+             margin: 16px;
          }
 
          /* thêm 2 hình thoi trước và sau */
@@ -152,19 +154,85 @@
                  </div>
              </div>
              <!-- danh muc; menu -->
+             <style>
+                 /* Thêm màu nền cho menu danh mục */
+                 .danhmuc {
+                     background-color: #F5F5F5;
+                 }
+
+                 /* thêm màu, padding, style chữ cho header danh mục */
+                 .danhmuc-header {
+                     padding: 10px;
+                     font-weight: bold;
+                     color: #F5F5F5;
+                     background-color: #C50608;
+                 }
+
+                 /* thêm padding cho danh mục con*/
+                 ul.danhmuc-body {
+                     padding: 10px;
+                 }
+
+                 /* thêm margin giữa các mục con*/
+                 ul.danhmuc-body li {
+                     list-style-type: none;
+                     margin-bottom: 5px;
+                 }
+
+                 /* Xóa margin cho phần tử cuối */
+                 ul.danhmuc-body li:last-child {
+                     margin-bottom: 0;
+                 }
+
+                 /* thêm style chữ cho mỗi menu con */
+                 ul.danhmuc-body li a {
+                     color: #333;
+                 }
+
+                 /* TOGGLE MENU: thêm style khi hover lên link menu */
+                 .danhmuc ul li a:hover {
+                     color: #C50608;
+                 }
+
+                 /* TOGGLE MENU: thêm style cho button toggle menu  */
+                 .danhmuc button.btn {
+                     box-shadow: none;
+                 }
+
+                 /* TOGGLE MENU: thêm style mặc định cho nút toggle  */
+                 .danhmuc button.btn-toggle {
+                     border: 0;
+                     outline: 0;
+                 }
+
+                 /* TOGGLE MENU: thêm style khi hover vào nút toggle */
+                 .danhmuc button.btn-toggle:hover {
+                     background-color: rgba(255, 155, 100, 0.5);
+                 }
+             </style>
              <div class="row">
                  <!-- danh muc -->
                  <div class="col-md-3">
-                     <div class="danhmuc">
-                         <div class="tieude">Danh mục sản phẩm</div>
-                         <ul>
-                             <?php foreach ($danhmuc_list as $key => $v) { ?>
-                                 <li>
-                                     <a href="<?= $v['tenkhongdauvi'] ?>"><?= $v['ten' . $lang] ?></a>
-                                 </li>
-                             <?php } ?>
-                         </ul>
-                     </div>
+                     <nav class="danhmuc">
+                         <div class="danhmuc-header roboto-slab container-fluid d-flex align-items-center">
+                             <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
+                                 <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
+                             </button>
+                             <h6 class="text-uppercase">Danh mục sản phẩm</h6>
+                         </div>
+                         <div class="collapse show" id="navbarToggleExternalContent">
+                             <ul class="danhmuc-body">
+                                 <?php foreach ($danhmuc_list as $key => $v) { ?>
+                                     <li>
+                                         <a href="<?= $v['tenkhongdauvi'] ?>">
+                                             <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/30x30x2/assets/images/noimage.png';" src="<?= THUMBS ?>/30x30x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                             <span><?= $v['ten' . $lang] ?></span>
+                                         </a>
+                                     </li>
+                                 <?php } ?>
+                             </ul>
+                         </div>
+                     </nav>
                  </div>
                  <!-- menu; slider, hinh -->
                  <div class="col-md-9">
@@ -192,7 +260,7 @@
                      </div>
                  </div>
              </div>
-             <!-- san pham noi bat -->
+             <!-- san pham chinh -->
              <div class="row">
                  <div class="col-md-4">
                      <img src="http://ttpcorp.vn/upload/images/1.png" alt="img-1" class="img-fluid">
@@ -207,9 +275,55 @@
          </div>
      </section>
      <!-- section sản phẩm mới-->
+     <style>
+         /* thêm style cho danh sach sản phẩm */
+         .dsSanPhamNoiBat {
+             border: 1px solid #D9D9D9;
+             border-radius: 4px;
+             padding: 10px 30px 20px;
+         }
+
+         @media only screen and (max-width: 768px) {
+             .dsSanPhamNoiBat {
+                 padding: 10px;
+             }
+         }
+
+         .dsSanPhamNoiBat:hover {
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         }
+
+
+         .dsSanPhamNoiBat .card-footer {
+             background-color: #fff;
+             border: 0;
+         }
+
+         .dsSanPhamNoiBat .card-title {
+             color: rgba(0, 0, 0, 0.7);
+             font-size: 15px;
+         }
+
+         .dsSanPhamNoiBat .card {
+             text-align: center;
+             margin: 4px;
+             max-height: 400px;
+             min-height: 400px;
+         }
+
+         .dsSanPhamNoiBat .card:hover {
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+             transform: translateY(-1px);
+             cursor: pointer;
+         }
+
+         .dsSanPhamNoiBat .card-body {
+             overflow-y: scroll;
+         }
+     </style>
      <section>
-         <div class="container">
-             <div class="mt-4 text-center">
+         <div class="container-fluid p-4">
+             <div class="row mt-4 text-center">
                  <h3 class="text-danger  text-uppercase ">Sản phẩm</h3>
                  <!-- ba hình thoi và đường kẻ ngang -->
                  <div class="row justify-content-center">
@@ -218,16 +332,114 @@
                      </div>
                  </div>
              </div>
-             <div class="row">
-                 <!-- danh sach san pham -->
-                 <ul>
-                     <?php foreach ($sanpham_list as $key => $v) { ?>
-                         <li>
-                             <a href="<?= $v['tenkhongdauvi'] ?>"><?= $v['ten' . $lang] ?></a>
-                         </li>
+             <!-- San pham nổi bật -->
+             <div class="row mb-3 dsSanPhamNoiBat">
+                 <!-- danh sach san pham: tieu de danh sach-->
+                 <div class="col-md-12">
+                     <div class="row">
+                         <div class="col-md-6">
+                             <h4 class="text-danger text-uppercase">Sản phẩm nổi bật</h4>
+                         </div>
+                         <div class="col-md-6">
+                             <!-- bread cum -->
+                             <nav aria-label="breadcrumb">
+                                 <ol class="breadcrumb roboto-slab">
+                                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                                     <li class="breadcrumb-item active" aria-current="page">Sản phẩm nổi bật</li>
+                                 </ol>
+                             </nav>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- danh sach san pham: danh sach hien thi -->
+                 <!-- php loop start -->
+                 <div class="owl-carousel owl-theme auto_dcategory">
+                     <?php foreach ($sanpham_nb as $value) {  ?>
+                         <!-- danh sach san pham -->
+                         <!-- sanpham margin -->
+                         <div class="p-0">
+                             <div class="card">
+                                 <?php
+                                    // UPLOAD_PRODUCT_L trong định nghĩa file constant.php
+                                    $imagePath =  UPLOAD_PRODUCT_L . $value['photo'];
+                                    $defaultImage = THUMBS . "/190x200x1/assets/images/noimage.png";
+                                    $imageSrc = file_exists($imagePath) && !empty($value['photo']) ? $imagePath : $defaultImage;
+                                    ?>
+
+                                 <img class="card-img-top" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="card-body">
+                                     <h5 class="card-title roboto-slab"><?= $value['ten' . $lang] ?></h5>
+                                 </div>
+
+                                 <div class="card-footer text-danger">
+                                     <!-- định dạng giá tiền -->
+                                     <!-- lấy giá tiền từ database -->
+                                     <!-- $value['gia'] -->
+                                     <p class="card-text"> Giá: <?= $func->format_money($value['gia']) ?> </p>
+                                     <p class="text-align-center">HOTLINE: <?= $optsetting['hotline'] ?></p>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- php loop end -->
                      <?php } ?>
-                 </ul>
+                 </div>
+                 <!-- end carousel -->
              </div>
+             <!-- sản phẩm theo loại nổi bật -->
+             <?php foreach ($danhmucnb_list as $key => $v) { ?>
+                 <div class="row mb-3 dsSanPhamNoiBat">
+                     <!-- danh sach san pham: tieu de danh sach-->
+                     <div class="col-md-12">
+                         <div class="row">
+                             <div class="col-md-6">
+                                 <h4 class="text-danger text-uppercase"><?= $v['ten' . $lang] ?></h4>
+                             </div>
+                             <div class="col-md-6">
+                                 <!-- bread cum -->
+                                 <nav aria-label="breadcrumb">
+                                     <ol class="breadcrumb roboto-slab">
+                                         <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                                         <li class="breadcrumb-item active" aria-current="page"><?= $v['ten' . $lang] ?></li>
+                                     </ol>
+                                 </nav>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- danh sach san pham: danh sach hien thi -->
+                     <!-- php loop start -->
+                     <?php $sanpham = $d->rawQuery("select ten$lang, tenkhongdauvi, mota$lang, ngaytao,photo, id,gia from #_product where id_list = ? and hienthi>0 and type='san-pham' order by stt,id desc", array($v['id'])); ?>
+                     <div class="owl-carousel owl-theme auto_dcategory">
+                         <?php foreach ($sanpham as $key => $value) { ?>
+                             <!-- danh sach san pham -->
+                             <!-- sanpham margin -->
+                             <div class="p-0">
+                                 <div class="card">
+                                     <?php
+                                        // UPLOAD_PRODUCT_L trong định nghĩa file constant.php
+                                        $imagePath =  UPLOAD_PRODUCT_L . $value['photo'];
+                                        $defaultImage = THUMBS . "/190x200x1/assets/images/noimage.png";
+                                        $imageSrc = file_exists($imagePath) && !empty($value['photo']) ? $imagePath : $defaultImage;
+                                        ?>
+                                     <!-- this.src là giữ cho src luôn có hình mặc định khi event onerror được kích hoạt -->
+                                     <img onerror="this.src=<?= $defaultImage ?>" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
+                                     <div class="card-body">
+                                         <h5 class="card-title roboto-slab"><?= $value['ten' . $lang] ?></h5>
+                                     </div>
+
+                                     <div class="card-footer text-danger">
+                                         <!-- định dạng giá tiền -->
+                                         <!-- lấy giá tiền từ database -->
+                                         <!-- $value['gia'] -->
+                                         <p class="card-text font-weight-bold"> Giá: <?= $func->format_money($value['gia']) ?> </p>
+                                         <p class="text-align-center">HOTLINE: <?= $optsetting['hotline'] ?></p>
+                                     </div>
+                                 </div>
+                             </div>
+                             <!-- php loop end -->
+                         <?php } ?>
+                     </div><!-- end carousel -->
+                 </div>
+             <?php } ?>
          </div>
      </section>
      <!-- section đăng ký nhận tin -->
@@ -516,7 +728,7 @@
          }
      </style>
      <section>
-         <div class="container">
+         <div class="container-fluid">
              <div class="mt-4 text-center m-auto">
                  <h3 class="text-danger text-uppercase">Đối tác và thương hiệu của chúng tôi</h3>
                  <!-- ba hình thoi và đường kẻ ngang -->
@@ -528,12 +740,14 @@
              </div>
              <div class="row doitac">
                  <!-- đối tác -->
-                 <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
-                 <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2">
-                 <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3">
-                 <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4">
-                 <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5">
-                 <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6">
+                 <div class="col-md-2">
+                     <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
+                 </div>
+                 <div class="col-md-2"><img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2"></div>
+                 <div class="col-md-2"><img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3"></div>
+                 <div class="col-md-2"><img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4"></div>
+                 <div class="col-md-2"><img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5"></div>
+                 <div class="col-md-2"><img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6"></div>
              </div>
          </div>
      </section>
@@ -605,12 +819,9 @@
                  <div class="row mb-3 mt-3">
                      <div class="col-md-6">
                          <ul>
-                             <li>Văn Phòng: C41 Nguyễn Thị Búp, Phường Hiệp Thành Quận 12</li>
-                             <li>Cơ sở 2: Khu tái định cư Bình Sơn, Xã Lộc An,
-                                 Huyện Long Thành, Tỉnh Đồng Nai</li>
-                             <li>Cơ sở 3: C41 Nguyễn Thị Búp, Phường Hiệp Thành Quận 12</li>
-                             <li>Hotline: 0938 898 087</li>
-                             <li>Email: info@ttpcorp.vn</li>
+                             <li><?= $optsetting['diachi'] ?></li>
+                             <li>Hotline: <?= $optsetting['hotline'] ?></li>
+                             <li>Email: <?= $optsetting['email'] ?></li>
                          </ul>
                          <!-- logo mang xa hoi-->
                          <div>
@@ -624,6 +835,7 @@
                      <div class="col-md-3">
                          <h4 class="roboto-slab text-uppercase mb-3">FanPage</h4>
                          <img src="../assets/images/footerTTP/fanpage.png" alt="fanpage">
+                         <!-- <iframe src="https://www.facebook.com/plugins/page.php?href=<?= $optsetting['fanpage'] ?>&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
                      </div>
                      <div class="col-md-3">
                          <h4 class="roboto-slab text-uppercase mb-3">MAPS</h4>
