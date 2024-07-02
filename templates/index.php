@@ -86,6 +86,12 @@
              transform: rotate(135deg) translate(-50%, -50%);
              transform-origin: 0;
          }
+
+         .square-area {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
      </style>
  </head>
 
@@ -137,7 +143,7 @@
                  </div>
                  <!-- search -->
                  <div class="col-md-6">
-                     <div class="row justify-content-center">
+                     <div class="">
                          <div class="col-md-8">
                              <form>
                                  <div class="input-group mb-3">
@@ -247,7 +253,7 @@
                          <div class="col-md-10">
                              <?php include TEMPLATE . LAYOUT . "slide.php"; ?>
                          </div>
-                         <div class="col-md-2">
+                         <div class="col-md-2 overflow-y text-align-center">
                              <div class="row">
                                  <div class="col-md-12 text-center">
                                      <img class="img-fluid" src="http://ttpcorp.vn/upload/product/cq5dam-495_430x400.jpeg" alt="">
@@ -262,13 +268,13 @@
              </div>
              <!-- san pham chinh -->
              <div class="row">
-                 <div class="col-md-4">
+                 <div class="col-md-4 mt-3">
                      <img src="http://ttpcorp.vn/upload/images/1.png" alt="img-1" class="img-fluid">
                  </div>
-                 <div class="col-md-4">
+                 <div class="col-md-4 mt-3">
                      <img src="http://ttpcorp.vn/upload/images/1.png" alt="img-2" class="img-fluid">
                  </div>
-                 <div class="col-md-4">
+                 <div class="col-md-4 mt-3">
                      <img src="http://ttpcorp.vn/upload/images/1.png" alt="img-3" class="img-fluid">
                  </div>
              </div>
@@ -286,6 +292,10 @@
          @media only screen and (max-width: 768px) {
              .dsSanPhamNoiBat {
                  padding: 10px;
+             }
+
+             .dsSanPhamNoiBat:hover {
+                 box-shadow: none !important;
              }
          }
 
@@ -317,8 +327,17 @@
              cursor: pointer;
          }
 
+         .dsSanPhamNoiBat .card-text {
+             color: #333;
+         }
+
+         .dsSanPhamNoiBat .card:hover .card-text {
+             font-weight: bold;
+             color: #C50608;
+         }
+
          .dsSanPhamNoiBat .card-body {
-             overflow-y: scroll;
+             overflow-y: auto;
          }
      </style>
      <section>
@@ -326,7 +345,7 @@
              <div class="row mt-4 text-center">
                  <h3 class="text-danger  text-uppercase ">Sản phẩm</h3>
                  <!-- ba hình thoi và đường kẻ ngang -->
-                 <div class="row justify-content-center">
+                 <div class="square-area">
                      <div class="rotated-square">
                          <div class="line"></div>
                      </div>
@@ -342,11 +361,12 @@
                          </div>
                          <div class="col-md-6">
                              <!-- bread cum -->
-                             <nav aria-label="breadcrumb">
-                                 <ol class="breadcrumb roboto-slab">
-                                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                                     <li class="breadcrumb-item active" aria-current="page">Sản phẩm nổi bật</li>
-                                 </ol>
+                             <nav>
+                                 <ul class="roboto-slab">
+                                     <li>
+                                         <a class="text-danger active" href=""><?= $v['ten' . $lang] ?></a>
+                                     </li>
+                                 </ul>
                              </nav>
                          </div>
                      </div>
@@ -359,15 +379,15 @@
                          <!-- sanpham margin -->
                          <div class="p-0">
                              <div class="card">
+
                                  <?php
                                     // UPLOAD_PRODUCT_L trong định nghĩa file constant.php
                                     $imagePath =  UPLOAD_PRODUCT_L . $value['photo'];
                                     $defaultImage = THUMBS . "/190x200x1/assets/images/noimage.png";
                                     $imageSrc = file_exists($imagePath) && !empty($value['photo']) ? $imagePath : $defaultImage;
                                     ?>
-
-                                 <img class="card-img-top" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
                                  <div class="card-body">
+                                     <img class="card-img-top" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
                                      <h5 class="card-title roboto-slab"><?= $value['ten' . $lang] ?></h5>
                                  </div>
 
@@ -396,13 +416,15 @@
                              </div>
                              <div class="col-md-6">
                                  <!-- bread cum -->
-                                 <nav aria-label="breadcrumb">
-                                     <ol class="breadcrumb roboto-slab">
-                                         <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                                         <li class="breadcrumb-item active" aria-current="page"><?= $v['ten' . $lang] ?></li>
-                                     </ol>
+                                 <nav>
+                                     <ul class="roboto-slab">
+                                         <li>
+                                             <a class="text-danger active" href=""><?= $v['ten' . $lang] ?></a>
+                                         </li>
+                                     </ul>
                                  </nav>
                              </div>
+
                          </div>
                      </div>
                      <!-- danh sach san pham: danh sach hien thi -->
@@ -421,8 +443,8 @@
                                         $imageSrc = file_exists($imagePath) && !empty($value['photo']) ? $imagePath : $defaultImage;
                                         ?>
                                      <!-- this.src là giữ cho src luôn có hình mặc định khi event onerror được kích hoạt -->
-                                     <img onerror="this.src=<?= $defaultImage ?>" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
                                      <div class="card-body">
+                                         <img class="card-img-top" onerror="this.src=<?= $defaultImage ?>" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
                                          <h5 class="card-title roboto-slab"><?= $value['ten' . $lang] ?></h5>
                                      </div>
 
@@ -430,7 +452,7 @@
                                          <!-- định dạng giá tiền -->
                                          <!-- lấy giá tiền từ database -->
                                          <!-- $value['gia'] -->
-                                         <p class="card-text font-weight-bold"> Giá: <?= $func->format_money($value['gia']) ?> </p>
+                                         <p class="card-text"> Giá: <?= $func->format_money($value['gia']) ?> </p>
                                          <p class="text-align-center">HOTLINE: <?= $optsetting['hotline'] ?></p>
                                      </div>
                                  </div>
@@ -478,7 +500,7 @@
              <div class="mt-4 text-center">
                  <h3 class="text-danger  text-uppercase ">Vì sao chọn chúng tôi</h3>
                  <!-- ba hình thoi và đường kẻ ngang -->
-                 <div class="row justify-content-center">
+                 <div class="square-area">
                      <div class="rotated-square">
                          <div class="line"></div>
                      </div>
@@ -644,7 +666,7 @@
                              </div>
                              <div class="col-md-8">
                                  <div class="card-body ps-0">
-                                     <h5 class="card-title">Hổ trợ khách hàng 24/7</h5>
+                                     <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
                              </div>
@@ -690,7 +712,7 @@
                              </div>
                              <div class="col-md-8">
                                  <div class="card-body ps-0">
-                                     <h5 class="card-title">Hổ trợ khách hàng 24/7</h5>
+                                     <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
                              </div>
@@ -732,7 +754,7 @@
              <div class="mt-4 text-center m-auto">
                  <h3 class="text-danger text-uppercase">Đối tác và thương hiệu của chúng tôi</h3>
                  <!-- ba hình thoi và đường kẻ ngang -->
-                 <div class="row justify-content-center">
+                 <div class="square-area">
                      <div class="rotated-square">
                          <div class="line"></div>
                      </div>
@@ -764,7 +786,7 @@
          .footer-info {
              background: #1BA9FF;
              margin: 0 !important;
-             padding: 30px 0;
+             padding: 16px 0;
          }
 
          .footer-info ul {
@@ -848,16 +870,15 @@
                      </div>
                      <div class="col-md-4">
                          <!-- truy cap luot xem -->
-                         <p><span class="pl-2 pr-2">Online: 1</span> <span class="border-left pl-2 pr-2">Hom nay: 20</span> <span class="border-left pl-2 pr-2">Tong truy cap: 100000</span></p>
+                         <p><span class="pl-1 pr-1">Online: 1</span> <span class="border-left pl-1 pr-1">Hôm nay: 20</span> <span class="border-left pl-1 pr-1">Tổng truy cập: 100000</span></p>
                      </div>
                  </div>
              </div>
          </div>
      </footer>
      <?php
-        include TEMPLATE . LAYOUT . "phone3.php";
-        include TEMPLATE . LAYOUT . "modal.php";
-        include TEMPLATE . LAYOUT . "js.php";
+        include TEMPLATE . LAYOUT . "red.support.php";
+        include TEMPLATE . LAYOUT . "red.js.php";
         ?>
  </body>
 
