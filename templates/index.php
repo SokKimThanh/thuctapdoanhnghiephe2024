@@ -762,12 +762,12 @@
              </div>
              <div class="row doitac">
                  <!-- đối tác -->
-                 <img class="img-fluid col-md-2 col" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
-                 <img class="img-fluid col-md-2 col" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2">
-                 <img class="img-fluid col-md-2 col" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3">
-                 <img class="img-fluid col-md-2 col" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4">
-                 <img class="img-fluid col-md-2 col" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5">
-                 <img class="img-fluid col-md-2 col" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6">
+                 <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
+                 <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2">
+                 <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3">
+                 <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4">
+                 <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5">
+                 <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6">
              </div>
          </div>
      </section>
