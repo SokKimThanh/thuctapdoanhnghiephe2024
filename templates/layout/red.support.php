@@ -1,231 +1,219 @@
- <style>
-     /* Định vị và căn chỉnh phần tử #red_sp */
-     #red_sp {
-         position: fixed;
-         right: 0;
-         margin-right: 16px;
-         bottom: 0;
-         margin-bottom: 16px;
-     }
+<style>
+    :root {
+        --white: #fff;
+        --red: #E41204;
+        --red10: rgba(255, 18, 8, 0.1);
+        --red30: rgba(255, 18, 8, 0.3);
+        --white50: rgba(255, 255, 255, 0.5)
+    }
 
-     /* Định dạng chung cho các vòng tròn */
-     .circle,
-     .circle1,
-     .circle2,
-     .circle3 {
-         position: relative;
-         width: 60px;
-         height: 60px;
-         background-color: #E41204;
-         border-radius: 50%;
-         animation: pulse 2s infinite;
-         transform-origin: right center;
-         /* Thiết lập gốc của phép biến đổi */
-     }
+    .size-nav {
+        position: relative;
+        height: 350px;
+    }
 
-     /* Hiệu ứng động cho các vòng tròn */
-     .circle::before,
-     .circle::after,
-     .circle1::before,
-     .circle1::after,
-     .circle2::before,
-     .circle2::after,
-     .circle3::before,
-     .circle3::after {
-         content: "";
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         width: 100%;
-         height: 100%;
-         background-color: #E41204;
-         border-radius: 50%;
-         transform: translate(-50%, -50%);
-         animation: ripple 2s infinite;
-         opacity: 0;
-     }
+    /* thêm spacing cho size nav */
+    .size-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-     /* Hiệu ứng delay cho các vòng tròn */
-     .circle::after,
-     .circle1::after,
-     .circle2::after,
-     .circle3::after {
-         animation-delay: 1s;
-     }
+    /* thêm ảnh nền cho side-nav */
+    .side-nav ul {
+        position: fixed;
+        right: 1%;
+        bottom: 10%;
+        /* thẻ ul đưa lên trên khi lăn chuột*/
+        z-index: 1;
+        background-color: var(--white50);
+        display: inline;
+    }
 
-     /* Định nghĩa hiệu ứng pulse */
-     @keyframes pulse {
-         0% {
-             transform: scale(1);
-         }
+    /* thêm canh lề cho ul */
+    .side-nav ul {
+        height: 256px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+    }
 
-         50% {
-             transform: scale(1.1);
-         }
+    /* thêm kích thước mặc định li khi chưa đưa chuột vào nút */
+    .side-nav ul li {
+        position: relative;
+        /* thẻ a đưa lên trên khi lăn chuột */
+        z-index: 1;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-image: url('../../assets/images/red_sp/bg_red_support.png');
+        background-size: cover;
+        background-color: var(--red30);
+        cursor: pointer;
+    }
 
-         100% {
-             transform: scale(1);
-         }
-     }
+    /* Thêm hình cho các li khác */
+    .side-nav ul li:nth-child(2) {
+        background-position: 0 288px;
+    }
 
-     /* Định nghĩa hiệu ứng ripple */
-     @keyframes ripple {
-         0% {
-             transform: translate(-50%, -50%) scale(1);
-             opacity: 1;
-         }
+    .side-nav ul li:nth-child(3) {
+        background-position: 0 192px;
+    }
 
-         100% {
-             transform: translate(-50%, -50%) scale(1.5);
-             opacity: 0;
-         }
-     }
+    .side-nav ul li:nth-child(4) {
+        background-position: 0 96px;
+    }
 
-     /* Hiệu ứng khi hover vào các vòng tròn */
-     .circle:hover {
-         width: 350px;
-         /* Tăng chiều rộng của div */
-         height: 60px;
-         /* Giữ nguyên chiều cao của div */
-         background-color: #E41204;
-         border-radius: 100px;
-         /* Bo cong góc */
-         transition: width 500ms ease-out;
-         /* Thêm hiệu ứng mượt mà */
-     }
+    /* thay đổi thuộc tính hover của thẻ li */
+    .side-nav ul li:hover::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+    }
 
-     /* Bo cong góc cho các thành phần con khi hover */
-     .circle:hover::after,
-     .circle:hover::before {
-         border-radius: 100px;
-     }
+    /* thẻ a đưa lên trên khi lăn chuột */
+    .side-nav ul li:hover::before {
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        background-image: url('../../assets/images/red_sp/bg_red_support.png');
+        background-size: cover;
+        transform: translate(-865%, 6%);
+    }
 
-     /* Tương tự cho các class khác */
-     .circle1:hover {
-         width: 350px;
-         height: 60px;
-         background-color: #E41204;
-         border-radius: 100px;
-         transition: width 500ms ease-out;
-     }
+    /* thay đổi hình của thẻ li khi hover */
+    .side-nav ul li:nth-child(1):hover::before {
+        background-position: 0 320px;
+    }
 
-     .circle1:hover::after,
-     .circle1:hover::before {
-         border-radius: 100px;
-     }
+    .side-nav ul li:nth-child(2):hover::before {
+        background-position: 0 240px;
+    }
 
-     .circle2:hover {
-         width: 350px;
-         height: 60px;
-         background-color: #E41204;
-         border-radius: 100px;
-         transition: width 500ms ease-out;
-     }
+    .side-nav ul li:nth-child(3):hover::before {
+        background-position: 0 160px;
+    }
 
-     .circle2:hover::after,
-     .circle2:hover::before {
-         border-radius: 100px;
-     }
+    .side-nav ul li:nth-child(4):hover::before {
+        background-position: 0 80px;
+    }
 
-     .circle3:hover {
-         width: 350px;
-         height: 60px;
-         background-color: #E41204;
-         border-radius: 100px;
-         transition: width 500ms ease-out;
-     }
+    /* Định dạng thẻ a: ẩn thông tin */
+    .side-nav ul li a {
+        position: relative;
+        /* đặt thẻ a ở dưới cùng để nhìn thấy logo */
+        z-index: -1;
+    }
 
-     .circle3:hover::after,
-     .circle3:hover::before {
-         border-radius: 100px;
-     }
+    /* Định dạng thẻ a: spacing, canh lề tiêu đề */
+    .side-nav ul li a {
+        /* khóa thẻ a không hiển thị */
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        width: 400px;
+        height: 53px;
+        padding: 5px 0 5px 50px;
+        align-items: start;
+    }
 
-     /* Định dạng thông tin hiển thị khi hover */
-     .hover-info {
-         position: relative;
-     }
+    /* Định dạng thẻ a: font style tiêu đề chăm sóc kh */
+    .side-nav ul li a {
+        background-color: var(--red);
+        color: var(--white) !important;
+        text-align: left;
+    }
 
-     .info-content {
-         display: none;
-         /* Mặc định ẩn nội dung */
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 300px;
-         color: #fff;
-     }
+    /* Định dạng thẻ a: bo góc 4 bên của thẻ a */
+    .side-nav ul li:hover a {
+        display: flex;
+        /* bug line-height: không thể tìm thấy thẻ before hoặc after của thẻ a; */
+        /* line-height: 0; */
+        transform: translateX(-87%);
+        border-radius: 27px;
+        transition: transform 0.5s ease;
+    }
 
-     .circle:hover+.info-content,
-     .circle1:hover+.info-content,
-     .circle2:hover+.info-content,
-     .circle3:hover+.info-content {
-         display: block;
-         /* Hiển thị nội dung khi hover */
-     }
+    /* Thêm hoạt ảnh cho   */
+    .side-nav ul li a::before {
+        content: '';
+        position: absolute;
+        top: calc(100% - 27px);
+        left: calc(100% - 200px);
+        /* transform: translate(-50%, -50%); */
+        height: 100%;
+        width: 100%;
+        background-color: var(--red30);
+        border-radius: 27px;
+        /* bật hoạt cảnh */
+        animation: ripple 1s infinite ease-in-out;
+    }
 
-     /* Định dạng hình ảnh bên trong vòng tròn */
-     .circle_image {
-         width: 50px;
-         height: 50px;
-         object-fit: cover;
-         border-radius: 50%;
-         border: 1px solid #fff;
-         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-         transition: border-color 0.5s ease;
-         background-color: #fff;
-         transform: translate(10%, 10%);
-     }
- </style>
- <section id="red_sp">
-     <div class="container">
-         <div class="circle hover-info mt-3">
-             <img class="img-fluid img-rounded circle_image" src="../../assets/images/red_sp/customer-service 1.svg" alt="">
-             <div class="info-content">
-                 <div class="row">
-                     <div class="col-md-4"></div>
-                     <div class="col-md-8">
-                         <h5>Hỗ trợ</h5>
-                         <p>Bạn cần tư vấn gì?</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="circle1 hover-info mt-3">
-             <img class="img-fluid img-rounded circle_image" src="../../assets/images/red_sp/customer-service 1.svg" alt="">
-             <div class="info-content">
-                 <div class="row">
-                     <div class="col-md-4"></div>
-                     <div class="col-md-8">
-                         <h5>Hỗ trợ</h5>
-                         <p>Bạn cần tư vấn gì?</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="circle2 hover-info mt-3">
-             <img class="img-fluid img-rounded circle_image" src="../../assets/images/red_sp/customer-service 1.svg" alt="">
-             <div class="info-content">
-                 <div class="row">
-                     <div class="col-md-4"></div>
-                     <div class="col-md-8">
-                         <h5>Hỗ trợ</h5>
-                         <p>Bạn cần tư vấn gì?</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="circle3 hover-info mt-3">
-             <img class="img-fluid img-rounded circle_image" src="../../assets/images/red_sp/customer-service 1.svg" alt="">
-             <div class="info-content">
-                 <div class="row">
-                     <div class="col-md-4"></div>
-                     <div class="col-md-8">
-                         <h5>Hỗ trợ</h5>
-                         <p>Bạn cần tư vấn gì?</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </section>
- s
+    /* thêm hoạt cảnh khi mới load trang cho thẻ li */
+    /* Hiệu ứng động cho các vòng tròn */
+    .side-nav ul li::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--red30);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: ripple 2s infinite;
+    }
+
+    .side-nav h1,
+    .side-nav p {
+        margin: 0;
+    }
+
+    /* Định nghĩa hiệu ứng ripple */
+    @keyframes ripple {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+
+<nav class="side-nav">
+    <ul>
+        <li>
+            <a>
+                <h6>Liên hệ</h6>
+                <p>Bạn cần liên hệ đặt hàng phải không?</p>
+            </a>
+        </li>
+        <li>
+            <a>
+                <h6>Đăng ký</h6>
+                <p>Bạn hãy đăng ký làm thành viên nhé?</p>
+            </a>
+        </li>
+        <li>
+            <a>
+                <h6>Lên đầu trang</h6>
+                <p>Bạn muốn quay về trang chủ không?</p>
+            </a>
+        </li>
+        <li>
+            <a>
+                <h6>Hỗ trợ</h6>
+                <p>Bạn cần tư vấn gì?</p>
+            </a>
+        </li>
+    </ul>
+</nav>
