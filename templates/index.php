@@ -92,6 +92,13 @@
              justify-content: center;
              align-items: center;
          }
+
+         @media screen and (max-width: 768px) {
+             .rotated-square .line {
+                 min-width: 376px;
+                 color: rgba(0, 0, 0, 0.1)
+             }
+         }
      </style>
  </head>
 
@@ -111,7 +118,7 @@
                      <p class="text-uppercase text-primary m-0 text-center">Công ty thiết bị công nghiệp Toàn Thịnh Phát xin kính chào quý khách</p>
                  </div>
                  <div class="col-md-4">
-                     <div class="row align-items-center">
+                     <div class="row align-items-center text-center">
                          <div class="col-md-2">
                              <p class="text-primary m-0">Email:</p>
                          </div>
@@ -136,14 +143,14 @@
      <section>
          <div class="container">
              <!-- logo; search; phone; -->
-             <div class="row align-items-center">
+             <div class="row align-items-center text-center">
                  <!-- logo -->
                  <div class="col-md-3">
-                     <a class="header_logo" href=""><img onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" /></a>
+                     <img onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" />
                  </div>
                  <!-- search -->
                  <div class="col-md-6">
-                     <div class="">
+                     <div>
                          <div class="col-md-8">
                              <form>
                                  <div class="input-group mb-3">
@@ -465,10 +472,16 @@
          </div>
      </section>
      <!-- section đăng ký nhận tin -->
-     <section style="background: url('../assets/images/dangkynhantin/bg_dangkynhantin.svg') no-repeat;">
+     <style>
+         section.dangkynhantin {
+             background: url('../assets/images/dangkynhantin/bg_dangkynhantin.svg') no-repeat;
+             background-size: cover;
+         }
+     </style>
+     <section class="dangkynhantin">
          <div class="container-fluid">
              <div class="row justify-content-center align-items-center">
-                 <div class="col-md-3 mt-4 mb-4" style="padding-left:53px;">
+                 <div class="col-md-3 mt-4 mb-4">
                      <img class="img-fluid" src="../assets/images/dangkynhantin/dangkynhantin.svg" alt="">
                      <p class="text-light">Đăng ký nhận tin để nhân được thông tin sản phẩm và chương trình khuyến mãi nhanh nhất</p>
                  </div>
@@ -482,11 +495,13 @@
                          </div>
                          <!-- phone number -->
                          <div class="row mb-3 mt-3">
-                             <div class="col-md-9">
+                             <div class="col-md-9 mb-3">
                                  <input type="text" class="form-control" id="phonenumber" placeholder="Số điện thoại:" name="phonenumber">
                              </div>
                              <div class="col-md-3">
-                                 <button type="submit" class="btn btn-light text-danger text-uppercase">Gửi</button>
+                                 <button type="submit" class="btn btn-light text-danger text-uppercase">
+                                     <img class="img-fluid" src="../assets/images/dangkynhantin/sent_font.svg" alt="send img">
+                                 </button>
                              </div>
                          </div>
                      </form>
@@ -495,7 +510,28 @@
          </div>
      </section>
      <!-- section vi sao chon chung toi -->
-     <section>
+     <style>
+         section#visaochonchungtoi .card {
+             min-height: 90%;
+             max-height: 90%;
+             /* overflow-y: auto; */
+         }
+
+         .image_container {
+             height: 100%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             padding: 15px 0;
+         }
+
+         @media screen and (max-width: 768px) {
+             #visaochonchungtoi .card .card-body {
+                 text-align: center;
+             }
+         }
+     </style>
+     <section id="visaochonchungtoi">
          <div class="container">
              <div class="mt-4 text-center">
                  <h3 class="text-danger  text-uppercase ">Vì sao chọn chúng tôi</h3>
@@ -512,7 +548,7 @@
                      <div class="card mb-3">
                          <div class="row">
                              <div class="col-md-4">
-                                 <div class="d-flex h-100 justify-content-center">
+                                 <div class="image_container">
                                      <img src="../assets/images/visaochonchungtoi/hangchinhhang.png" class="img-fluid rounded-start align-self-center" alt="">
                                  </div>
                              </div>
@@ -529,7 +565,7 @@
                      <div class="card mb-3">
                          <div class="row">
                              <div class="col-md-4">
-                                 <div class="d-flex h-100 justify-content-center">
+                                 <div class="image_container">
                                      <img src="../assets/images/visaochonchungtoi/giaca.png" class="img-fluid rounded-start align-self-center" alt="">
                                  </div>
                              </div>
@@ -546,7 +582,7 @@
                      <div class="card mb-3">
                          <div class="row">
                              <div class="col-md-4">
-                                 <div class="d-flex h-100 justify-content-center">
+                                 <div class="image_container">
                                      <img src="../assets/images/visaochonchungtoi/khohang.png" class="img-fluid rounded-start align-self-center" alt="">
                                  </div>
                              </div>
@@ -566,7 +602,7 @@
                      <div class="card mb-3">
                          <div class="row">
                              <div class="col-md-4">
-                                 <div class="d-flex h-100 justify-content-center">
+                                 <div class="image_container">
                                      <img src="../assets/images/visaochonchungtoi/doingu.png" class="img-fluid rounded-start align-self-center" alt="">
                                  </div>
                              </div>
@@ -583,7 +619,7 @@
                      <div class="card mb-3">
                          <div class="row">
                              <div class="col-md-4">
-                                 <div class="d-flex h-100 justify-content-center">
+                                 <div class="image_container">
                                      <img src="../assets/images/visaochonchungtoi/tuvan.png" class="img-fluid rounded-start align-self-center" alt="">
                                  </div>
                              </div>
@@ -600,7 +636,7 @@
                      <div class="card mb-3">
                          <div class="row">
                              <div class="col-md-4">
-                                 <div class="d-flex h-100 justify-content-center">
+                                 <div class="image_container">
                                      <img src="../assets/images/visaochonchungtoi/baohanh.png" class="img-fluid rounded-start align-self-center" alt="">
                                  </div>
                              </div>
@@ -617,55 +653,118 @@
          </div>
      </section>
      <!-- section kiến thức - tin tức - video -->
+     <?php
+        // UPLOAD_PRODUCT_L trong định nghĩa file constant.php
+        $imagePath =  '../assets/images/kienthuc-tintuc-video/hinhmau.png';
+        $defaultImage = THUMBS . "/190x200x1/assets/images/noimage.png";
+        $imageSrc = file_exists($imagePath) && !empty($value['photo']) ? $imagePath : $defaultImage;
+        ?>
      <style>
          /* Thêm xử lý tiêu đề card sát góc lề trái trên cùng*/
-         .card-body.ps-0 {
+         section#kienthuc-tintuc-video .card-body {
              padding-left: 0;
              padding-top: 0;
          }
+
+         section#kienthuc-tintuc-video .card {
+             margin-bottom: 16px;
+             margin-right: 0;
+             border: 1px solid rgba(0, 0, 0, 0.1);
+             box-shadow: none;
+             transition: box-shadow 0.3s ease;
+         }
+
+         section#kienthuc-tintuc-video .card:hover,
+         .card:hover {
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         }
+
+         div.img-background {
+             height: 100%;
+             width: 100%;
+             border-radius: 4px 0 0 4px;
+
+         }
+
+         div.img-background {
+             background: url('../assets/images/kienthuc-tintuc-video/hinhmau.png');
+             background-size: cover;
+             background-repeat: no-repeat;
+             background-position: top left;
+         }
+
+         @media screen and (max-width: 500px) {
+
+             /* Thêm spacing cho mục kiến thức tin tức video */
+             .kienthuc-tintuc-video {
+                 display: grid;
+                 gap: 16px;
+                 padding: 20px 16px;
+             }
+
+             div.img-background {
+                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                 border-radius: 0;
+                 height: 131px;
+             }
+
+             div.img-background {
+                 background-size: contain;
+                 background-position: center;
+             }
+
+             section#kienthuc-tintuc-video .card {
+                 border: 1px solid rgba(0, 0, 0, 0.1);
+             }
+
+             section#kienthuc-tintuc-video .card-body {
+                 padding-left: 16px;
+                 padding-top: 16px;
+             }
+         }
      </style>
-     <section>
+     <section id="kienthuc-tintuc-video">
          <div class="container">
-             <div class="row">
+             <div class="row kienthuc-tintuc-video">
                  <!-- kien thuc -->
                  <div class="col-md-4">
                      <div class="bottom_slash">
                          <h3 class="text-uppercase text-danger">kiến thức</h3>
                      </div>
                      <p>Chia sẽ kiến thức từ Toàn Thịnh Phát</p>
-                     <div class="card mb-3 border-0 me-0 mb-2">
+                     <div class="card">
                          <div class="row">
                              <div class="col-md-4">
-                                 <img class="img-fluid" src="<?= THUMBS ?>/190x200x1/assets/images/noimage.png" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="img-background"></div>
                              </div>
                              <div class="col-md-8">
-                                 <div class="card-body ps-0">
+                                 <div class="card-body">
                                      <h5 class="card-title">Uy tín chất lượng cao</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
                              </div>
                          </div>
                      </div>
-                     <div class="card mb-3 border-0 me-0 mb-2">
+                     <div class="card">
                          <div class="row">
                              <div class="col-md-4">
-                                 <img class="img-fluid" src="<?= THUMBS ?>/190x200x1/assets/images/noimage.png" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="img-background"></div>
                              </div>
                              <div class="col-md-8">
-                                 <div class="card-body ps-0">
+                                 <div class="card-body">
                                      <h5 class="card-title">Giá cả cạnh tranh</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
                              </div>
                          </div>
                      </div>
-                     <div class="card mb-3 border-0 me-0 mb-2">
+                     <div class="card">
                          <div class="row">
                              <div class="col-md-4">
-                                 <img class="img-fluid" src="<?= THUMBS ?>/190x200x1/assets/images/noimage.png" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="img-background"></div>
                              </div>
                              <div class="col-md-8">
-                                 <div class="card-body ps-0">
+                                 <div class="card-body">
                                      <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
@@ -679,39 +778,39 @@
                          <h3 class="text-uppercase text-danger">tin tức</h3>
                      </div>
                      <p>Cập nhật những tin tức mới từ Toàn Thịnh Phát</p>
-                     <div class="card mb-3 border-0 me-0 mb-2">
+                     <div class="card">
                          <div class="row">
                              <div class="col-md-4">
-                                 <img class="img-fluid" src="<?= THUMBS ?>/190x200x1/assets/images/noimage.png" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="img-background"></div>
                              </div>
                              <div class="col-md-8">
-                                 <div class="card-body ps-0">
+                                 <div class="card-body">
                                      <h5 class="card-title">Uy tín chất lượng cao</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
                              </div>
                          </div>
                      </div>
-                     <div class="card mb-3 border-0 me-0 mb-2">
+                     <div class="card">
                          <div class="row">
                              <div class="col-md-4">
-                                 <img class="img-fluid" src="<?= THUMBS ?>/190x200x1/assets/images/noimage.png" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="img-background"></div>
                              </div>
                              <div class="col-md-8">
-                                 <div class="card-body ps-0">
+                                 <div class="card-body">
                                      <h5 class="card-title">Giá cả cạnh tranh</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
                              </div>
                          </div>
                      </div>
-                     <div class="card mb-3 border-0 me-0 mb-2">
+                     <div class="card">
                          <div class="row">
                              <div class="col-md-4">
-                                 <img class="img-fluid" src="<?= THUMBS ?>/190x200x1/assets/images/noimage.png" alt="<?= $value['ten' . $lang] ?>" />
+                                 <div class="img-background"></div>
                              </div>
                              <div class="col-md-8">
-                                 <div class="card-body ps-0">
+                                 <div class="card-body">
                                      <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
                                      <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
                                  </div>
@@ -719,6 +818,18 @@
                          </div>
                      </div>
                  </div>
+                 <style>
+                     .video {
+                         width: 100%;
+                         height: 240px;
+                         max-width: 100%;
+                         object-fit: cover;
+                         border-radius: 10px;
+                         overflow: hidden;
+                         cursor: pointer;
+                         transition: transform 0.3s ease;
+                     }
+                 </style>
                  <!-- video -->
                  <div class="col-md-4">
                      <div class="bottom_slash">
@@ -726,7 +837,7 @@
                      </div>
                      <p>Review và trải nghiệm sản phẩm</p>
                      <div>
-                         <video controls height="450" width="350">
+                         <video controls class="video">
                              <source src="movie.mp4" type="video/mp4">
                              <source src="movie.ogg" type="video/ogg">
                              Your browser does not support the video tag.
