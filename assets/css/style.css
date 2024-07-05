@@ -4051,16 +4051,43 @@ section#kienthuc-tintuc-video {
 }
 
 section#kienthuc-tintuc-video .card {
-    margin-bottom: 16px;
-    margin-right: 0;
+
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: none;
     transition: box-shadow 0.3s ease;
+
 }
 
 section#kienthuc-tintuc-video .card:hover,
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+section#kienthuc-tintuc-video .card .card-body {
+    margin-left: 10px;
+    padding: 0;
+}
+
+section#kienthuc-tintuc-video .card .card-title {
+    font-size: 16px;
+    /* max-height: 34px; */
+    /* margin-top: 4px; */
+}
+
+section#kienthuc-tintuc-video .card .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    max-width: 90%;
+    text-align: justify;
+}
+
+section#kienthuc-tintuc-video .card img {
+    margin: 0;
+    padding: 0;
 }
 
 div.img-background {

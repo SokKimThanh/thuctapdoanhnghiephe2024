@@ -295,25 +295,43 @@
                      <h3 class="text-uppercase text-danger">kiến thức</h3>
                  </div>
                  <p>Chia sẽ kiến thức từ Toàn Thịnh Phát</p>
-                 <div class="card">
-                     <img class="card-img-top" src="../../assets/images/kienthuc-tintuc-video/hinhmau.png" alt="hinhmau">
-                     <div class="card-body">
-                         <h5 class="card-title">Uy tín chất lượng cao</h5>
-                         <p class="card-text text-justify">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <div class="card mb-3">
+                     <div class="row g-0">
+                         <div class="col-md-4 p-0 m-0">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                         </div>
+                         <div class="col-md-8 p-0 m-0">
+                             <div class="card-body">
+                                 <h5 class="card-title">Uy tín chất lượng cao</h5>
+                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                             </div>
+                         </div>
                      </div>
                  </div>
-                 <div class="card">
-                     <img class="card-img-top" src="../../assets/images/kienthuc-tintuc-video/hinhmau.png" alt="hinhmau">
-                     <div class="card-body">
-                         <h5 class="card-title">Giá cả cạnh tranh</h5>
-                         <p class="card-text text-justify">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <div class="card mb-3">
+                     <div class="row g-0">
+                         <div class="col-md-4 p-0 m-0">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                         </div>
+                         <div class="col-md-8 p-0 m-0">
+                             <div class="card-body">
+                                 <h5 class="card-title">Giá cả cạnh tranh</h5>
+                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                             </div>
+                         </div>
                      </div>
                  </div>
-                 <div class="card">
-                     <img class="card-img-top" src="../../assets/images/kienthuc-tintuc-video/hinhmau.png" alt="hinhmau">
-                     <div class="card-body">
-                         <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
-                         <p class="card-text text-justify">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <div class="card mb-3">
+                     <div class="row g-0">
+                         <div class="col-md-4 p-0 m-0">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                         </div>
+                         <div class="col-md-8 p-0 m-0">
+                             <div class="card-body">
+                                 <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
+                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                             </div>
+                         </div>
                      </div>
                  </div>
              </div>
@@ -323,25 +341,43 @@
                      <h3 class="text-uppercase text-danger">tin tức</h3>
                  </div>
                  <p>Cập nhật những tin tức mới từ Toàn Thịnh Phát</p>
-                 <div class="card">
-                     <img class="card-img-top" src="../../assets/images/kienthuc-tintuc-video/hinhmau.png" alt="hinhmau">
-                     <div class="card-body">
-                         <h5 class="card-title">Uy tín chất lượng cao</h5>
-                         <p class="card-text text-justify">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <div class="card mb-3">
+                     <div class="row g-0">
+                         <div class="col-md-4 p-0 m-0">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                         </div>
+                         <div class="col-md-8 p-0 m-0">
+                             <div class="card-body">
+                                 <h5 class="card-title">Uy tín chất lượng cao</h5>
+                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                             </div>
+                         </div>
                      </div>
                  </div>
-                 <div class="card">
-                     <img class="card-img-top" src="../../assets/images/kienthuc-tintuc-video/hinhmau.png" alt="hinhmau">
-                     <div class="card-body">
-                         <h5 class="card-title">Giá cả cạnh tranh</h5>
-                         <p class="card-text text-justify">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <div class="card mb-3">
+                     <div class="row g-0">
+                         <div class="col-md-4 p-0 m-0">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                         </div>
+                         <div class="col-md-8 p-0 m-0">
+                             <div class="card-body">
+                                 <h5 class="card-title">Giá cả cạnh tranh</h5>
+                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                             </div>
+                         </div>
                      </div>
                  </div>
-                 <div class="card">
-                     <img class="card-img-top" src="../../assets/images/kienthuc-tintuc-video/hinhmau.png" alt="hinhmau">
-                     <div class="card-body">
-                         <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
-                         <p class="card-text text-justify">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <div class="card mb-3">
+                     <div class="row g-0">
+                         <div class="col-md-4 p-0 m-0">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                         </div>
+                         <div class="col-md-8 p-0 m-0">
+                             <div class="card-body">
+                                 <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
+                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                             </div>
+                         </div>
                      </div>
                  </div>
              </div>
