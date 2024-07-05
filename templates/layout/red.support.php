@@ -1,3 +1,5 @@
+<!-- RED SUPPORT -->
+<!-- Danh sách nút bấm hỗ trợ người dùng như: chăm sóc khách hàng 24/7, nút up to top, hỗ trợ trực tuyến, nút đăng ký -->
 <style>
     :root {
         --white: #fff;
@@ -6,6 +8,8 @@
         --red30: rgba(255, 18, 8, 0.3);
         --white50: rgba(255, 255, 255, 0.5)
     }
+
+
 
     .size-nav {
         position: relative;
@@ -185,6 +189,45 @@
         100% {
             transform: translate(-50%, -50%) scale(1.5);
             opacity: 0;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        .side-nav ul {
+            padding: 8px;
+            border-radius: 15px;
+        }
+
+        .side-nav ul li {
+            height: 40px;
+            width: 40px;
+        }
+
+        .side-nav ul li a {
+            width: 336px;
+            height: 48px;
+            padding: 2px 0 2px 56px;
+        }
+
+        .side-nav ul li:nth-child(2) {
+            background-position: 0 240px;
+        }
+
+        .side-nav ul li:nth-child(3) {
+            background-position: 0 480px;
+        }
+
+        .side-nav ul li:nth-child(4) {
+            background-position: 0 1040px;
+        }
+
+        .side-nav ul li a::before {
+            top: 23px;
+            left: 50%;
+        }
+
+        .side-nav ul li:hover::before {
+            transform: translate(-720%, 10%);
         }
     }
 </style>
