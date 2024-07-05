@@ -1,43 +1,6 @@
-<style>
-    /* Thêm màu cho navbar menu */
-    .bg-danger {
-        background-color: #C50608 !important;
-    }
-
-    /* Thêm định dạng giỏ hàng có đánh số item trong giỏ hàng */
-    .giohang {
-        position: relative;
-    }
-
-    .giohang>.badge {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background-color: white;
-        color: #C50608;
-        font-size: 12px;
-        padding: 3px 5px;
-        border-radius: 50%;
-    }
-
-    ul.navbar-nav {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul.navbar-nav>li.nav-item>a.nav-link {
-        font-size: 1rem;
-        align-self: center;
-    }
-
-    ul.navbar-nav>li.nav-item {
-        height: 100%;
-        justify-content: space-between;
-    }
-</style>
-
+<!-- ------------------------------------- -->
+<!-- red menu header -->
+<!-- ------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger roboto-slab">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

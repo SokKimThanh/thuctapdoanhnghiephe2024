@@ -11,6 +11,17 @@
     --color-black: #212529;
     --color-gray: #6c757d;
     --color-main: #dbc656;
+
+
+
+    /* Toàn thịnh phát color */
+    --white: #fff;
+    --red: #E41204;
+    --red-dark: rgba(197, 6, 8, 1);
+    --red10: rgba(255, 18, 8, 0.1);
+    --red30: rgba(255, 18, 8, 0.3);
+    --white50: rgba(255, 255, 255, 0.5);
+    --Aqua30: rgba(67, 255, 207, 0.3);
 }
 
 .h1,
@@ -1725,6 +1736,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .slider-nav {
     margin-bottom: 20px;
+
 }
 
 .slick-slide .item_kh_img {
@@ -3709,4 +3721,530 @@ div#danhmuc ul li a {
     width: 100%;
     background: gray;
     z-index: -2;
+}
+
+/* ======================================================================================================= */
+/* Thực tập trang thịnh phát 05/07/2024 style desktop*/
+/* ======================================================================================================= */
+
+
+/* ======================================================================================================= */
+/* RED MENU header */
+/* ======================================================================================================= */
+/* Thêm màu cho navbar menu */
+.bg-danger {
+    background-color: #C50608 !important;
+}
+
+/* Thêm định dạng giỏ hàng có đánh số item trong giỏ hàng */
+.giohang {
+    position: relative;
+}
+
+.giohang>.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: white;
+    color: #C50608;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 50%;
+}
+
+ul.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul.navbar-nav>li.nav-item>a.nav-link {
+    font-size: 1rem;
+    align-self: center;
+}
+
+ul.navbar-nav>li.nav-item {
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* ======================================================================================================= */
+/* RED header */
+/* ======================================================================================================= */
+
+/* thêm style chung cho tiêu đề (kiểu chữ và màu chữ) */
+.roboto-slab,
+.text-danger {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* sửa màu text-danger của bootstrap */
+.text-danger {
+    color: var(--red-dark);
+}
+
+/* thêm style cho nút bấm ở mục đăng ký nhận tin */
+.btn-light {
+    text-transform: uppercase;
+}
+
+/* thêm style cho card ở mục vì sao chọn chúng tôi */
+.card-title {
+    font-weight: bold;
+}
+
+/* thêm gạch chân cho tiêu đề kiến thức - tin tức - video */
+.bottom_slash {
+    position: relative;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--red-dark);
+    width: 50%;
+}
+
+/* Thêm style cho hình vuông xoay 45 độ */
+.rotated-square {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--red-dark);
+    transform: rotate(45deg);
+    position: relative;
+    margin: 16px;
+}
+
+/* thêm 2 hình thoi trước và sau */
+.rotated-square::before,
+.rotated-square::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #B8B8B8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    /* canh tâm quay của chính nó ra giữa mỗi hình */
+    transform-origin: center;
+    opacity: 0.5;
+}
+
+.rotated-square::before {
+    transform: rotate(90deg) translate(-45%, -20%)
+}
+
+.rotated-square::after {
+    transform: rotate(90deg) translate(25%, 50%);
+}
+
+/* Thêm line kẻ ngang 3 hình thoi */
+.rotated-square .line {
+    position: absolute;
+    width: 72px;
+    height: 1px;
+    border-bottom: 1px solid #B8B8B8;
+    top: 50%;
+    left: 50%;
+    transform: rotate(135deg) translate(-50%, -50%);
+    transform-origin: 0;
+}
+
+.square-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ======================================================================================================= */
+/* BANNER GALERRY*/
+/* ======================================================================================================= */
+section#header {
+    margin-bottom: 43px;
+}
+
+/* ======================================================================================================= */
+/* BANNER GALERRY*/
+/* ======================================================================================================= */
+section#banner {
+    margin-bottom: 25px;
+}
+
+/* ======================================================================================================= */
+/* danh mục menu */
+/* ======================================================================================================= */
+
+/* Thêm màu nền cho menu danh mục */
+.danhmuc {
+    background-color: #F5F5F5;
+}
+
+/* thêm màu, padding, style chữ cho header danh mục */
+.danhmuc-header {
+    padding: 10px;
+    font-weight: bold;
+    color: #F5F5F5;
+    background-color: var(--red-dark);
+}
+
+/* thêm padding cho danh mục con*/
+ul.danhmuc-body {
+    padding: 10px;
+}
+
+/* thêm margin giữa các mục con*/
+ul.danhmuc-body li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+/* Xóa margin cho phần tử cuối */
+ul.danhmuc-body li:last-child {
+    margin-bottom: 0;
+}
+
+/* thêm style chữ cho mỗi menu con */
+ul.danhmuc-body li a {
+    color: #333;
+}
+
+/* TOGGLE MENU: thêm style khi hover lên link menu */
+.danhmuc ul li a:hover {
+    color: #C50608;
+}
+
+/* TOGGLE MENU: thêm style cho button toggle menu  */
+.danhmuc button.btn {
+    box-shadow: none;
+}
+
+/* TOGGLE MENU: thêm style mặc định cho nút toggle  */
+.danhmuc button.btn-toggle {
+    border: 0;
+    outline: 0;
+}
+
+/* TOGGLE MENU: thêm style khi hover vào nút toggle */
+.danhmuc button.btn-toggle:hover {
+    background-color: rgba(255, 155, 100, 0.5);
+}
+
+/* ======================================================================================================= */
+/* sản phẩm */
+/* ======================================================================================================= */
+section#sanphammoi {
+    margin-bottom: 39px;
+}
+
+/* thêm style cho danh sach sản phẩm */
+.dsSanPhamNoiBat {
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    padding: 10px 30px 20px;
+}
+
+.dsSanPhamNoiBat:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.dsSanPhamNoiBat .card-footer {
+    background-color: #fff;
+    border: 0;
+}
+
+.dsSanPhamNoiBat .card-title {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 15px;
+}
+
+.dsSanPhamNoiBat .card {
+    text-align: center;
+    margin: 4px;
+    max-height: 400px;
+    min-height: 350px;
+    height: 350px;
+}
+
+.dsSanPhamNoiBat .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    cursor: pointer;
+}
+
+.dsSanPhamNoiBat .card-text {
+    color: #333;
+}
+
+.dsSanPhamNoiBat .card:hover .card-text {
+    font-weight: bold;
+    color: #C50608;
+}
+
+.dsSanPhamNoiBat .card-body {
+    overflow-y: auto;
+}
+
+/* xem thêm */
+.xemthem_container {
+    background-color: #F0EFEF;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 39px;
+}
+
+.xemthem_container:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.xemthem_container:hover a {
+    font-size: larger;
+    transition: font-size 250ms ease-in-out;
+}
+
+/* ======================================================================================================= */
+/* đăng ký nhận tin */
+/* ======================================================================================================= */
+section#dangkynhantin {
+    background: url('../../assets/images/dangkynhantin/bg_dangkynhantin.png') no-repeat;
+    background-size: cover;
+    margin-bottom: 38px;
+}
+
+.input-group .btn {
+    z-index: 0;
+}
+
+
+/* ======================================================================================================= */
+/* vì sao chọn chúng tôi */
+/* ======================================================================================================= */
+section#visaochonchungtoi {
+    margin-bottom: 91px;
+}
+
+section#visaochonchungtoi .card {
+    min-height: 90%;
+    max-height: 90%;
+    /* overflow-y: auto; */
+}
+
+.image_container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* ======================================================================================================= */
+/* Kiến thức - tin tức - videos */
+/* ======================================================================================================= */
+/* Thêm xử lý tiêu đề card sát góc lề trái trên cùng*/
+section#kienthuc-tintuc-video {
+    margin-bottom: 71px;
+}
+
+section#kienthuc-tintuc-video .card {
+    margin-bottom: 16px;
+    margin-right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+}
+
+section#kienthuc-tintuc-video .card:hover,
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.img-background {
+    height: 100%;
+    width: 100%;
+    border-radius: 4px 0 0 4px;
+
+}
+
+div.img-background {
+    background: url('../assets/images/kienthuc-tintuc-video/hinhmau.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.video {
+    width: 100%;
+    height: 240px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* ======================================================================================================= */
+/* Đối tác và thương hiệu */
+/* ======================================================================================================= */
+section#doitacvathuonghieu {
+    margin-bottom: 71px;
+}
+
+.doitac {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ======================================================================================================= */
+/* footer toàn thịnh phát */
+/* ======================================================================================================= */
+.footer-logo {
+    border-top: #C50608 solid 1px;
+    padding-top: 13px;
+    margin-bottom: 29px;
+}
+
+.footer-info {
+    background: #1BA9FF;
+    margin: 0 !important;
+    padding: 16px 20px;
+}
+
+.footer-info ul {
+    list-style-type: disc;
+    /* Hiển thị gạch đầu dòng tròn */
+    padding-left: 20px;
+    /* Căn lề để gạch đầu dòng không sát mép */
+}
+
+.footer-info li {
+    margin-bottom: 5px;
+    /* Thêm khoảng cách giữa các mục */
+}
+
+.footer li::before {
+    content: '-';
+    /* Thay đổi bullet thành gạch đầu dòng */
+    padding-right: 8px;
+}
+
+
+/* ======================================================================================================= */
+/* mobile: Thực tập trang thịnh phát 05/07/2024 style */
+/* ======================================================================================================= */
+
+
+/* ======================================================================================================= */
+/* mobile: header */
+/* ======================================================================================================= */
+
+
+@media screen and (max-width: 768px) {
+    .rotated-square .line {
+        min-width: 376px;
+        color: rgba(0, 0, 0, 0.1)
+    }
+}
+
+
+/* ======================================================================================================= */
+/* mobile: sản phẩm */
+/* ======================================================================================================= */
+
+@media only screen and (max-width: 768px) {
+    .dsSanPhamNoiBat {
+        padding: 10px;
+    }
+
+    .dsSanPhamNoiBat:hover {
+        box-shadow: none !important;
+    }
+}
+
+
+/* ======================================================================================================= */
+/* mobile: vì sao chọn chúng tôi*/
+/* ======================================================================================================= */
+
+@media screen and (max-width: 768px) {
+    #visaochonchungtoi .card .card-body {
+        text-align: center;
+    }
+}
+
+/* ======================================================================================================= */
+/* mobile Kiến thức - tin tức - videos */
+/* ======================================================================================================= */
+
+@media screen and (max-width: 500px) {
+
+    /* Thêm spacing cho mục kiến thức tin tức video */
+    .kienthuc-tintuc-video {
+        display: grid;
+        gap: 16px;
+        padding: 20px 16px;
+    }
+
+    div.img-background {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        height: 131px;
+    }
+
+    div.img-background {
+        background-size: contain;
+        background-position: center;
+    }
+
+    section#kienthuc-tintuc-video .card {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    section#kienthuc-tintuc-video .card-body {
+        padding-left: 16px;
+        padding-top: 16px;
+    }
+}
+
+/* ======================================================================================================= */
+/* mobile: footer toàn thịnh phát */
+/* ======================================================================================================= */
+
+@media screen and (max-width: 500px) {
+    .dsLogoMXH {
+        background: var(--Aqua30);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .dsLogoMXH:hover img {
+        box-shadow: rebeccapurple 2px 2px 0px #fff inset transparent;
+    }
+
+    .dsLogoMXH img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .footer-info .img-fluid {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }

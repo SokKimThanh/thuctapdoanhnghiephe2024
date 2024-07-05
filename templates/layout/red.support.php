@@ -1,16 +1,6 @@
 <!-- RED SUPPORT -->
 <!-- Danh sách nút bấm hỗ trợ người dùng như: chăm sóc khách hàng 24/7, nút up to top, hỗ trợ trực tuyến, nút đăng ký -->
 <style>
-    :root {
-        --white: #fff;
-        --red: #E41204;
-        --red10: rgba(255, 18, 8, 0.1);
-        --red30: rgba(255, 18, 8, 0.3);
-        --white50: rgba(255, 255, 255, 0.5)
-    }
-
-
-
     .size-nav {
         position: relative;
         height: 350px;
