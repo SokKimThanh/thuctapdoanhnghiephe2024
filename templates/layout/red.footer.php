@@ -11,7 +11,7 @@
                      <div class="col-md-8 me-0">
                          <div class="row align-items-center text-align-center">
                              <div class="col-md-2 me-0">
-                                 <img src="../assets/images/doitacvathuonghieucuachungtoi/logoToanThinhPhat.svg" alt="logo" class="img-fluid">
+                                 <img src="../assets/images/doitacvathuonghieucuachungtoi/logoToanThinhPhat.svg" alt="logo" class="img-fluid logo logoTTP">
                              </div>
                              <div class="col-md-10 me-0">
                                  <img src="../assets/images/doitacvathuonghieucuachungtoi/fontToanThinhPhat.svg" alt="logo" class="img-fluid">
@@ -22,9 +22,9 @@
                      <!-- logo thuong mai dien tu -->
                      <div class="col-md-4">
                          <ul class="p-0 d-flex justify-content-around align-items-center">
-                             <li><a><img src="../assets/images/doitacvathuonghieucuachungtoi/shopee.png" alt="shopee" class="img-fluid"></a></li>
-                             <li><a><img src="../assets/images/doitacvathuonghieucuachungtoi/lazada.png" alt="lazada" class="img-fluid"></a></li>
-                             <li><a><img src="../assets/images/doitacvathuonghieucuachungtoi/tiki.png" alt="tiki" class="img-fluid"></a></li>
+                             <li><a><img src="../assets/images/doitacvathuonghieucuachungtoi/shopee.png" alt="shopee" class="img-fluid logo"></a></li>
+                             <li><a><img src="../assets/images/doitacvathuonghieucuachungtoi/lazada.png" alt="lazada" class="img-fluid logo"></a></li>
+                             <li><a><img src="../assets/images/doitacvathuonghieucuachungtoi/tiki.png" alt="tiki" class="img-fluid logo"></a></li>
                          </ul>
                      </div>
                  </div>

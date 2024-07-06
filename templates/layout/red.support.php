@@ -20,8 +20,13 @@
         bottom: 10%;
         /* thẻ ul đưa lên trên khi lăn chuột*/
         z-index: 1;
-        background-color: var(--white50);
         display: inline;
+        border-radius: 15px;
+        padding: 4px;
+    }
+
+    .side-nav ul:hover {
+        background-color: white;
     }
 
     /* thêm canh lề cho ul */

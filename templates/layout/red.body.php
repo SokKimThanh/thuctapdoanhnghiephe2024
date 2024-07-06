@@ -298,7 +298,8 @@
                  <div class="card mb-3">
                      <div class="row g-0">
                          <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
                          </div>
                          <div class="col-md-8 p-0 m-0">
                              <div class="card-body">
@@ -311,7 +312,8 @@
                  <div class="card mb-3">
                      <div class="row g-0">
                          <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
                          </div>
                          <div class="col-md-8 p-0 m-0">
                              <div class="card-body">
@@ -324,7 +326,8 @@
                  <div class="card mb-3">
                      <div class="row g-0">
                          <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
                          </div>
                          <div class="col-md-8 p-0 m-0">
                              <div class="card-body">
@@ -344,7 +347,8 @@
                  <div class="card mb-3">
                      <div class="row g-0">
                          <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
                          </div>
                          <div class="col-md-8 p-0 m-0">
                              <div class="card-body">
@@ -357,7 +361,8 @@
                  <div class="card mb-3">
                      <div class="row g-0">
                          <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
                          </div>
                          <div class="col-md-8 p-0 m-0">
                              <div class="card-body">
@@ -370,7 +375,8 @@
                  <div class="card mb-3">
                      <div class="row g-0">
                          <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
+                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
                          </div>
                          <div class="col-md-8 p-0 m-0">
                              <div class="card-body">
@@ -416,14 +422,14 @@
                  </div>
              </div>
          </div>
-         <div class="row doitac">
+         <div class="doitac">
              <!-- đối tác -->
-             <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
-             <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2">
-             <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3">
-             <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4">
-             <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5">
-             <img class="img-fluid col-md-2 col-5" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6">
+             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
+             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2">
+             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3">
+             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4">
+             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5">
+             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6">
          </div>
      </div>
  </section>
