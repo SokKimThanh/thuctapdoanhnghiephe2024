@@ -384,8 +384,8 @@ NN_FRAMEWORK.OwlPage = function () {
             $('.owl-partner').trigger('next.owl.carousel');
         });*/
     }
-    if ($(".auto_danhMucNoiBat").exists()) {
-        $('.auto_danhMucNoiBat').owlCarousel({
+    if ($(".auto_slider").exists()) {
+        $('.auto_slider').owlCarousel({
             rewind: true,
             autoplay: true,
             loop: false,
@@ -400,17 +400,25 @@ NN_FRAMEWORK.OwlPage = function () {
             responsiveRefreshRate: 200,
             responsive: {
                 0: {
-                    items: 1,
+                    items: 2,
                     margin: 10,
                 },
-                768: {
+                450: {
+                    items: 2,
+                    margin: 10,
+                },
+                800: {
                     items: 3,
                     margin: 10,
                 },
-                1024: {
-                    items: 6,
-                    margin: 4,
+                1000: {
+                    items: 3,
+                    margin: 20,
                 },
+                1030: {
+                    items: 3,
+                    margin: 30,
+                }
             }
         });
         /*$('.prev-partner').click(function() {

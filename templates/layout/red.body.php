@@ -32,7 +32,7 @@
              </div>
              <!-- danh sach san pham: danh sach hien thi -->
              <!-- php loop start -->
-             <div class="owl-carousel owl-theme auto_dcategory">
+             <div class="owl-carousel owl-theme auto_slider">
                  <?php foreach ($sanpham_nb as $value) {  ?>
                      <!-- danh sach san pham -->
                      <!-- sanpham margin -->
@@ -89,7 +89,7 @@
                  <!-- danh sach san pham: danh sach hien thi -->
                  <!-- php loop start -->
                  <?php $sanpham = $d->rawQuery("select ten$lang, tenkhongdauvi, mota$lang, ngaytao,photo, id,gia from #_product where id_list = ? and hienthi>0 and type='san-pham' order by stt,id desc", array($v['id'])); ?>
-                 <div class="owl-carousel owl-theme auto_dcategory">
+                 <div class="owl-carousel owl-theme auto_slider">
                      <?php foreach ($sanpham as $key => $value) { ?>
                          <!-- danh sach san pham -->
                          <!-- sanpham margin -->

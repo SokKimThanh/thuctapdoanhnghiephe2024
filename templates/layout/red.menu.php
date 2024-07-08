@@ -3,10 +3,13 @@
 <!-- ------------------------------------- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger roboto-slab">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-     
-    <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
-    </button>
+
+    <div id="navbar-toggle">
+        <button class="btn btn-toggle d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
+        </button>
+        <img class="img-fluid logoTTP" onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" />
+    </div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item <?= $source == 'index' ? 'active' : '' ?>">

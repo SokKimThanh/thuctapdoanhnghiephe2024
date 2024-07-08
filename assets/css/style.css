@@ -3773,11 +3773,25 @@ ul.navbar-nav>li.nav-item {
 /* desktop: Header: menu slider hinh */
 /* ======================================================================================================= */
 
-/* lập trình cho chỗn này biến height thành 100% khi click vào navbar button icon */
-nav.navbar {
-    /* height: 43px; */
+/* thêm logo khi ở mobile trên thành navbar */
+#navbar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+#navbar-toggle img.logoTTP {
+    width: 24%;
+    background-color: var(--white50);
+    border-radius: 15px;
+    padding: 4px;
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    #navbar-toggle img.logoTTP {
+        display: block;
+    }
+}
 /* ======================================================================================================= */
 /* desktop: Header: logo search phone */
 /* ======================================================================================================= */
@@ -3891,7 +3905,7 @@ nav.navbar {
 
 
 /* ======================================================================================================= */
-/* BANNER GALERRY*/
+/* desktop: BANNER GALERRY*/
 /* ======================================================================================================= */
 section#header {
     margin-bottom: 43px;
@@ -4254,10 +4268,40 @@ section#doitacvathuonghieu {
 /* mobile: Thực tập trang thịnh phát 05/07/2024 style */
 /* ======================================================================================================= */
 
+/* ======================================================================================================= */
+/* mobile: seo*/
+/* ======================================================================================================= */
+@media screen and (max-width: 500px) {
+    #red_seo {
+        display: none;
+    }
+
+    #logosearchphone_container {
+        border: none;
+    }
+
+    #logosearchphone_container .phone {
+        display: none;
+    }
+
+    nav.danhmuc {
+        display: none;
+    }
+
+    #list-image-gallery {
+        display: none;
+    }
+}
 
 /* ======================================================================================================= */
 /* mobile: header: danh mục menu */
 /* ======================================================================================================= */
+
+@media screen and (max-width: 500px) {
+    #logosearchphone_container img {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .rotated-square .line {

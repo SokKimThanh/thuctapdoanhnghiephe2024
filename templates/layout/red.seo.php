@@ -5,7 +5,7 @@
 <!-- |-|-row logo cong ty - ô tìm kiếm  - số điện thoại-->
 <!-- |-|- row danh mục - menu - slider-->
 <!-- |-|- row sản phẩm nổi bật-->
-<section>
+<section id="red_seo">
     <div class="container">
         <div class="row mt-4 align-items-center">
 

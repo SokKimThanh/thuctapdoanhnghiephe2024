@@ -57,11 +57,12 @@
                          </div>
                      </div>
                      <!-- slider -->
-                     <div class="row">
+                     <div id="list-image-gallery" class="row">
                          <div class="col-md-8">
                              <?php include TEMPLATE . LAYOUT . "red.slide.php"; ?>
                          </div>
                          <div class="col-md-4 text-align-center">
+
                              <ul class="list-image-gallery">
                                  <li>
                                      <a>
@@ -74,6 +75,7 @@
                                      </a>
                                  </li>
                              </ul>
+
                          </div>
                      </div>
                  </div>
@@ -83,16 +85,13 @@
      <section id="banner">
          <div class="container">
              <!-- banner -->
-             <div class="row">
-                 <div class="col-md-4 mt-3">
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
-                 </div>
-                 <div class="col-md-4 mt-3">
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
-                 </div>
-                 <div class="col-md-4 mt-3">
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
-                 </div>
+             <div class="owl-carousel owl-theme auto_slider">
+                 <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
+
+                 <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
+
+                 <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
+
              </div>
          </div>
      </section>
