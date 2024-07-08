@@ -3954,6 +3954,8 @@ section#header {
     margin-bottom: 43px;
 }
 
+
+
 section#header .list-image-gallery {
     display: flex;
     align-items: center;
@@ -4234,7 +4236,7 @@ section#doitacvathuonghieu {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 8px;
     border-radius: 10px;
     overflow: hidden;
     flex-direction: row;
@@ -4343,6 +4345,11 @@ section#doitacvathuonghieu {
 @media screen and (max-width: 500px) {
     #logosearchphone_container img {
         display: none;
+    }
+
+    /* bỏ margin bottom khi ở màn hình điện thoại */
+    section#header {
+        margin-bottom: 0;
     }
 }
 

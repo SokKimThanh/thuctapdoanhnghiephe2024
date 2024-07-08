@@ -33,9 +33,9 @@
              <!-- danh sach san pham: danh sach hien thi -->
              <!-- php loop start -->
              <div class="owl-carousel owl-theme auto_slider">
+                 <!-- danh sach san pham -->
+                 <!-- sanpham margin -->
                  <?php foreach ($sanpham_nb as $value) {  ?>
-                     <!-- danh sach san pham -->
-                     <!-- sanpham margin -->
                      <div class="p-0">
                          <div class="card">
 
