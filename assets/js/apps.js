@@ -408,16 +408,16 @@ NN_FRAMEWORK.OwlPage = function () {
                     margin: 10,
                 },
                 800: {
-                    items: 3,
+                    items: 2,
                     margin: 10,
                 },
                 1000: {
                     items: 3,
-                    margin: 20,
+                    margin: 5,
                 },
                 1030: {
-                    items: 3,
-                    margin: 30,
+                    items: 6,
+                    margin: 5,
                 }
             }
         });

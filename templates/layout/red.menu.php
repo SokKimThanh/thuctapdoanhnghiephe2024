@@ -5,10 +5,16 @@
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
 
     <div id="navbar-toggle">
-        <button class="btn btn-toggle d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="btn btn-toggle d-flex align-items-center justify-content-between col-md-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
         </button>
-        <img class="img-fluid logoTTP" onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" />
+        <form method="get" class="col-md-7">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="keyword2" name="keyword" placeholder="Tìm kiếm sản phẩm" onkeypress="doEnter(event,'keyword2');">
+                <button type="submit" class="btn btn-danger" onclick="onSearch('keyword2');"><i class="far fa-search"></i></button>
+            </div>
+        </form>
+        <img class="img-fluid logoTTP col-md-4" onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" />
     </div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">

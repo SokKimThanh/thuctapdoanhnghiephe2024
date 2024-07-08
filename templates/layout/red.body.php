@@ -177,15 +177,15 @@
          </div>
          <!-- hang 1 -->
          <div class="row">
-             <div class="col-md-4">
+             <div class="col-md-4 col-6">
                  <div class="card mb-3">
                      <div class="row">
-                         <div class="col-md-4">
+                         <div class="col-md-4 col-sm-4">
                              <div class="image_container">
                                  <img src="../assets/images/visaochonchungtoi/hangchinhhang.png" class="img-fluid rounded-start align-self-center" alt="">
                              </div>
                          </div>
-                         <div class="col-md-8">
+                         <div class="col-md-8 col-sm-8">
                              <div class="card-body">
                                  <h5 class="card-title">Hàng Chính hãng</h5>
                                  <p class="card-text">Đúng xuất xứ, đầy đủ giấy tờ</p>
@@ -194,7 +194,7 @@
                      </div>
                  </div>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-4 col-6">
                  <div class="card mb-3">
                      <div class="row">
                          <div class="col-md-4">
@@ -211,7 +211,7 @@
                      </div>
                  </div>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-4 col-6">
                  <div class="card mb-3">
                      <div class="row">
                          <div class="col-md-4">
@@ -228,10 +228,10 @@
                      </div>
                  </div>
              </div>
-         </div>
-         <!-- hang 2 -->
-         <div class="row">
-             <div class="col-md-4">
+
+             <!-- hang 2 -->
+
+             <div class="col-md-4 col-6">
                  <div class="card mb-3">
                      <div class="row">
                          <div class="col-md-4">
@@ -248,7 +248,7 @@
                      </div>
                  </div>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-4 col-6">
                  <div class="card mb-3">
                      <div class="row">
                          <div class="col-md-4">
@@ -265,7 +265,7 @@
                      </div>
                  </div>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-4 col-6">
                  <div class="card mb-3">
                      <div class="row">
                          <div class="col-md-4">

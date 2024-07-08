@@ -26,7 +26,7 @@
              <!-- danh muc; menu -->
              <div class="row">
                  <!-- danh muc -->
-                 <div class="col-md-3 p-0">
+                 <div class="col-md-3">
                      <nav class="danhmuc">
                          <div class="danhmuc-header roboto-slab container-fluid d-flex align-items-center">
                              <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -62,7 +62,6 @@
                              <?php include TEMPLATE . LAYOUT . "red.slide.php"; ?>
                          </div>
                          <div class="col-md-4 text-align-center">
-
                              <ul class="list-image-gallery">
                                  <li>
                                      <a>
@@ -75,7 +74,6 @@
                                      </a>
                                  </li>
                              </ul>
-
                          </div>
                      </div>
                  </div>
@@ -85,13 +83,20 @@
      <section id="banner">
          <div class="container">
              <!-- banner -->
-             <div class="owl-carousel owl-theme auto_slider">
+             <div id="banner-desktop" class="row d-flex justify-content-between align-items-center">
+                 <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
+
+                 <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
+
+                 <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
+             </div>
+             <!-- Thêm banner mobile khi hiển thị mobile -->
+             <div id="banner-mobile" class="owl-carousel owl-theme auto_slider">
                  <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
 
                  <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
 
                  <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
-
              </div>
          </div>
      </section>

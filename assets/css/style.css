@@ -3778,20 +3778,63 @@ ul.navbar-nav>li.nav-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* gap: 10px; */
+}
+
+#navbar-toggle form {
+    height: 38px;
+    display: none;
 }
 
 #navbar-toggle img.logoTTP {
     width: 24%;
-    background-color: var(--white50);
+    background-color: white;
     border-radius: 15px;
     padding: 4px;
     display: none;
 }
+
 @media screen and (max-width: 500px) {
+    #navbar-toggle {
+        flex-direction: row-reverse;
+    }
+
+    #navbar-toggle form {
+        display: block;
+    }
+
     #navbar-toggle img.logoTTP {
         display: block;
     }
+
+    #navbar-toggle button {
+        width: fit-content !important;
+    }
 }
+
+#banner-desktop img {
+    margin-right: 1px;
+    width: 33%;
+}
+
+#bannder-desktop img:hover:nth-last-child() {
+    margin-right: 0;
+}
+
+#banner-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    #banner-desktop {
+        display: none !important;
+    }
+
+    #banner-mobile {
+        display: block;
+    }
+}
+
 /* ======================================================================================================= */
 /* desktop: Header: logo search phone */
 /* ======================================================================================================= */
@@ -3957,7 +4000,7 @@ section#banner img:hover {
     font-weight: bold;
     color: #F5F5F5;
     background-color: var(--red-dark);
-    /* height: 43px; */
+    height: 66px;
 }
 
 .danhmuc>.danhmuc-header .danhmuc-title {
@@ -4101,7 +4144,7 @@ section#dangkynhantin {
 /* desktop: vì sao chọn chúng tôi */
 /* ======================================================================================================= */
 section#visaochonchungtoi {
-    margin-bottom: 91px;
+    margin-bottom: 38px;
 }
 
 section#visaochonchungtoi .card {
@@ -4144,7 +4187,7 @@ section#kienthuc-tintuc-video .card .card-body {
 section#kienthuc-tintuc-video .card .card-title {
     font-size: 16px;
     /* max-height: 34px; */
-    /* margin-top: 4px; */
+    margin-top: 16px !important;
 }
 
 section#kienthuc-tintuc-video .card .card-text {
@@ -4260,8 +4303,6 @@ section#doitacvathuonghieu {
     .footer-logo .logoTTP {
         width: 79px;
     }
-
-
 }
 
 /* ======================================================================================================= */
@@ -4278,6 +4319,8 @@ section#doitacvathuonghieu {
 
     #logosearchphone_container {
         border: none;
+        display: none;
+        margin: 0;
     }
 
     #logosearchphone_container .phone {
@@ -4296,7 +4339,7 @@ section#doitacvathuonghieu {
 /* ======================================================================================================= */
 /* mobile: header: danh mục menu */
 /* ======================================================================================================= */
-
+/* Làm thanh search và các thông tin con biến mất khỏi màn hình mobile chỉ gọi lại khi nhấp vào icon */
 @media screen and (max-width: 500px) {
     #logosearchphone_container img {
         display: none;
