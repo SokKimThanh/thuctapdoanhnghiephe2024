@@ -271,7 +271,7 @@ switch ($com) {
 	case 'sitemap':
 		include_once LIBRARIES . "sitemap.php";
 		exit();
-
+		
 	case '':
 	case 'index':
 		$source = "index";
