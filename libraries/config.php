@@ -72,7 +72,8 @@
 				"san-pham" => array("vi"=>"san-pham"),
 				"cong-trinh" => array("vi"=>"cong-trinh"),
 				"dich-vu" => array("vi"=>"dich-vu"),
-				"lien-he" => array("vi"=>"lien-he")
+				"lien-he" => array("vi"=>"lien-he"),
+				"doi-tac" => array("vi"=>"doi-tac")
 			)
 		),
 		'order' => array(

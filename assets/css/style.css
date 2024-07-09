@@ -4188,8 +4188,15 @@ section#kienthuc-tintuc-video .card .card-body {
 
 section#kienthuc-tintuc-video .card .card-title {
     font-size: 16px;
-    /* max-height: 34px; */
-    margin-top: 16px !important;
+}
+
+/* xử lý margin-top cho card-title khi ở màn hình mobile */
+@media screen and (max-width: 500px) {
+
+    section#kienthuc-tintuc-video .card .card-title {
+        margin-top: 16px;
+    }
+
 }
 
 section#kienthuc-tintuc-video .card .card-text {
