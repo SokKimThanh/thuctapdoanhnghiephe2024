@@ -1,3 +1,8 @@
-<div class="breadCrumbs">
-    <div class="wrap-content"><?= $breadcrumbs ?></div>
-</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <?= $breadcrumbs ?>
+        </div>
+    </div>
+</section>

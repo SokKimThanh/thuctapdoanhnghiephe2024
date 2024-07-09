@@ -162,4 +162,5 @@ define("thoat","Thoát");
 define("chuanhaptukhoatimkiem","Chưa nhập từ khóa tìm kiếm");
 define("capnhatthongtin","Cập nhật thông tin");
 define("noidungdangcapnhat","Nội dung đang cập nhật");
+define("doitac","Đối tác");
 ?>

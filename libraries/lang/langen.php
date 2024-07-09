@@ -162,4 +162,5 @@ define("thoat","Exit");
 define("chuanhaptukhoatimkiem","No search keywords entered");
 define("capnhatthongtin","Update information");
 define("noidungdangcapnhat","Content is updating");
+define("doitac","Partner");
 ?>

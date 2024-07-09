@@ -1,14 +1,28 @@
 <?php
+
+/** //Kiểm tra HTTP:
+ * Đoạn mã này gọi hàm checkHTTP để kiểm tra và xử lý các yêu cầu HTTP, 
+ * đảm bảo các yêu cầu được chuyển hướng tới đúng URL và sử dụng HTTPS nếu cần.
+ */
 /* Check HTTP */
 $func->checkHTTP($http, $config['arrayDomainSSL'], $config_base, $config_url);
 
+/**
+ * Đảm bảo URL hợp lệ, ngăn chặn các URL không hợp lệ hoặc độc hại.
+ */
 /* Validate URL */
 $func->checkUrl($config['website']['index']);
 
 /* Check login */
+/**
+ * Kiểm tra xem người dùng đã đăng nhập hay chưa.
+ */
 $func->checkLogin();
 
 /* Mobile detect */
+/**
+ * Đoạn mã này phát hiện loại thiết bị (di động hoặc máy tính) và định nghĩa thư mục chứa template tương ứng.
+ */
 $deviceType = ($detect->isMobile() || $detect->isTablet()) ? 'mobile' : 'computer';
 if ($deviceType == 'computer') define('TEMPLATE', './templates/');
 else define('TEMPLATE', './templates/');
@@ -18,6 +32,10 @@ $wtmPro = $d->rawQueryOne("select hienthi, photo, options from #_photo where typ
 $wtmNews = $d->rawQueryOne("select hienthi, photo, options from #_photo where type = ? and act = ? limit 0,1", array('watermark-news', 'photo_static'));
 
 /* Router */
+/**
+ * Đoạn mã này định tuyến các URL tới các chức năng tương ứng. 
+ * Ví dụ, URL dangnhap/ sẽ được chuyển hướng tới dangnhap/index.php.
+ */
 $router->setBasePath($config['database']['url']);
 $router->map('GET', array('dangnhap/', 'dangnhap'), function () {
 	global $func, $config;
@@ -47,6 +65,10 @@ $router->map('GET', WATERMARK . '/news/[i:w]x[i:h]x[i:z]/[**:src]', function ($w
 	global $func, $wtmNews;
 	$func->createThumb($w, $h, $z, $src, $wtmNews, "news");
 }, 'watermarkNews');
+
+// 7. Xử lý yêu cầu:
+// Đoạn mã này xử lý các yêu cầu URL đã được định tuyến, gọi các chức năng tương 
+// ứng hoặc hiển thị trang 404 nếu không tìm thấy.
 $match = $router->match();
 if (is_array($match)) {
 	if (is_callable($match['target'])) {
@@ -61,11 +83,13 @@ if (is_array($match)) {
 	exit;
 }
 
+// 8. Thiết lập và tải các thiết lập:
 /* Setting */
 $sqlCache = "select * from #_setting";
 $setting = $cache->getCache($sqlCache, 'fetch', 7200);
 $optsetting = (isset($setting['options']) && $setting['options'] != '') ? json_decode($setting['options'], true) : null;
 
+// 9. Thiết lập ngôn ngữ:
 /* Lang */
 if (isset($match['params']['lang']) && $match['params']['lang'] != '') $_SESSION['lang'] = $match['params']['lang'];
 else if (!isset($_SESSION['lang']) && !isset($match['params']['lang'])) $_SESSION['lang'] = $optsetting['lang_default'];
@@ -81,8 +105,10 @@ $seolang = "vi";
 require_once LIBRARIES . "lang/lang$lang.php";
 require_once SOURCES . "allpage.php";
 
+// 10. Định nghĩa các route nhanh (requick):
 /* Tối ưu link */
 $requick = array(
+	// Các route nhanh cho sản phẩm, tin tức, bài viết, trang tĩnh, liên hệ
 	/* Sản phẩm */
 	array("tbl" => "product_list", "field" => "idl", "source" => "product", "com" => "san-pham", "type" => "san-pham", 'menu' => true),
 	array("tbl" => "product_cat", "field" => "idc", "source" => "product", "com" => "san-pham", "type" => "san-pham", 'menu' => true),
@@ -114,9 +140,11 @@ $requick = array(
 
 );
 
+// 11. Tìm dữ liệu dựa trên route nhanh:
 /* Find data */
 if ($com != 'tim-kiem' && $com != 'account' && $com != 'sitemap') {
 	foreach ($requick as $k => $v) {
+		// Logic tìm kiếm dữ liệu tương ứng với route
 		$url_tbl = (isset($v['tbl']) && $v['tbl'] != '') ? $v['tbl'] : '';
 		$url_tbltag = (isset($v['tbltag']) && $v['tbltag'] != '') ? $v['tbltag'] : '';
 		$url_type = (isset($v['type']) && $v['type'] != '') ? $v['type'] : '';
@@ -134,6 +162,7 @@ if ($com != 'tim-kiem' && $com != 'account' && $com != 'sitemap') {
 		}
 	}
 }
+// 12. Chuyển đổi các route:
 
 /* Switch coms */
 switch ($com) {
@@ -239,7 +268,12 @@ switch ($com) {
 			$seo->setSeo('type','object');
 			$title_crumb = null;
 			break;*/
-
+	case 'doi-tac':
+		$source = "doitac";
+		$template = "doitac/doitac";
+		$title_crumb = doitac;
+		$seo->setSeo('type', 'object');
+		break;
 	case 'gio-hang':
 		$source = "order";
 		$template = 'order/order';
@@ -271,7 +305,7 @@ switch ($com) {
 	case 'sitemap':
 		include_once LIBRARIES . "sitemap.php";
 		exit();
-		
+
 	case '':
 	case 'index':
 		$source = "index";
@@ -285,6 +319,7 @@ switch ($com) {
 		exit();
 }
 
+// 13. Bao gồm các nguồn và template tương ứng:
 /* Include sources */
 if ($source != '') include SOURCES . $source . ".php";
 if ($template == '') {

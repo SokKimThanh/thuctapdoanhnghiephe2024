@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Lớp Seo cung cấp các phương thức để thiết lập, lấy và quản lý dữ liệu SEO từ cơ sở dữ liệu.
+ * Các phương thức chính:
+ * setSeo: Thiết lập giá trị SEO cho một khóa cụ thể.
+ * getSeo: Lấy giá trị SEO cho một khóa cụ thể.
+ * getSeoDB: Truy vấn cơ sở dữ liệu để lấy dữ liệu SEO.
+ * updateSeoDB: Cập nhật dữ liệu SEO trong cơ sở dữ liệu.
+ * Cách sử dụng: Đối tượng Seo được khởi tạo với một đối tượng cơ sở dữ liệu,
+ * sau đó có thể thiết lập và quản lý các giá trị SEO thông qua các phương thức đã định nghĩa.
+ */
 class Seo
 {
 	private $d;

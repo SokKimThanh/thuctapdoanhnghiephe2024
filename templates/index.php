@@ -11,7 +11,13 @@
      <?php
         include TEMPLATE . LAYOUT . "red.seo.php";
         include TEMPLATE . LAYOUT . "red.header.php";
-        include TEMPLATE . LAYOUT . "red.body.php";
+        if ($source != 'index') {
+            include TEMPLATE . LAYOUT . "breadcrumb.php";
+            include TEMPLATE . $template . "_tpl.php";
+        }else{
+            include TEMPLATE . LAYOUT . "red.body.php";
+        }
+
         include TEMPLATE . LAYOUT . "red.footer.php";
         include TEMPLATE . LAYOUT . "red.support.php";
         include TEMPLATE . LAYOUT . "red.js.php";
