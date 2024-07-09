@@ -4190,14 +4190,6 @@ section#kienthuc-tintuc-video .card .card-title {
     font-size: 16px;
 }
 
-/* xử lý margin-top cho card-title khi ở màn hình mobile */
-@media screen and (max-width: 500px) {
-
-    section#kienthuc-tintuc-video .card .card-title {
-        margin-top: 16px;
-    }
-
-}
 
 section#kienthuc-tintuc-video .card .card-text {
     overflow: hidden;
@@ -4402,6 +4394,7 @@ section#doitacvathuonghieu {
 @media screen and (max-width: 768px) {
     #visaochonchungtoi .card .card-body {
         text-align: center;
+        padding: 0.1rem;
     }
 }
 
@@ -4431,6 +4424,15 @@ section#doitacvathuonghieu {
     .md-hinhvuong {
         display: none;
     }
+}
+
+/* xử lý margin-top cho card-title khi ở màn hình mobile */
+@media screen and (max-width: 500px) {
+
+    section#kienthuc-tintuc-video .card .card-title {
+        margin-top: 16px;
+    }
+
 }
 
 /* ======================================================================================================= */
