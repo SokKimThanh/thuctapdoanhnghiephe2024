@@ -20,6 +20,8 @@
     $cs = $d->rawQuery("select ten$lang, tenkhongdau$lang from #_news where type = ? and hienthi > 0 order by stt,id desc ",array('chinh-sach'));
 
     //$tagsProduct = $d->rawQuery("select ten$lang, tenkhongdauvi, tenkhongdauen, id from #_tags where type = ? and noibat > 0 order by stt,id desc",array('san-pham'));
+    
+    $dsDoiTac = $d->rawQuery("select photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('doitac'));
 
     /* Get statistic */
     $counter = $statistic->getCounter();

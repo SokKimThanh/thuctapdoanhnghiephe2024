@@ -11,10 +11,11 @@
      <?php
         include TEMPLATE . LAYOUT . "red.seo.php";
         include TEMPLATE . LAYOUT . "red.header.php";
+        // Nếu không phải là index thì hiển thị breadcrumb và trang con
         if ($source != 'index') {
             include TEMPLATE . LAYOUT . "breadcrumb.php";
             include TEMPLATE . $template . "_tpl.php";
-        }else{
+        } else {
             include TEMPLATE . LAYOUT . "red.body.php";
         }
 

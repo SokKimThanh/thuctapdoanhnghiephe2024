@@ -167,7 +167,7 @@
  <section id="visaochonchungtoi">
      <div class="container">
          <div class="mt-4 text-center">
-             <h3 class="text-danger  text-uppercase ">Vì sao chọn chúng tôi</h3>
+             <h3 class="text-danger  text-uppercase">Vì sao chọn chúng tôi</h3>
              <!-- ba hình thoi và đường kẻ ngang -->
              <div class="square-area">
                  <div class="rotated-square">
@@ -423,13 +423,11 @@
              </div>
          </div>
          <div class="doitac">
-             <!-- đối tác -->
-             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac1.png" alt="doitac1">
-             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac2.png" alt="doitac2">
-             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac3.png" alt="doitac3">
-             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac4.png" alt="doitac4">
-             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac5.png" alt="doitac5">
-             <img class="img-fluid" src="../assets/images/doitacvathuonghieucuachungtoi/doitac6.png" alt="doitac6">
+             <?php if (isset($dsDoiTac) && count($dsDoiTac) > 0) { ?>
+                 <?php foreach ($dsDoiTac as $v) { ?>
+                     <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/240x200x1/assets/images/noimage.png';" src="<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" title="<?= $v['ten' . $lang] ?>" />
+                 <?php } ?>
+             <?php } ?>
          </div>
      </div>
  </section>

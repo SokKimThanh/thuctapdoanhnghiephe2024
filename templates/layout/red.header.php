@@ -28,7 +28,7 @@
                  <!-- Lập trình ẩn hiện khối div menu - slider - hinh nếu không phải là trang chủ -->
                  <?php if ($source == 'index') { ?>
                      <!-- danh muc -->
-                     <div class="col-md-3">
+                     <div class="col-md-3 pl-0">
                          <nav class="danhmuc">
                              <div class="danhmuc-header roboto-slab container-fluid d-flex align-items-center">
                                  <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
