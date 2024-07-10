@@ -5,8 +5,6 @@ $slider = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo whe
 $doitac = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('doitac'));
 $kh = $d->rawQuery("select ten$lang, mota$lang, photo,diachi,nghenghiep, noidung$lang from #_news where type = ? and hienthi > 0 order by stt,id desc ", array('feedback'));
 
-
-
 $pronb_list = $d->rawQueryOne("select count(id) as numb from #_product where noibat>0 and hienthi>0 and type='san-pham'");
 $danhmuc_list = $d->rawQuery("select ten$lang, tenkhongdauvi, mota$lang, ngaytao, id from #_product_list where hienthi>0 and type='san-pham' order by stt,id desc");
 // danh sách sản phẩm theo loại nổi bật
@@ -45,4 +43,10 @@ if (count($img_json_bar) > 0) {
     $seo->setSeo('photo:width', $img_json_bar['w']);
     $seo->setSeo('photo:height', $img_json_bar['h']);
     $seo->setSeo('photo:type', $img_json_bar['m']);
+}
+
+// Lập trình css cho thanh menu ở trang "red.header.php" thành col-md-12 khi đang ở trang không phải là index
+$colMenu = "col-md-9";
+if ($source != 'index') {
+    $colMenu = "col-md-12";
 }

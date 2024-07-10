@@ -133,6 +133,8 @@ $requick = array(
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "feedback", "type" => "feedback", 'menu' => true),
 	/* Trang tĩnh */
 	array("tbl" => "static", "field" => "id", "source" => "static", "com" => "gioi-thieu", "type" => "gioi-thieu", 'menu' => true),
+	/* đối tác là trang tĩnh */
+	array("tbl" => "static", "field" => "id", "source" => "static", "com" => "doi-tac", "type" => "doi-tac", 'menu' => true /* sitemap on*/),
 
 	/* Liên hệ */
 	array("tbl" => "", "field" => "id", "source" => "", "com" => "lien-he", "type" => "", 'menu' => true),
@@ -171,6 +173,12 @@ switch ($com) {
 		$template = "contact/contact";
 		$seo->setSeo('type', 'object');
 		$title_crumb = 'Liên hệ';
+		break;
+	case 'doi-tac':
+		$source = "doitac";
+		$template = "doitac/doitac";
+		$seo->setSeo('type', 'object');
+		$title_crumb = 'Đối tác';
 		break;
 
 		// case 'baogia':
@@ -268,12 +276,7 @@ switch ($com) {
 			$seo->setSeo('type','object');
 			$title_crumb = null;
 			break;*/
-	case 'doi-tac':
-		$source = "doitac";
-		$template = "doitac/doitac";
-		$title_crumb = doitac;
-		$seo->setSeo('type', 'object');
-		break;
+
 	case 'gio-hang':
 		$source = "order";
 		$template = 'order/order';

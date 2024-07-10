@@ -25,78 +25,88 @@
              </div>
              <!-- danh muc; menu -->
              <div class="row">
-                 <!-- danh muc -->
-                 <div class="col-md-3">
-                     <nav class="danhmuc">
-                         <div class="danhmuc-header roboto-slab container-fluid d-flex align-items-center">
-                             <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
-                                 <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
-                             </button>
-                             <h6 class="danhmuc-title">Danh mục sản phẩm</h6>
-                         </div>
-                         <div class="collapse show" id="navbarToggleExternalContent">
-                             <ul class="danhmuc-body">
-                                 <?php foreach ($danhmuc_list as $key => $v) { ?>
-                                     <li>
-                                         <a href="<?= $v['tenkhongdauvi'] ?>">
-                                             <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/30x30x2/assets/images/noimage.png';" src="<?= THUMBS ?>/30x30x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
-                                             <span><?= $v['ten' . $lang] ?></span>
-                                         </a>
-                                     </li>
-                                 <?php } ?>
-                             </ul>
-                         </div>
-                     </nav>
-                 </div>
+                 <!-- Lập trình ẩn hiện khối div menu - slider - hinh nếu không phải là trang chủ -->
+                 <?php if ($source == 'index') { ?>
+                     <!-- danh muc -->
+                     <div class="col-md-3">
+                         <nav class="danhmuc">
+                             <div class="danhmuc-header roboto-slab container-fluid d-flex align-items-center">
+                                 <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
+                                     <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
+                                 </button>
+                                 <h6 class="danhmuc-title">Danh mục sản phẩm</h6>
+                             </div>
+                             <div class="collapse show" id="navbarToggleExternalContent">
+                                 <ul class="danhmuc-body">
+                                     <?php foreach ($danhmuc_list as $key => $v) { ?>
+                                         <li>
+                                             <a href="<?= $v['tenkhongdauvi'] ?>">
+                                                 <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/30x30x2/assets/images/noimage.png';" src="<?= THUMBS ?>/30x30x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                                 <span><?= $v['ten' . $lang] ?></span>
+                                             </a>
+                                         </li>
+                                     <?php } ?>
+                                 </ul>
+                             </div>
+                         </nav>
+                     </div>
+                 <?php    } ?>
+
                  <!-- menu; slider, hinh -->
-                 <div class="col-md-9 p-0">
+                 <div class="<?= $colMenu ?> p-0">
                      <!-- menu -->
                      <div class="row mb-3">
                          <div class="col-md-12">
                              <?php include TEMPLATE . LAYOUT . "red.menu.php"; ?>
                          </div>
                      </div>
-                     <!-- slider -->
-                     <div id="list-image-gallery" class="row">
-                         <div class="col-md-8">
-                             <?php include TEMPLATE . LAYOUT . "red.slide.php"; ?>
+                     <!-- Lập trình cho khối div ẩn đi khi không phải trang index  -->
+                     <?php if ($source == 'index') { ?>
+                         <!-- slider -->
+                         <div id="list-image-gallery" class="row">
+                             <div class="col-md-8">
+                                 <?php include TEMPLATE . LAYOUT . "red.slide.php"; ?>
+                             </div>
+                             <div class="col-md-4 text-align-center">
+                                 <ul class="list-image-gallery">
+                                     <li>
+                                         <a>
+                                             <img class="img-fluid" src="../assets/images/bannersanpham/banner4.png" alt="banner-4">
+                                         </a>
+                                     </li>
+                                     <li>
+                                         <a>
+                                             <img class="img-fluid" src="../assets/images/bannersanpham/banner5.png" alt="banner-5">
+                                         </a>
+                                     </li>
+                                 </ul>
+                             </div>
                          </div>
-                         <div class="col-md-4 text-align-center">
-                             <ul class="list-image-gallery">
-                                 <li>
-                                     <a>
-                                         <img class="img-fluid" src="../assets/images/bannersanpham/banner4.png" alt="banner-4">
-                                     </a>
-                                 </li>
-                                 <li>
-                                     <a>
-                                         <img class="img-fluid" src="../assets/images/bannersanpham/banner5.png" alt="banner-5">
-                                     </a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </div>
+                     <?php    } ?>
+                 </div>
+
+             </div>
+         </div>
+     </section>
+     <?php if ($source == 'index') { ?>
+         <section id="banner">
+             <div class="container">
+                 <!-- banner -->
+                 <div id="banner-desktop" class="row d-flex justify-content-between align-items-center">
+                     <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
+
+                     <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
+
+                     <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
+                 </div>
+                 <!-- Thêm banner mobile khi hiển thị mobile -->
+                 <div id="banner-mobile" class="owl-carousel owl-theme auto_slider">
+                     <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
+
+                     <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
+
+                     <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
                  </div>
              </div>
-         </div>
-     </section>
-     <section id="banner">
-         <div class="container">
-             <!-- banner -->
-             <div id="banner-desktop" class="row d-flex justify-content-between align-items-center">
-                 <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
-
-                 <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
-
-                 <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
-             </div>
-             <!-- Thêm banner mobile khi hiển thị mobile -->
-             <div id="banner-mobile" class="owl-carousel owl-theme auto_slider">
-                 <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
-
-                 <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
-
-                 <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
-             </div>
-         </div>
-     </section>
+         </section>
+     <?php } ?>

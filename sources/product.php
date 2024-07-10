@@ -32,7 +32,7 @@ if ($id != '') {
 			array_push($sumRating, $value['rating']);
 		}
 		$totalRating = number_format(array_sum($sumRating) / count($getRating), 1, '.', '');
-	}else{
+	} else {
 		$totalRating = 0;
 	}
 

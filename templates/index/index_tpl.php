@@ -1,1 +1,1 @@
-<?php include TEMPLATE . LAYOUT . "red.body.php";?>
+<?php include TEMPLATE . LAYOUT . "red.body.php";
