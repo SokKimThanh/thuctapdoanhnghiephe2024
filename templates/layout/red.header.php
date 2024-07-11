@@ -93,19 +93,22 @@
              <div class="container">
                  <!-- banner -->
                  <div id="banner-desktop" class="row d-flex justify-content-between align-items-center">
-                     <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
-
-                     <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
-
-                     <img class="img-fluid p-0" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
+                     <?php foreach ($dsSanPhamBanner as $key => $v) {   ?>
+                         <img class="img-fluid p-0" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" 
+                         src="<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                     <?php } ?> 
                  </div>
                  <!-- Thêm banner mobile khi hiển thị mobile -->
                  <div id="banner-mobile" class="owl-carousel owl-theme auto_slider">
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
+                 <?php foreach ($dsSanPhamBanner as $key => $v) {   ?>
+                         <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" 
+                         src="<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                     <?php } ?>
+                     <!-- <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
 
                      <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
 
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3">
+                     <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3"> -->
                  </div>
              </div>
          </section>
