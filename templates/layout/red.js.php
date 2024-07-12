@@ -42,6 +42,7 @@
     $js->setJs("./assets/js/functions.js");
     $js->setJs("./assets/js/jquery.nivo.slider.js");
     $js->setJs("./assets/js/apps.js");
+    $js->setJs("./assets/fotorama/fotorama.js");
     echo $js->getJs();
     ?>
  <script src="./assets/js/lazyload.min.js"></script>
@@ -108,17 +109,17 @@
  <!-- 7. OneSignal -->
  <!-- Sử dụng OneSignal để gửi thông báo đẩy cho người dùng. -->
  <?php if (isset($config['oneSignal']['active']) && $config['oneSignal']['active'] == true) { ?>
-    <!-- Js OneSignal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script type="text/javascript">
-        var OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "<?= $config['oneSignal']['id'] ?>"
-            });
-        });
-    </script>
-<?php } ?>
+     <!-- Js OneSignal -->
+     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+     <script type="text/javascript">
+         var OneSignal = window.OneSignal || [];
+         OneSignal.push(function() {
+             OneSignal.init({
+                 appId: "<?= $config['oneSignal']['id'] ?>"
+             });
+         });
+     </script>
+ <?php } ?>
 
  <!-- 8. Cấu trúc dữ liệu -->
  <!-- Bao gồm cấu trúc dữ liệu (structured data) để tối ưu SEO cho trang web. -->
@@ -132,4 +133,35 @@
 
  <!-- 10. JavaScript từ cấu hình trang web -->
  <!-- Nhúng mã JavaScript từ cấu hình trang web, được lưu trong biến $setting['bodyjs']. -->
- <?= htmlspecialchars_decode($setting['bodyjs']) ?>
+ <?= htmlspecialchars_decode($setting['bodyjs']) ?>.
+
+
+ <!-- 11. slider dọc cho banner-sanpham-right -->
+ <!-- Đoạn mã này được sử dụng để tạo một slider dọc tự động cuộn trên một trang chỉ khi biến $source bằng "index".
+Sử dụng JavaScript để lấy chiều cao của các phần tử trong danh sách và tự động di chuyển slider theo trục y mỗi 2 giây.
+Khi slider di chuyển đến cuối danh sách, nó sẽ quay trở lại vị trí ban đầu để bắt đầu lại quá trình cuộn.
+ -->
+ <!-- Kiểm tra xem biến $source có bằng "index" hay không. Nếu đúng, 
+  mã JavaScript bên trong sẽ được chạy. -->
+ <?php if ($source === "index") { ?>
+     <script>
+         const slider = document.querySelector('.gallery'); // Lấy phần tử có class 'gallery'
+         const items = slider.querySelectorAll('li'); // Lấy tất cả các phần tử <li> bên trong phần tử slider
+         const itemHeight = items[0].offsetHeight; // Lấy chiều cao của phần tử <li> đầu tiên
+
+         let currentIndex = 0; // Vị trí hiện tại của slider
+
+         function moveSlider() {
+             currentIndex += 1; // Tăng vị trí hiện tại lên 1
+             // Nếu đã đến cuối danh sách, quay về đầu
+             if (currentIndex >= items.length - 1) {
+                 currentIndex = 0; // Quay về vị trí ban đầu
+             }
+             // Di chuyển slider theo trục y dựa trên chiều cao của mỗi phần tử
+             slider.style.transform = `translateY(-${currentIndex * itemHeight + items.length * 5}px)`;
+         }
+
+         setInterval(moveSlider, 2000); // Tự động cuộn mỗi 2 giây
+     </script>
+
+ <?php } ?>

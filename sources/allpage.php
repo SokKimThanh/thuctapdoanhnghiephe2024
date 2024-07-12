@@ -23,6 +23,15 @@ $cs = $d->rawQuery("select ten$lang, tenkhongdau$lang from #_news where type = ?
 
 $dsDoiTac = $d->rawQuery("select photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('doitac'));
 $dsSanPhamBanner = $d->rawQuery("select photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('sanpham-banner'));
+$dsSanPhamBannerRight = $d->rawQuery("select photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('sanpham-banner-right'));
+
+/**danh sách kiến thức - tin tức - video */
+$dsVideo = $d->rawQuery("select video, id, ten$lang from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt, id desc", array('video'));
+$dsKienThuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc", array('kien-thuc'));
+$dsTinTuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from table_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc", array('tin-tuc'));
+$dsViSaoChonChungToi = $d->rawQuery("select ten$lang, mota$lang, ngaytao, id, photo from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('vi-sao-chon-chung-toi'));
+
+
 
 /* Get statistic */
 $counter = $statistic->getCounter();

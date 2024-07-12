@@ -3947,6 +3947,7 @@ ul.navbar-nav>li.nav-item {
 }
 
 
+
 /* ======================================================================================================= */
 /* desktop: BANNER GALERRY*/
 /* ======================================================================================================= */
@@ -3954,14 +3955,25 @@ section#header {
     margin-bottom: 0;
 }
 
+.gallery-container {
+    overflow: hidden;
+    height: 235px;
+    /* Chiều cao cố định */
+}
 
+section#header .gallery {
+
+    /* Tạo thanh cuộn theo chiều dọc */
+    transition: transform 0.5s ease-in-out;
+}
 
 section#header .list-image-gallery {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     flex-direction: column;
+    /* hiển thị cột hình ảnh */
 }
 
 section#header .list-image-gallery img:hover {
@@ -4182,12 +4194,18 @@ section#kienthuc-tintuc-video .card:hover,
 }
 
 section#kienthuc-tintuc-video .card .card-body {
-    margin-left: 10px;
-    padding: 0;
+    padding: 0 !important;
 }
 
 section#kienthuc-tintuc-video .card .card-title {
     font-size: 16px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    margin-bottom: 1px;
 }
 
 
@@ -4197,7 +4215,7 @@ section#kienthuc-tintuc-video .card .card-text {
     white-space: normal;
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     max-width: 90%;
     text-align: justify;
 }
@@ -4205,6 +4223,7 @@ section#kienthuc-tintuc-video .card .card-text {
 section#kienthuc-tintuc-video .card img {
     margin: 0;
     padding: 0;
+    height: 100% !important;
 }
 
 .sm-hinhchunhat {

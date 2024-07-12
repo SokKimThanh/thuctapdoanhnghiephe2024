@@ -67,18 +67,14 @@
                              <div class="col-md-8">
                                  <?php include TEMPLATE . LAYOUT . "red.slide.php"; ?>
                              </div>
-                             <div class="col-md-4 text-align-center">
-                                 <ul class="list-image-gallery">
-                                     <li>
-                                         <a>
-                                             <img class="img-fluid" src="../assets/images/bannersanpham/banner4.png" alt="banner-4">
-                                         </a>
-                                     </li>
-                                     <li>
-                                         <a>
-                                             <img class="img-fluid" src="../assets/images/bannersanpham/banner5.png" alt="banner-5">
-                                         </a>
-                                     </li>
+                             <!-- lập trình nguồn dữ liệu động là banner-sanpham-right -->
+                             <div class="col-md-4 gallery-container">
+                                 <ul class="list-image-gallery gallery">
+                                     <?php foreach ($dsSanPhamBannerRight as $key => $v) {   ?>
+                                         <li>
+                                             <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                         </li>
+                                     <?php } ?>
                                  </ul>
                              </div>
                          </div>
@@ -102,11 +98,6 @@
                      <?php foreach ($dsSanPhamBanner as $key => $v) {   ?>
                          <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
                      <?php } ?>
-                     <!-- <img class="img-fluid" src="../assets/images/bannersanpham/banner1.png" alt="banner-1">
-
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner2.png" alt="banner-2">
-
-                     <img class="img-fluid" src="../assets/images/bannersanpham/banner3.png" alt="banner-3"> -->
                  </div>
              </div>
          </section>

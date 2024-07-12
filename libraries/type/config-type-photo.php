@@ -99,7 +99,34 @@ $config['photo']['man_photo'][$nametype]['height_photo'] = 196;
 $config['photo']['man_photo'][$nametype]['thumb_photo'] = '419x196x1';
 $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
+/* Slideshow */
+$nametype = "sanpham-banner-right";
+$config['photo']['man_photo'][$nametype]['title_main_photo'] = "Sản phẩm Banner Right";
+$config['photo']['man_photo'][$nametype]['number_photo'] = 1;
+$config['photo']['man_photo'][$nametype]['images_photo'] = true;
+$config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+$config['photo']['man_photo'][$nametype]['link_photo'] = true;
+$config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+$config['photo']['man_photo'][$nametype]['mota_photo'] = false;
+$config['photo']['man_photo'][$nametype]['width_photo'] = 419;
+$config['photo']['man_photo'][$nametype]['height_photo'] = 196;
+$config['photo']['man_photo'][$nametype]['thumb_photo'] = '419x196x1';
+$config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
+/* vi sao chon chung toi*/
+$nametype = "vi-sao-chon-chung-toi";
+$config['photo']['man_photo'][$nametype]['title_main_photo'] = "Vì sao chọn chúng tôi";
+$config['photo']['man_photo'][$nametype]['number_photo'] = 1;
+$config['photo']['man_photo'][$nametype]['images_photo'] = true;
+$config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+$config['photo']['man_photo'][$nametype]['link_photo'] = true;
+$config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+$config['photo']['man_photo'][$nametype]['mota_photo'] = true;
+$config['photo']['man_photo'][$nametype]['noidung_photo'] = false;
+$config['photo']['man_photo'][$nametype]['width_photo'] = 32;
+$config['photo']['man_photo'][$nametype]['height_photo'] = 32;
+$config['photo']['man_photo'][$nametype]['thumb_photo'] = '32x32x1';
+$config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
 $nametype = "background-khachhang";
 $config['photo']['photo_static'][$nametype]['title_main'] = "Background footer";

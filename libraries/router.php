@@ -125,6 +125,7 @@ $requick = array(
 	array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", 'menu' => true),
 	array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", 'menu' => true),
 	array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "phu-kien", "type" => "phu-kien", 'menu' => true),
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "kien-thuc", "type" => "kien-thuc", 'menu' => true),
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", 'menu' => true),
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", 'menu' => true),
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "bang-gia", "type" => "bang-gia", 'menu' => true),
@@ -173,6 +174,12 @@ switch ($com) {
 		$template = "contact/contact";
 		$seo->setSeo('type', 'object');
 		$title_crumb = 'Liên hệ';
+		break;
+	case 'kien-thuc':
+		$source = "news";
+		$template = "news/news";
+		$seo->setSeo('type', 'object');
+		$title_crumb = 'Kiến thức';
 		break;
 	case 'doi-tac':
 		$source = "doitac";

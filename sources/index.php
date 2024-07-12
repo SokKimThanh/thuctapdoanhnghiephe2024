@@ -20,11 +20,13 @@ $ct_list = $d->rawQueryOne("select count(id) as numb from #_news where noibat>0 
 $gioithieu = $d->rawQueryOne("select ten$lang, mota$lang,photo,photo1 from #_static where type = ?", array('gioi-thieu'));
 
 
-$tintuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ", array('tin-tuc'));
+// $tintuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc", array('tin-tuc'));
 
-$duan = $d->rawQuery("select ten$lang, tenkhongdau$lang, id, icon,mota$lang from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ", array('dich-vu'));
+// $kienthuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc", array('kien-thuc'));
 
-$video = $d->rawQuery("select ten$lang, id, video from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ", array('video'));
+// $duan = $d->rawQuery("select ten$lang, tenkhongdau$lang, id, icon,mota$lang from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc", array('dich-vu'));
+
+// $video = $d->rawQuery("select ten$lang, id, video from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ", array('video'));
 
 /* SEO */
 $seoDB = $seo->getSeoDB(0, 'setting', 'capnhat', 'setting');

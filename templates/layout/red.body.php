@@ -177,111 +177,32 @@
          </div>
          <!-- hang 1 -->
          <div class="row">
-             <div class="col-md-4 col-6">
-                 <div class="card mb-3">
-                     <div class="row">
-                         <div class="col-md-4 col-sm-4">
-                             <div class="image_container">
-                                 <img src="../assets/images/visaochonchungtoi/hangchinhhang.png" class="img-fluid rounded-start align-self-center" alt="">
-                             </div>
-                         </div>
-                         <div class="col-md-8 col-sm-8">
-                             <div class="card-body">
-                                 <h5 class="card-title">Hàng Chính hãng</h5>
-                                 <p class="card-text">Đúng xuất xứ, đầy đủ giấy tờ</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-md-4 col-6">
-                 <div class="card mb-3">
-                     <div class="row">
-                         <div class="col-md-4">
-                             <div class="image_container">
-                                 <img src="../assets/images/visaochonchungtoi/giaca.png" class="img-fluid rounded-start align-self-center" alt="">
-                             </div>
-                         </div>
-                         <div class="col-md-8">
-                             <div class="card-body">
-                                 <h5 class="card-title">Giá cả cạnh tranh</h5>
-                                 <p class="card-text">Chiết khấu cao cho khối</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-md-4 col-6">
-                 <div class="card mb-3">
-                     <div class="row">
-                         <div class="col-md-4">
-                             <div class="image_container">
-                                 <img src="../assets/images/visaochonchungtoi/khohang.png" class="img-fluid rounded-start align-self-center" alt="">
-                             </div>
-                         </div>
-                         <div class="col-md-8">
-                             <div class="card-body">
-                                 <h5 class="card-title">Kho hàng có sẵn</h5>
-                                 <p class="card-text">Đáp ứng khối lượng > 30 tỷ</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+             <?php if (count($dsViSaoChonChungToi) > 0) { ?>
+                 <?php foreach ($dsViSaoChonChungToi as $k => $v) {
+                        $imagePath = UPLOAD_PHOTO_L . $v['photo'];
+                        $defaultImage = THUMBS . "/32x32x1/assets/images/noimage.png";
+                        $imageSrc = file_exists($imagePath) && !empty($v['photo']) ? $imagePath : $defaultImage;
+                    ?>
 
-             <!-- hang 2 -->
-
-             <div class="col-md-4 col-6">
-                 <div class="card mb-3">
-                     <div class="row">
-                         <div class="col-md-4">
-                             <div class="image_container">
-                                 <img src="../assets/images/visaochonchungtoi/doingu.png" class="img-fluid rounded-start align-self-center" alt="">
-                             </div>
-                         </div>
-                         <div class="col-md-8">
-                             <div class="card-body">
-                                 <h5 class="card-title">Đội ngũ</h5>
-                                 <p class="card-text">Hơn 10 năm kinh nghiệm</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-md-4 col-6">
-                 <div class="card mb-3">
-                     <div class="row">
-                         <div class="col-md-4">
-                             <div class="image_container">
-                                 <img src="../assets/images/visaochonchungtoi/tuvan.png" class="img-fluid rounded-start align-self-center" alt="">
-                             </div>
-                         </div>
-                         <div class="col-md-8">
-                             <div class="card-body">
-                                 <h5 class="card-title">Tư vấn 24/7</h5>
-                                 <p class="card-text">Đáp ứng mọi nhu cầu</p>
+                     <div class="col-md-4 col-6">
+                         <div class="card mb-3">
+                             <div class="row">
+                                 <div class="col-md-4 col-sm-4">
+                                     <div class="image_container">
+                                         <img class="img-fluid rounded-start align-self-center" onerror="this.src=<?= $defaultImage ?>" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
+                                     </div>
+                                 </div>
+                                 <div class="col-md-8 col-sm-8">
+                                     <div class="card-body">
+                                         <h5 class="card-title"><?= $v['ten' . $lang] ?></h5>
+                                         <p class="card-text"><?= $v['mota' . $lang] ?></p>
+                                     </div>
+                                 </div>
                              </div>
                          </div>
                      </div>
-                 </div>
-             </div>
-             <div class="col-md-4 col-6">
-                 <div class="card mb-3">
-                     <div class="row">
-                         <div class="col-md-4">
-                             <div class="image_container">
-                                 <img src="../assets/images/visaochonchungtoi/baohanh.png" class="img-fluid rounded-start align-self-center" alt="">
-                             </div>
-                         </div>
-                         <div class="col-md-8">
-                             <div class="card-body">
-                                 <h5 class="card-title">Bảo hành tốt</h5>
-                                 <p class="card-text">Bảo hành nhanh một đổi một</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+             <?php }
+                } ?>
          </div>
      </div>
  </section>
@@ -295,48 +216,28 @@
                      <h3 class="text-uppercase text-danger">kiến thức</h3>
                  </div>
                  <p>Chia sẽ kiến thức từ Toàn Thịnh Phát</p>
-                 <div class="card mb-3">
-                     <div class="row g-0">
-                         <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
-                         </div>
-                         <div class="col-md-8 p-0 m-0">
-                             <div class="card-body">
-                                 <h5 class="card-title">Uy tín chất lượng cao</h5>
-                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <?php if (isset($dsKienThuc)) {   ?>
+                     <?php foreach ($dsKienThuc as $key => $v) { ?>
+                         <div class="card mb-3">
+                             <div class="row">
+                                 <div class="col-md-5">
+                                     <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
+                                         <img class="img-fluid rounded-start md-hinhvuong" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                     </a>
+                                     <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
+                                         <img class="img-fluid rounded-start sm-hinhchunhat" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                     </a>
+                                 </div>
+                                 <div class="col-md-7">
+                                     <div class="card-body">
+                                         <h5 class="card-title"><?= $v['ten' . $lang] ?></h5>
+                                         <p class="card-text"><?= $v['mota' . $lang] ?></p>
+                                     </div>
+                                 </div>
                              </div>
                          </div>
-                     </div>
-                 </div>
-                 <div class="card mb-3">
-                     <div class="row g-0">
-                         <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
-                         </div>
-                         <div class="col-md-8 p-0 m-0">
-                             <div class="card-body">
-                                 <h5 class="card-title">Giá cả cạnh tranh</h5>
-                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="card mb-3">
-                     <div class="row g-0">
-                         <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
-                         </div>
-                         <div class="col-md-8 p-0 m-0">
-                             <div class="card-body">
-                                 <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
-                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                 <?php }
+                    } ?>
              </div>
              <!-- tin tuc -->
              <div class="col-md-4 col-sm-12">
@@ -344,48 +245,28 @@
                      <h3 class="text-uppercase text-danger">tin tức</h3>
                  </div>
                  <p>Cập nhật những tin tức mới từ Toàn Thịnh Phát</p>
-                 <div class="card mb-3">
-                     <div class="row g-0">
-                         <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
-                         </div>
-                         <div class="col-md-8 p-0 m-0">
-                             <div class="card-body">
-                                 <h5 class="card-title">Uy tín chất lượng cao</h5>
-                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
+                 <?php if (isset($dsTinTuc)) {   ?>
+                     <?php foreach ($dsTinTuc as $key => $v) { ?>
+                         <div class="card mb-3">
+                             <div class="row">
+                                 <div class="col-md-5">
+                                     <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
+                                         <img class="img-fluid rounded-start md-hinhvuong" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                     </a>
+                                     <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
+                                         <img class="img-fluid rounded-start sm-hinhchunhat" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                                     </a>
+                                 </div>
+                                 <div class="col-md-7">
+                                     <div class="card-body">
+                                         <h5 class="card-title"><?= $v['ten' . $lang] ?></h5>
+                                         <p class="card-text"><?= $v['mota' . $lang] ?></p>
+                                     </div>
+                                 </div>
                              </div>
                          </div>
-                     </div>
-                 </div>
-                 <div class="card mb-3">
-                     <div class="row g-0">
-                         <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
-                         </div>
-                         <div class="col-md-8 p-0 m-0">
-                             <div class="card-body">
-                                 <h5 class="card-title">Giá cả cạnh tranh</h5>
-                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="card mb-3">
-                     <div class="row g-0">
-                         <div class="col-md-4 p-0 m-0">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmauvuong.png" class="img-fluid rounded-start md-hinhvuong" alt="...">
-                             <img src="assets/images/kienthuc-tintuc-video/hinhmau.png" class="img-fluid rounded-start sm-hinhchunhat" alt="...">
-                         </div>
-                         <div class="col-md-8 p-0 m-0">
-                             <div class="card-body">
-                                 <h5 class="card-title">Hỗ trợ khách hàng 24/7</h5>
-                                 <p class="card-text">Chúng tôi luôn đặt uy tín lên hàng đầu, dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực dịch vụ cho thuê xe du lịch Hoàng Thái đã trở thành đối tác uy tín trong khu vực</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                 <?php }
+                    } ?>
              </div>
              <!-- video -->
              <div class="col-md-4 col-sm-12">
@@ -394,17 +275,15 @@
                  </div>
                  <p>Review và trải nghiệm sản phẩm</p>
                  <div class="card">
-                     <!-- <div class="owl-carousel owl-theme auto_video">
-                         <?php foreach ($video as $k => $v) { ?>
-                             <a data-fancybox="video" class="tailvideo_item_owl" data-src="<?= $v['video'] ?>" data-name="<?= $v['ten' . $lang] ?>" title="<?= $v['ten' . $lang] ?>" style="background:url(https://img.youtube.com/vi/<?= $func->getYoutube($v['video']) ?>/hqdefault.jpg) no-repeat center; background-size:cover;">
-                             </a>
-                         <?php } ?>
-                     </div> -->
-                     <video controls class="video">
-                         <source src="movie.mp4" type="video/mp4">
-                         <source src="movie.ogg" type="video/ogg">
-                         Your browser does not support the video tag.
-                     </video>
+                     <div class="fotorama" data-nav="thumbs">
+                         <?php if (count($dsVideo) > 0) {
+                                echo count($dsVideo) . 'videos';
+                                foreach ($dsVideo as $k => $v) { ?>
+                                 <a href="https://www.youtube.com/embed/<?= $func->getYoutube($v['video']) ?>" data-fancybox="video" class="tailvideo_item_owl" data-src="https://www.youtube.com/embed/<?= $func->getYoutube($v['video']) ?>" data-name="Video1" title="Video1">
+                                 </a>
+                         <?php }
+                            } ?>
+                     </div>
                  </div>
              </div>
          </div>
