@@ -41,7 +41,7 @@
     $js->setJs("./assets/js/lazyload.min.js");
     $js->setJs("./assets/js/functions.js");
     $js->setJs("./assets/js/jquery.nivo.slider.js");
-    $js->setJs("./assets/js/apps.js");
+    $js->setJs("./assets/js/apps.js"); //loading NN_FRAMEWORK (shoping cart)
     $js->setJs("./assets/fotorama/fotorama.js");
     echo $js->getJs();
     ?>

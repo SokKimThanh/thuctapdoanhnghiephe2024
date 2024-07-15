@@ -91,20 +91,20 @@
                                     <label class="attr-label-pro-detail"><?= luotxem ?>:</label>
                                     <div class="attr-content-pro-detail"><?= $row_detail['luotxem'] ?></div>
                                 </li>
-                                <?php /*<li class="w-clear"> 
-                        <label class="attr-label-pro-detail">Số lượng:</label>
-                        <div class="attr-content-pro-detail">
-                            <div class="quantity-pro-detail">
-                                <button type="button" class="quantity-minus-pro-detail" data-action="minus">-</button>
-                                <input type="text"  id="quantity" pattern="[1-9]{10}" value="1">
-                                <button type="button" class="quantity-plus-pro-detail" data-action="plus">+</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="w-clear border-top-0"> 
-                        <a data-toggle="modal" class="muangay1 addcart" data-action="addnow" data-id="<?=$row_detail['id']?>" data-name="<?=$row_detail['tenvi']?>" data-gia="<?=$func->format_money($row_detail['gia'])?>" href="#popup-detail"><i class="fal fa-cart-plus"></i> Thêm vào giỏ</a>
-                        <a class="muangay2 addcart" data-action="buynow" data-id="<?=$row_detail['id']?>" data-name="<?=$row_detail['tenvi']?>" data-gia="<?=$func->format_money($row_detail['gia'])?>" ><i class="fal fa-shopping-cart"></i> Mua ngay</a>
-                    </li>*/ ?>
+                                <li class="w-clear">
+                                    <label class="attr-label-pro-detail">Số lượng:</label>
+                                    <div class="attr-content-pro-detail">
+                                        <div class="quantity-pro-detail">
+                                            <button type="button" class="quantity-minus-pro-detail" data-action="minus">-</button>
+                                            <input type="text" id="quantity" pattern="[1-9]{10}" value="1">
+                                            <button type="button" class="quantity-plus-pro-detail" data-action="plus">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="w-clear border-top-0">
+                                    <a data-toggle="modal" class="btn btn-primary addcart" data-action="addnow" data-id="<?= $row_detail['id'] ?>" data-name="<?= $row_detail['tenvi'] ?>" data-gia="<?= $func->format_money($row_detail['gia']) ?>" href="#popup-cart"><i class="fal fa-cart-plus"></i> Thêm vào giỏ</a>
+                                    <a class="btn btn-danger text-white addcart" data-action="buynow" data-id="<?= $row_detail['id'] ?>" data-name="<?= $row_detail['tenvi'] ?>" data-gia="<?= $func->format_money($row_detail['gia']) ?>"><i class="fal fa-shopping-cart"></i> Mua ngay</a>
+                                </li>
                             </ul>
                             <div class="desc-pro-detail">
                                 <?= (isset($row_detail['mota' . $lang]) && $row_detail['mota' . $lang] != '') ? htmlspecialchars_decode($row_detail['mota' . $lang]) : '' ?>

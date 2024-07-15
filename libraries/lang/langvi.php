@@ -108,6 +108,7 @@ define("chiase","Chia sẻ");
 define("xoa","Xóa");
 define("mausac","Màu sắc");
 define("thongtingiaohang","Thông tin giao hàng");
+define("giohangcuatoi","Giỏ hàng của tôi");
 define("vuilongchontinhthanh","Vui lòng chọn tỉnh thành");
 define("yeucaukhac","Yêu cầu khác (không bắt buộc)");
 define("khongtontaisanphamtronggiohang","Không tồn tại sản phẩm nào trong giỏ hàng !");

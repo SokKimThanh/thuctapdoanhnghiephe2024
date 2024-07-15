@@ -4098,8 +4098,7 @@ section#sanphammoi {
     text-align: center;
     margin: 4px;
     max-height: 400px;
-    min-height: 350px;
-    height: 350px;
+    height: 300px;
 }
 
 .dsSanPhamNoiBat .card:hover {
@@ -4118,7 +4117,7 @@ section#sanphammoi {
 }
 
 .dsSanPhamNoiBat .card-body {
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 /* xem thêm */

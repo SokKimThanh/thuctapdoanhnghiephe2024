@@ -643,6 +643,7 @@ NN_FRAMEWORK.Cart = function () {
         });
     }
 };
+
 var star = document.querySelectorAll('.star');
 var dem = 0;
 for (let index = 0; index < star.length; index++) {

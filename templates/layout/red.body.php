@@ -1,3 +1,13 @@
+ <style>
+     .add-cart {
+         background-color: #f8f9fa;
+         border: 1px solid #f8f9fa;
+         color: #dc3545;
+         padding: 5px 10px;
+         border-radius: 5px;
+         cursor: pointer;
+     }
+ </style>
  <!-- section sản phẩm mới-->
  <section id="sanphammoi">
      <div class="container">
@@ -18,16 +28,6 @@
                      <div class="col-md-6">
                          <h4 class="text-danger text-uppercase">Sản phẩm nổi bật</h4>
                      </div>
-                     <div class="col-md-6">
-                         <!-- bread cum -->
-                         <nav>
-                             <ul class="roboto-slab">
-                                 <li>
-                                     <a class="text-danger active" href=""><?= $v['ten' . $lang] ?></a>
-                                 </li>
-                             </ul>
-                         </nav>
-                     </div>
                  </div>
              </div>
              <!-- danh sach san pham: danh sach hien thi -->
@@ -38,7 +38,6 @@
                  <?php foreach ($sanpham_nb as $value) {  ?>
                      <div class="p-0">
                          <div class="card">
-
                              <?php
                                 // UPLOAD_PRODUCT_L trong định nghĩa file constant.php
                                 $imagePath =  UPLOAD_PRODUCT_L . $value['photo'];
@@ -46,8 +45,10 @@
                                 $imageSrc = file_exists($imagePath) && !empty($value['photo']) ? $imagePath : $defaultImage;
                                 ?>
                              <div class="card-body">
-                                 <img class="card-img-top" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
-                                 <h5 class="card-title roboto-slab"><?= $value['ten' . $lang] ?></h5>
+                                 <a href="<?= $value['tenkhongdauvi'] ?>">
+                                     <img class="card-img-top" src="<?= $imageSrc ?>" alt="<?= $value['ten' . $lang] ?>" />
+                                     <h5 class="card-title roboto-slab"><?= $value['ten' . $lang] ?></h5>
+                                 </a>
                              </div>
 
                              <div class="card-footer text-danger">

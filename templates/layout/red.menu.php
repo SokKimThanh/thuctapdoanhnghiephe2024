@@ -76,7 +76,7 @@
             <li class="nav-item <?= $com == 'gio-hang' ? 'active' : '' ?>">
                 <a class="nav-link giohang" href="gio-hang" title="GIỎ HÀNG">
                     <img class="img-fluid" src="../assets/images/navbar-menu/shopping-cart32_32.svg" alt="">
-                    <span class="badge badge-danger">0</span>
+                    <span class="badge badge-danger .count-cart">0</span>
                 </a>
             </li>
         </ul>

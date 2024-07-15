@@ -1,4 +1,6 @@
+
 <?php
+
 // 1. Bao gồm tệp cấu hình AJAX
 // Đoạn mã này bao gồm tệp cấu hình, có thể chứa các thiết lập cơ bản và kết nối cơ sở dữ liệu.
 include "ajax_config.php";
@@ -12,10 +14,11 @@ $size = (isset($_POST['size']) && $_POST['size'] > 0) ? htmlspecialchars($_POST[
 $quantity = (isset($_POST['quantity']) && $_POST['quantity'] > 0) ? htmlspecialchars($_POST['quantity']) : 1;
 $code = (isset($_POST['code']) && $_POST['code'] != '') ? htmlspecialchars($_POST['code']) : '';
 $ship = (isset($_POST['ship']) && $_POST['ship'] > 0) ? htmlspecialchars($_POST['ship']) : 0;
-
+ 
 // 3. Thêm sản phẩm vào giỏ hàng
 // Nếu lệnh là 'add-cart' và ID sản phẩm hợp lệ, sản phẩm sẽ được thêm vào giỏ hàng và trả về số lượng sản phẩm trong giỏ.
 if ($cmd == 'add-cart' && $id > 0) {
+	 
 	$cart->addtocart($quantity, $id, $mau, $size);
 	$max = (isset($_SESSION['cart'])) ? count($_SESSION['cart']) : 0;
 	$data = array('max' => $max);

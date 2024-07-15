@@ -11,12 +11,12 @@
                  </div>
                  <!-- search -->
                  <div class="col-md-6">
-                     <form method="get">
-                         <div class="input-group mb-3">
-                             <input type="text" class="form-control search-input" id="keyword2" name="keyword" placeholder="Tìm kiếm sản phẩm" onkeypress="doEnter(event,'keyword2');">
-                             <button type="submit" class="btn btn-danger" onclick="onSearch('keyword2');"><i class="far fa-search"></i></button>
-                         </div>
-                     </form>
+                     <div class="input-group mb-3">
+                         <input type="text" class="form-control search-input" id="keyword" name="keyword" value="<?= (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>" placeholder="Tìm kiếm sản phẩm" onkeypress="doEnter(event,'keyword','<?= $linkMan ?>')">
+                         <button type="submit" class="btn btn-danger" onclick="onSearch('keyword','<?= $linkMan ?>')">
+                             <i class="far fa-search"></i>
+                         </button>
+                     </div>
                  </div>
                  <!-- phone -->
                  <div class="col-md-3">

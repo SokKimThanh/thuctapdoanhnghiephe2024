@@ -20,7 +20,11 @@
         }
 
         include TEMPLATE . LAYOUT . "red.footer.php";
+         
         include TEMPLATE . LAYOUT . "red.support.php";
+
+        include TEMPLATE . LAYOUT . "modal.php"; //(shopping modal)
+        
         include TEMPLATE . LAYOUT . "red.js.php";
         ?>
  </body>

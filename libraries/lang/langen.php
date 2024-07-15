@@ -108,6 +108,7 @@ define("chiase","Share");
 define("xoa","Delete");
 define("mausac","Color");
 define("thongtingiaohang","Shipment Details");
+define("giohangcuatoi","My cart");
 define("vuilongchontinhthanh","Please select a province");
 define("yeucaukhac","Other (Optional)");
 define("khongtontaisanphamtronggiohang","No products in your shopping cart !");
