@@ -11,7 +11,7 @@ $dv_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_new
 $tintuc_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('tin-tuc'));
 $phukien_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('phu-kien'));
 
-
+$danhmuc_list = $d->rawQuery("select ten$lang, tenkhongdauvi, mota$lang, ngaytao, id from #_product_list where hienthi>0 and type='san-pham' order by stt,id desc");
 
 $footer = $d->rawQueryOne("select ten$lang, noidung$lang from #_static where type = ? limit 0,1", array('footer'));
 $social1 = $d->rawQuery("select ten$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('mxh'));

@@ -27,7 +27,7 @@
              <div class="row">
                  <!-- Lập trình ẩn hiện khối div menu - slider - hinh nếu không phải là trang chủ -->
                  <?php if ($source == 'index') { ?>
-                     <!-- danh muc -->
+                     <!-- danh muc san pham -->
                      <div class="col-md-3 pl-0">
                          <nav class="danhmuc">
                              <div class="danhmuc-header roboto-slab container-fluid d-flex align-items-center">

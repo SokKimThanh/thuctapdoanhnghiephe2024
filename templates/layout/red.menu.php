@@ -1,12 +1,108 @@
 <!-- ------------------------------------- -->
 <!-- red menu header -->
 <!-- ------------------------------------- -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger roboto-slab">
-    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+<style>
+    #navbarMobile {
+        transform: translateX(-101%);
+        position: fixed;
+        inset: 0;
+        height: 100vh;
+        width: 75vw;
+        z-index: 94035;
+        /* z-index 94035 trên 1 lớp của social-logo (z-index: 94034) trong trang chi tiết sản phẩm */
+        background-color: #fff;
+    }
 
+    .show-mobile {
+        transform: translateX(0) !important;
+        transition: transform 500ms ease-in-out;
+    }
+
+    .collapseMobile .navbarCloseButtonMobile {
+        background-color: #ffffff09;
+        border: 1px solid #ffffff03;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        margin-top: 4px;
+        margin-right: 0;
+        margin-left: -5px;
+    }
+
+    .collapseMobile .titleContainer {
+        height: 3.4rem;
+        display: flex;
+        /* lập trình css bộ webkit flex */
+        align-items: center;
+        padding-left: 1.44rem;
+    }
+
+    .collapseMobile .titleMobile {
+        margin-left: 0px;
+    }
+
+    /* mặc định ban đầu không hiển thị nút dropdown togglebutton và danh mục  */
+    #dropdownToggleButton,
+    #navbarOpenButtonMobile {
+        display: none;
+    }
+
+    /* khi màn hình đạt tối đa là dưới 500px thì hiển thị dropdown button và gán cứng vị trí đầu cho navigation */
+    @media screen and (max-width: 500px) {
+        .navbar {
+            position: fixed;
+            z-index: 2;
+            right: 0;
+            left: 0;
+        }
+
+        #navbarOpenButtonMobile {
+            display: block;
+        }
+
+        #dropdownToggleButton {
+            display: block;
+        }
+    }
+
+    /* khi màn hình đạt 500px trở lên thì sẽ ẩn đi nút toggle button dropdown menu và hiện thanh menu navigation */
+    @media screen and (min-width: 500px) {
+        #navbarNavDropdown ul.navbar-nav {
+            flex-direction: row !important;
+        }
+
+        #dropdownToggleButton {
+            display: none !important;
+        }
+
+        #navbarNavDropdown {
+            display: block;
+        }
+    }
+</style>
+<div class="collapseMobile" id="navbarMobile">
+    <div class="titleContainer bg-danger">
+        <button class="navbarCloseButtonMobile"><span><i class="fa fa-bars"></i></span></button>
+        <h6 class="text-white roboto-slab text-center text-uppercase titleMobile">Danh mục sản phẩm</h6>
+    </div>
+    <ul class="danhmuc-body">
+        <?php foreach ($danhmuc_list as $key => $v) { ?>
+            <li>
+                <a href="<?= $v['tenkhongdauvi'] ?>">
+                    <img class="img-fluid" onerror="this.src='<?= THUMBS ?>/30x30x2/assets/images/noimage.png';" src="<?= THUMBS ?>/30x30x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
+                    <span><?= $v['ten' . $lang] ?></span>
+                </a>
+            </li>
+        <?php } ?>
+    </ul>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger roboto-slab">
     <div id="navbar-toggle">
-        <button class="btn btn-toggle d-flex align-items-center justify-content-between col-md-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
+        <button id="dropdownToggleButton" class="btn btn-toggle d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="text-white"><i class="fa fa-bars"></i></span>
         </button>
         <form method="get" class="col-md-7">
             <div class="input-group mb-3">
@@ -14,7 +110,10 @@
                 <button type="submit" class="btn btn-danger" onclick="onSearch('keyword2');"><i class="far fa-search"></i></button>
             </div>
         </form>
-        <img class="img-fluid logoTTP col-md-4" onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" />
+        <!-- <img class="img-fluid logoTTP col-md-4" onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" /> -->
+        <button id="navbarOpenButtonMobile" class="btn btn-toggle mr-2" type="button">
+            <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
+        </button>
     </div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -82,3 +181,27 @@
         </ul>
     </div>
 </nav>
+
+
+<script>
+    // tìm nút mở navbar danh mục sản phẩm
+    var navbarOpenButtonMobile = document.getElementById('navbarOpenButtonMobile');
+    // tìm nút đóng navbar danh mục sản phẩm
+    var navbarCloseButtonMobile = document.getElementsByClassName('navbarCloseButtonMobile')[0];
+    // tìm navbar mobile
+    var navbarMobile = document.getElementById('navbarMobile');
+
+    /**
+     * hiển thị/ẩn nút đóng navbar danh mục sản phẩm
+     */
+
+    // 1. mở navbar danh mục sản phẩm
+    navbarOpenButtonMobile.addEventListener('click', function() {
+        navbarMobile.classList.add('show-mobile');
+    });
+
+    // 2. đóng navbar danh mục sản phẩm
+    navbarCloseButtonMobile.addEventListener('click', function() {
+        navbarMobile.classList.remove('show-mobile');
+    });
+</script>

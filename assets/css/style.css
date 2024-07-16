@@ -3891,7 +3891,13 @@ ul.navbar-nav>li.nav-item {
     position: relative;
     margin-top: 20px;
     border-bottom: 1px solid var(--red-dark);
-    width: 50%;
+    width: 60%;
+}
+
+@media screen and (min-width: 768px) {
+    .bottom_slash {
+        width: 76%;
+    }
 }
 
 /* Thêm style cho hình vuông xoay 45 độ */
@@ -4420,14 +4426,10 @@ section#doitacvathuonghieu {
 /* mobile Kiến thức - tin tức - videos */
 /* ======================================================================================================= */
 
+
+
 @media screen and (max-width: 500px) {
 
-    /* Thêm spacing cho mục kiến thức tin tức video */
-    .kienthuc-tintuc-video {
-        display: grid;
-        gap: 16px;
-        padding: 20px 16px;
-    }
 
     /* không để margin âm làm méo card img */
     section#kienthuc-tintuc-video .card .row {

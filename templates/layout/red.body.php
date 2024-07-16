@@ -221,7 +221,7 @@
                      <?php foreach ($dsKienThuc as $key => $v) { ?>
                          <div class="card mb-3">
                              <div class="row">
-                                 <div class="col-md-5">
+                                 <div class="col-md-5 pr-md-1">
                                      <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
                                          <img class="img-fluid rounded-start md-hinhvuong" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
                                      </a>
@@ -229,7 +229,7 @@
                                          <img class="img-fluid rounded-start sm-hinhchunhat" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
                                      </a>
                                  </div>
-                                 <div class="col-md-7">
+                                 <div class="col-md-7 pl-md-0">
                                      <div class="card-body">
                                          <h5 class="card-title"><?= $v['ten' . $lang] ?></h5>
                                          <p class="card-text"><?= $v['mota' . $lang] ?></p>
@@ -250,7 +250,7 @@
                      <?php foreach ($dsTinTuc as $key => $v) { ?>
                          <div class="card mb-3">
                              <div class="row">
-                                 <div class="col-md-5">
+                                 <div class="col-md-5 pr-md-1">
                                      <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
                                          <img class="img-fluid rounded-start md-hinhvuong" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
                                      </a>
@@ -258,7 +258,7 @@
                                          <img class="img-fluid rounded-start sm-hinhchunhat" onerror="this.src='<?= THUMBS ?>/419x196x1/assets/images/noimage.png';" src="<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" />
                                      </a>
                                  </div>
-                                 <div class="col-md-7">
+                                 <div class="col-md-7 pl-md-0">
                                      <div class="card-body">
                                          <h5 class="card-title"><?= $v['ten' . $lang] ?></h5>
                                          <p class="card-text"><?= $v['mota' . $lang] ?></p>
