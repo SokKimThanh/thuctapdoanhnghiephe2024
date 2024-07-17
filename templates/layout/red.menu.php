@@ -1,13 +1,71 @@
-<!-- ------------------------------------- -->
-<!-- red menu header -->
-<!-- ------------------------------------- -->
+<!-- -------------------------------------------------------------------------- -->
+<!-- red menu header style for navbar left menu navigation dropdown -->
+<!-- -------------------------------------------------------------------------- -->
+<style>
+    #navbarNavDropdown .titleContainer {
+        display: none;
+    }
+
+    @media screen and (max-width: 500px) {
+        #navbarNavDropdown {
+            transform: translateX(-101%);
+            /* ẩn đi navigation bar dropdown */
+            position: fixed !important;
+            inset: 0;
+            height: 100vh;
+            width: 100vw;
+            /* tăng chiều ngang của navigation */
+            z-index: 94035;
+            /* z-index 94035 trên 1 lớp của social-logo (z-index: 94034) trong trang chi tiết sản phẩm */
+            background-color: #fff;
+            color: black;
+            display: block;
+        }
+
+
+        #navbarNavDropdown .titleContainer {
+            display: flex;
+            height: 3.4rem;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            gap: 8px;
+        }
+
+        /* đổi vị trí bắt đầu của item trong navbar-nav */
+        #navbarNavDropdown ul.navbar-nav {
+            height: 100vh;
+            padding: 16px 20px;
+            align-items: start;
+            justify-content: start;
+        }
+
+        /* đổi kích thước mỗi nav-item */
+        #navbarNavDropdown ul.navbar-nav li {
+            height: auto;
+        }
+
+        /* đổi màu chữ của link navigation */
+        #navbarNavDropdown .nav-link {
+            color: black;
+        }
+
+        #navbarNavDropdown .nav-link:hover {
+            color: var(--red);
+        }
+    }
+</style>
+
+<!-- -------------------------------------------------------------------------- -->
+<!-- red menu header style for navbar left menu danh muc san pham-->
+<!-- -------------------------------------------------------------------------- -->
 <style>
     #navbarMobile {
         transform: translateX(-101%);
         position: fixed;
         inset: 0;
         height: 100vh;
-        width: 75vw;
+        width: 100vw;
         z-index: 94035;
         /* z-index 94035 trên 1 lớp của social-logo (z-index: 94034) trong trang chi tiết sản phẩm */
         background-color: #fff;
@@ -18,7 +76,7 @@
         transition: transform 500ms ease-in-out;
     }
 
-    .collapseMobile .navbarCloseButtonMobile {
+    .navbarCloseButtonMobile {
         background-color: #ffffff09;
         border: 1px solid #ffffff03;
         font-size: 1rem;
@@ -83,6 +141,37 @@
         }
     }
 </style>
+<!-- ------------------------------------- -->
+<!-- red menu header html-->
+<!-- ------------------------------------- -->
+<!-- Đoạn code giao diện navbar (thanh điều hướng) trong một trang web. Hãy đi 
+ qua từng phần:
+
+collapse navbar-collapse: Đây là một lớp CSS của Bootstrap để chỉ định khi nào 
+navbar sẽ được thu gọn (collapse) khi trang được xem trên các thiết bị nhỏ như 
+điện thoại.
+
+ul.navbar-nav: Đây là danh sách chứa các mục điều hướng của navbar.
+
+li.nav-item: Mỗi mục trong danh sách có lớp nav-item, và một số có lớp active 
+dựa trên điều kiện $com hoặc $source để chỉ ra mục đang được chọn hoặc trang 
+hiện tại.
+
+a.nav-link: Là các liên kết điều hướng.
+
+Dropdown menus: Có một menu dropdown cho mục "SẢN PHẨM", trong đó menu con sẽ
+được tạo ra dựa trên dữ liệu từ mảng $splistmenu và các vòng lặp foreach để tạo
+các mục con.
+
+Icon giỏ hàng: Có một liên kết đặc biệt cho giỏ hàng, hiển thị số lượng sản phẩm
+ hiện có trong giỏ hàng bên cạnh biểu tượng giỏ hàng.
+
+Thẻ span và thẻ ul: Được sử dụng để chỉnh sửa các lớp và thuộc tính aria để điều
+ chỉnh menu dropdown.
+
+Mã này sử dụng PHP để tạo ra các điều kiện và lặp để tạo giao diện dựa trên dữ
+liệu động. Nó tích hợp Bootstrap để tạo ra giao diện phản hồi và các menu dropdown.
+ -->
 <div class="collapseMobile" id="navbarMobile">
     <div class="titleContainer bg-danger">
         <button class="navbarCloseButtonMobile"><span><i class="fa fa-bars"></i></span></button>
@@ -101,21 +190,30 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger roboto-slab">
     <div id="navbar-toggle">
-        <button id="dropdownToggleButton" class="btn btn-toggle d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- nút mở navigation bar -->
+        <button id="dropdownToggleButton" class="btn btn-toggle d-flex align-items-center justify-content-between" type="button">
             <span class="text-white"><i class="fa fa-bars"></i></span>
         </button>
-        <form method="get" class="col-md-7">
+        <!-- ô tìm kiếm -->
+        <div class="col-md-7 input-group-search-container">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="keyword2" name="keyword" placeholder="Tìm kiếm sản phẩm" onkeypress="doEnter(event,'keyword2');">
-                <button type="submit" class="btn btn-danger" onclick="onSearch('keyword2');"><i class="far fa-search"></i></button>
+                <input type="text" class="form-control search-input" id="keywordMenuSearch" name="keywordMenuSearch" value="<?= (isset($_GET['keywordMenuSearch'])) ? $_GET['keywordMenuSearch'] : '' ?>" placeholder="Tìm kiếm sản phẩm" onkeypress="doEnter(event,'keywordMenuSearch','<?= $linkMan ?>')">
+                <button type="submit" class="btn btn-danger" onclick="onSearch('keywordMenuSearch','<?= $linkMan ?>')">
+                    <i class="far fa-search"></i>
+                </button>
             </div>
-        </form>
+        </div>
         <!-- <img class="img-fluid logoTTP col-md-4" onerror="this.src='<?= THUMBS ?>/0x200x1/assets/images/noimage.png';" src="<?= THUMBS ?>/0x200x1/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" /> -->
+        <!-- nút mở menu danh mục sản phẩm -->
         <button id="navbarOpenButtonMobile" class="btn btn-toggle mr-2" type="button">
             <span class="fa-1x text-white"><i class="fa fa-bars"></i></span>
         </button>
     </div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="titleContainer bg-danger">
+            <h6 class="text-white roboto-slab text-center text-uppercase titleMobile">Danh mục sản phẩm</h6>
+            <button class="navbarCloseButtonMobile"><span><i class="fa fa-bars"></i></span></button>
+        </div>
         <ul class="navbar-nav">
             <li class="nav-item <?= $source == 'index' ? 'active' : '' ?>">
                 <a class="nav-link" href="" title="TRANG CHỦ">TRANG CHỦ <span class="sr-only">(current)</span></a>
@@ -183,12 +281,15 @@
 </nav>
 
 
+<!-- ----------------------------------------------------------------------- -->
+<!-- Menu danh muc san pham -->
+<!-- ----------------------------------------------------------------------- -->
 <script>
     // tìm nút mở navbar danh mục sản phẩm
     var navbarOpenButtonMobile = document.getElementById('navbarOpenButtonMobile');
     // tìm nút đóng navbar danh mục sản phẩm
     var navbarCloseButtonMobile = document.getElementsByClassName('navbarCloseButtonMobile')[0];
-    // tìm navbar mobile
+    // tìm navbar mobile danh mục sản phẩm
     var navbarMobile = document.getElementById('navbarMobile');
 
     /**
@@ -203,5 +304,27 @@
     // 2. đóng navbar danh mục sản phẩm
     navbarCloseButtonMobile.addEventListener('click', function() {
         navbarMobile.classList.remove('show-mobile');
+    });
+</script>
+<!-- ----------------------------------------------------------------------- -->
+<!-- Menu Navigation dropdown -->
+<!-- xử lý cho danh mục navigation nằm bên trái và sự kiện click vào 
+button navigation để gọi menu xuất hiện dần từ trái qua phải-->
+<!-- ----------------------------------------------------------------------- -->
+<script>
+    // tìm nút mở navigation button
+    var dropdownOpenButton = document.getElementById('dropdownToggleButton');
+    // tìm nút đóng navbar danh mục sản phẩm
+    var dropdownCloseButton = document.getElementsByClassName('navbarCloseButtonMobile')[1];
+    // tìm navigation bar dropdown
+    var navbar = document.getElementById('navbarNavDropdown');
+
+    // 1. mở navigation bar dropdown
+    dropdownOpenButton.addEventListener('click', function() {
+        navbar.classList.toggle('show-mobile');
+    });
+    // 2. đóng navigation bar dropdown
+    dropdownCloseButton.addEventListener('click', function() {
+        navbar.classList.remove('show-mobile');
     });
 </script>
