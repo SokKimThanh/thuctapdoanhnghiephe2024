@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body>
+    <!-- section desktop: navigation desktop -->
+    <section id="navigation-bar-desktop" class="navigation-bg">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <a><img src="./public/images/logo-2.png" alt="logo"></a>
+                <!-- menu box for desktop -->
+                <nav class="menu-desktop">
+                    <ul class="navbar-nav d-flex justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                                <i class="bi bi-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <span class="btn-search">
+                    <i class="bi bi-search"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+    <!-- section mobile: navigation mobile-->
+    <section id="navigation-bar-mobile" class="navigation-bg">
+        <div class="container-fluid">
+            <a href="#"><img src="./public/images/logo-2.png" alt="logo"></a>
+            <!-- menu box for mobile -->
+            <nav class="menu-container-visible">
+                <div class="menu-container">
+                    <!-- button close -->
+                    <div class="menu-box-head">
+                        <span class="icon-close">
+                            <i class="bi bi-x"></i>
+                        </span>
+                    </div>
+                    <!-- menu box mobile: list item -->
+                    <ul class="menu-box">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                                <i class="bi bi-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <button id="menu-button-mobile" class="btn btn-outline-dark menu-button-mobile">
+                <span><i class="fa fa-home"></i></span>menu
+            </button>
+        </div>
+    </section>
+    <!-- search section -->
+    <!-- search container and category search -->
+    <section class="search-container">
+        <!-- search container -->
+        <div class="container">
+            <div class="row">
+                <span id="button-close-container-search" class="icon-close">
+                    <i class="bi bi-x"></i>
+                </span>
+                <!-- form search -->
+                <form>
+                    <div class="input-group2">
+                        <input class="form-control underline" type="search" placeholder="Enter the keywords"
+                            aria-label="Search">
+                        <button class="btn" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- category search -->
+            <div class="row">
+                <!-- keyword list -->
+                <ul class="keywords">
+                    <li class="item"><a class="link">keyword1</a></li>
+                    <li class="item"><a class="link">keyword1</a></li>
+                    <li class="item"><a class="link">keyword1</a></li>
+                    <li class="item"><a class="link">keyword1</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./public/script.js"></script>
+</body>
+
+</html>
