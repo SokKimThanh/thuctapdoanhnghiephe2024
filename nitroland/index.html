@@ -15,45 +15,71 @@
     <!-- section desktop: navigation desktop -->
     <section id="navigation-bar-desktop" class="navigation-bg">
         <div class="container">
+
             <div class="d-flex justify-content-between">
                 <a><img src="./public/images/logo-2.png" alt="logo"></a>
                 <!-- menu box for desktop -->
-                <nav class="menu-desktop">
-                    <ul class="navbar-nav d-flex justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
+                <nav clhome-linkass="menu-desktop">
+                    <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a class="nav-link dropdown-toggle" href="" id="homeLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown link
-                                <i class="bi bi-caret-down"></i>
+                                Home
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <ul class="dropdown-menu home-link row" aria-labelledby="homeLink">
+                                <li class="col-sm-2"><a class="dropdown-item">
+                                        <img class="img-fluid" src="./public/images/home-1-min.png" alt="" srcset="">
+                                    </a></li>
+                                <li class="col-sm-2"><a class="dropdown-item">
+                                        <img class="img-fluid" src="./public/images/home-1-min.png" alt="" srcset="">
+                                    </a></li>
+                                <li class="col-sm-2"><a class="dropdown-item">
+                                        <img class="img-fluid" src="./public/images/home-1-min.png" alt="" srcset="">
+                                    </a></li>
+                                <li class="col-sm-2"><a class="dropdown-item">
+                                        <img class="img-fluid" src="./public/images/home-1-min.png" alt="" srcset="">
+                                    </a></li>
+                                 
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="homeLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="homeLink">
+                                <li><a class="dropdown-item">
+
+                                    </a></li>
+                                <li><a class="dropdown-item">
+
+                                    </a></li>
+                                <li><a class="dropdown-item">
+
+                                    </a></li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
 
-                <span class="btn-search">
-                    <i class="bi bi-search"></i>
-                </span>
+                <div class="d-flex gap-3">
+                    <span class="btn btn-search">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <span class="btn btn-search">
+                        <i class="bi bi-menu-app"></i>
+                    </span>
+                    <span class="btn btn-search">
+                        Purschase Now
+                    </span>
+                </div>
             </div>
         </div>
     </section>
     <!-- section mobile: navigation mobile-->
     <section id="navigation-bar-mobile" class="navigation-bg">
         <div class="container-fluid">
-            <a href="#"><img src="./public/images/logo-2.png" alt="logo"></a>
+            <a href=""><img src="./public/images/logo-2.png" alt="logo"></a>
             <!-- menu box for mobile -->
             <nav class="menu-container-visible">
                 <div class="menu-container">
@@ -66,26 +92,26 @@
                     <!-- menu box mobile: list item -->
                     <ul class="menu-box">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown link
                                 <i class="bi bi-caret-down"></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="">Action</a></li>
+                                <li><a class="dropdown-item" href="">Another action</a></li>
+                                <li><a class="dropdown-item" href="">Something else here</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="">Link</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                 </div>
@@ -93,6 +119,27 @@
             <button id="menu-button-mobile" class="btn btn-outline-dark menu-button-mobile">
                 <span><i class="fa fa-home"></i></span>menu
             </button>
+        </div>
+    </section>
+    <!-- jumbotron -->
+    <section id="main-section-jumbotron" class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <h1 class="title">NioLand Brings<br>Solutions to Captures<br>Ideas</h1>
+                    <p class="sub-title">Easily achieve your saving goals. Have all your recurring and one time expenses
+                        and incomes in
+                        one
+                        place.</p>
+                    <div class="button-jumbotron">
+                        <button class="btn btn-primary">Try Free demo</button>
+                        <button class="btn btn-outline-primary">Explore Now</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 img-jumbotron">
+                    <img class="img-fluid" src="./public/images/image-2-1.png" alt="">
+                </div>
+            </div>
         </div>
     </section>
     <!-- search section -->
@@ -127,6 +174,7 @@
             </div>
         </div>
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
