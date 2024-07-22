@@ -32,12 +32,19 @@ btnCloseSearch.addEventListener('click', () => {
 // Ghi đè sự kiện click bằng sự kiện hover
 const navItems = document.querySelectorAll('.nav-item.dropdown');
 
-navItems.forEach(item => {
+navItems.forEach((item, index) => {
     // Truy cập phần tử nav-link và home-link
     const navLink = item.querySelector('.nav-link.dropdown-toggle');
     const homeLink = item.querySelector('.dropdown-menu');
 
     if (homeLink === null) return;
+
+    // Thêm lớp CSS đặc biệt hoặc thay đổi style trực tiếp cho 2 phan tu dau tien
+    if (index == 1 || index == 0) {
+        // Thêm lớp CSS đặc biệt 
+        homeLink.classList.add('home-link');
+        homeLink.classList.add('area-inside');
+    }
 
     // Thêm sự kiện mouseover cho nav-link
     navLink.addEventListener('mouseover', () => {
@@ -64,9 +71,3 @@ navItems.forEach(item => {
  */
 // Truy cập phần tử home-link đầu tiên
 const firstHomeLink = document.getElementsByClassName('home-link');
-
-// Thêm lớp CSS đặc biệt hoặc thay đổi style trực tiếp
-if (firstHomeLink) {
-    // Thêm lớp CSS đặc biệt 
-    firstHomeLink[0].classList.add('area-inside');
-}
