@@ -371,6 +371,16 @@ section.search-container {
     }
 }
 
+@keyframes slide-in-y {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 @keyframes scales {
     0% {
         transform: scale(0.9);
@@ -408,6 +418,9 @@ ul.home-link {
     width: 80vw;
     transform: translate(calc(-40% + 10px), 39px);
     transition: transform 0.3s ease-in-out !important;
+}
+
+.linear {
     background-image: linear-gradient(180deg, var(--primary-color) 0%, #F4F8FF 50%, var(--primary-color) 100%);
 }
 
@@ -429,4 +442,239 @@ ul.home-link {
 .nav-item-active {
     font-weight: 600;
     cursor: pointer;
+}
+
+/*  */
+/** Section Slider-company
+*   làm băng chuyền animation cho slider
+*/
+/*  */
+
+/* tieu de cho slider */
+h4.slider-title {
+    text-align: center !important;
+    color: rgba(0, 0, 0, 0.5);
+
+    .strong {
+        font-weight: 600;
+        color: rgba(0, 0, 0, 1)
+    }
+}
+
+.slider-container {
+    width: calc(152px * 5 + 30px);
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+    cursor: grab;
+
+    /* thêm cursor grad khi kéo slider trái phải */
+    .slider-button {
+        display: block;
+        position: absolute;
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        height: 100%;
+        opacity: 0;
+
+        .slider-cheveron {
+            font-size: 3rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .slider-button:hover {
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .slider-button#prev {
+        top: calc(50% - 48px);
+        left: -10px;
+        text-align: left;
+    }
+
+    .slider-button#next {
+        top: calc(50% - 48px);
+        right: -10px;
+        text-align: right;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        user-select: none;
+        list-style: none;
+        justify-content: space-between;
+        position: relative;
+        /* đặt relative để dời các nút next và previous 2 bên */
+        margin: 0;
+        padding: 20px;
+
+        .slider-item {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            width: 152px;
+
+            .slider-link {
+                display: block;
+                margin: 30px;
+
+                img {
+                    width: 120px;
+                    margin: auto;
+                }
+            }
+
+            .slider-link:nth-child(1) {
+                margin-left: 15px;
+            }
+        }
+
+    }
+}
+
+
+
+
+/*  */
+/* POWERFULL FEATURE SECTION */
+/*  */
+#powerful-feature {
+    padding: 4.5rem 0rem 2.5rem 0rem;
+    background-color: #FFFFFF;
+
+    .section-title {
+        font-size: .875rem;
+        line-height: 1rem;
+        display: inline-block;
+        letter-spacing: .04rem;
+        color: var(--four-color);
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .title {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .card-container {
+        min-height: 40vh;
+    }
+
+    .card {
+        min-height: 42vh;
+        border: 0;
+        text-align: center;
+
+        .card-head {
+            min-height: 200px;
+
+            img {
+                height: 200px;
+            }
+        }
+
+        .card-body {
+            .card-title {
+                font-weight: 550;
+            }
+
+            .card-text {
+                font-size: 1rem;
+                color: rgba(0, 0, 0, 0.5)
+            }
+        }
+
+        /* ghi đè và thêm một số style cho card footer */
+        .card-footer {
+            border: 0;
+            background-color: transparent;
+            text-align: center;
+
+            .card-link {
+                font-size: 1.1rem;
+                font-weight: 700;
+
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+
+            .card-link>i {
+                font-weight: normal;
+                font-style: normal;
+                margin: 0px 0px 0px 10px;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+/*  */
+/* section powerful-feature > button-container */
+/*  */
+.button-container {
+    padding: 1em 0em 2.5em 0em;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .btn {
+        height: 3.5rem;
+        width: 10rem;
+        border: 0.1rem solid var(--button-color);
+        font-weight: 600;
+        color: var(--button-color);
+    }
+
+    .btn:hover {
+        background-color: var(--button-color);
+    }
+
+    .btn.btn-primary {
+        background-color: var(--button-color);
+        color: white;
+    }
+
+    /* hover button jumbotron trái ngược nhau */
+    .btn:hover.btn-primary {
+        background-color: white;
+        color: var(--button-color);
+    }
+
+    .btn:hover.btn-outline-primary {
+        background-color: var(--button-color);
+        color: white !important;
+    }
+}
+
+/*  */
+/* Section customer-testimonials */
+/*  */
+section#customer-testimonials {
+    padding: 4rem 0rem 03.5rem 0rem;
+    background-color: #F4F8FF;
+
+    .section-title {
+        font-size: .875rem;
+        line-height: 1rem;
+        display: inline-block;
+        letter-spacing: .04rem;
+        color: var(--four-color);
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .title {
+        font-size: 3rem;
+        font-weight: 600;
+    }
 }
