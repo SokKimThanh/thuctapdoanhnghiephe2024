@@ -95,13 +95,13 @@ window.addEventListener('scroll', function () {
         });
     }
     /**
-     * For section company
+     * For section our-sucesss
      */
     const triggerSectionOurProcess = document.getElementById('our-process');
     const sectionPositionOurProcess = triggerSectionOurProcess.getBoundingClientRect().top;
     const screenPositionOurProcess = window.innerHeight;
     if (sectionPositionOurProcess < screenPositionOurProcess) {
-        document.querySelectorAll('.process-item').forEach(el => {
+        document.querySelectorAll('.process-bar').forEach(el => {
             el.style.animation = ' scale 1s ease-in-out';
             el.style.animationDelay = '0.3s';
             el.classList.add('scale');

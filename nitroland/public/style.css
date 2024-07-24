@@ -10,6 +10,8 @@
     --border-thirth-color: #798dffa4;
     --black-color-opacity-05: rgba(0, 0, 0, 0.5);
     --star-color: #F6596B;
+    --background-section-color: #F4F8FF;
+    --background-article-color: #f7f8f9;
 }
 
 /* reset css */
@@ -318,6 +320,7 @@ section.search-container {
     animation: fade-in 1s ease-in-out, slide-in-x 1s ease-in-out;
     animation-delay: 0.2s;
     /* Animation will start after 2 seconds */
+    text-wrap: balance;
 }
 
 /*  */
@@ -447,7 +450,7 @@ ul.home-link {
 
 /* Linear Gradient Background */
 .linear-home-link {
-    background-image: linear-gradient(180deg, var(--primary-color) 0%, #F4F8FF 50%, var(--primary-color) 100%);
+    background-image: linear-gradient(180deg, var(--primary-color) 0%, var(--background-section-color) 50%, var(--primary-color) 100%);
 }
 
 /* Kiểu dáng liên kết */
@@ -647,7 +650,7 @@ section {
 
 section#customer-testimonials {
     padding: 4rem 0rem 03.5rem 0rem;
-    background-color: #F4F8FF;
+    background-color: var(--background-section-color);
 
     .card-container {
         padding: 10px 20px;
@@ -692,7 +695,6 @@ section#customer-testimonials {
                 color: rgba(0, 0, 0, 0.5);
                 margin: 0;
             }
-
         }
 
         span.title-quote {
@@ -883,7 +885,6 @@ section#our-process {
     padding: 4rem 0rem 5rem 0rem;
     background-color: #FFFFFF;
 
-
     .process-bar {
         display: flex;
         flex-flow: column;
@@ -892,25 +893,51 @@ section#our-process {
 
         /* phần tử con được phép trôi đi */
         .col {
+            z-index: 1;
+
             .process-item {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-between;
+                padding: 50px 0;
+                /* justify-content: space-between; */
 
                 .process-step {
                     /* cho the div step number*/
                     background: var(--primary-color);
-                    height: 64px;
-                    width: 64px;
+                    min-width: 64px;
+                    min-height: 64px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     border-radius: 50%;
                     font-size: 1.5rem;
                     color: var(--thirth-color);
+                    margin-right: 40px;
                 }
 
+                .process-info {
+                    /* cho thông tin về step */
+                    width: 100%;
+
+                    .title {
+                        font-size: 2.3rem;
+                    }
+
+                    .button-container {
+                        justify-content: start;
+                        padding: 0;
+
+                        .btn {
+                            text-transform: capitalize;
+                            font-weight: 300;
+
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -920,6 +947,21 @@ section#our-process {
                     background: #FDF6E6 !important;
                     color: #F9C12C !important;
                 }
+
+                .process-info {
+                    .button-container {
+                        .btn-outline-primary {
+                            border-color: #F9C12C;
+                            color: #F9C12C;
+                        }
+
+                        .btn-outline-primary:hover {
+                            border: 0;
+                            background: #F9C12C !important;
+                            color: #fff !important;
+                        }
+                    }
+                }
             }
         }
 
@@ -928,6 +970,21 @@ section#our-process {
                 .process-step {
                     background: #FDEBED !important;
                     color: #D83248 !important;
+                }
+
+                .process-info {
+                    .button-container {
+                        .btn-outline-primary {
+                            border-color: #D83248;
+                            color: #D83248;
+                        }
+
+                        .btn-outline-primary:hover {
+                            border: 0;
+                            background: #D83248 !important;
+                            color: #fff !important;
+                        }
+                    }
                 }
             }
         }
@@ -942,5 +999,175 @@ section#our-process {
         left: calc(2.79rem - 1px);
         top: 0;
         background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/*  */
+/* Section our-facts */
+/*  */
+section#our-facts {
+    padding: 4rem 0rem 2.5rem 0rem;
+    background-color: var(--background-section-color);
+
+    .row:nth-child(2) {
+        padding-bottom: 20px;
+
+    }
+
+    .our-facts-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        .our-fact-item {
+            text-align: center;
+            padding: 10px;
+
+            .number-title {
+                font-family: var(--font-family-text);
+                font-size: 3rem;
+                line-height: 3.5rem;
+                color: #6472B9;
+                font-weight: 700;
+            }
+
+            .row-title {
+                font-size: 20px;
+                line-height: 28px;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .row-sub-title {
+                font-size: 16px;
+                line-height: 26px;
+                font-family: var(--font-family-text);
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.5);
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+
+/*  */
+/* Section for FAQs */
+/*  */
+section#faqs {
+    background-color: #fff;
+    padding: 4rem 0rem 2.5rem 0rem;
+
+    .faqs-container {
+        gap: 10px;
+        padding: 20px;
+        flex-direction: column;
+
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--background-article-color);
+            color: #000;
+            padding: 10px;
+            border-radius: 15px;
+           
+            .row-hidden {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 2rem;
+                cursor: pointer;
+
+                .row-title {
+
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+
+                .row-button {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
+            }
+
+            .row-quote {
+                color: #fff;
+                padding: 1rem 2rem 1rem;
+            }
+        }
+
+        .faq-item:hover {
+            background-color: var(--four-color);
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .faq-analytic {
+            padding: 30px;
+            background-color: var(--background-article-color);
+            border: 1px solid #E5E7EB;
+            color: #000;
+            border-radius: 10px 10px 10px 10px;
+
+            span.row-circle {
+                position: relative;
+                display: block;
+                height: 64px;
+                width: 64px;
+                border: 1px solid var(--button-color);
+                color: var(--button-color);
+                border-radius: 50%;
+                font-size: 24px;
+                margin-bottom: 24px;
+                padding: 16px;
+
+                i {
+                    position: absolute;
+                    top: calc(50% - 19px);
+                    right: calc(50% - 13px);
+                }
+            }
+
+            .row-title {
+                font-size: unset;
+                line-height: unset;
+                margin: 0;
+
+                a {
+                    font-size: 24px;
+                    line-height: 32px;
+                    font-weight: 700;
+                    color: #000;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+
+                a:hover {
+                    color: var(--four-color);
+                    transition: color 0.3s ease-in-out;
+                    cursor: pointer;
+                }
+            }
+
+            .row-sub-title {
+                font-size: 16px;
+                line-height: 26px;
+                font-family: var(--font-family-text);
+                font-weight: 400;
+                margin-bottom: 15px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            .row-link {
+                display: inline-flex;
+                align-items: center;
+                font-weight: 600;
+                font-size: 16px;
+                color: var(--four-color);
+            }
+        }
     }
 }
