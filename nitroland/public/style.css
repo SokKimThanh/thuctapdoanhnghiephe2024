@@ -8,16 +8,19 @@
     --four-color: #3C59F9;
     --button-color: #4977DD;
     --border-thirth-color: #798dffa4;
+    --border-button-color: #E5E7EB;
     --black-color-opacity-05: rgba(0, 0, 0, 0.5);
     --star-color: #F6596B;
     --background-section-color: #F4F8FF;
     --background-article-color: #f7f8f9;
+    --background-card-color: #3F78E0;
 }
 
 /* reset css */
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     /* outline: 1px solid red; */
     /**debug*/
 }
@@ -792,7 +795,7 @@ section#customer-testimonials {
             }
 
             .owl-next {
-                right: -10px;
+                right: 20px;
             }
 
             .owl-prev:hover,
@@ -815,14 +818,14 @@ section#customer-testimonials {
             content: '\2039';
             position: absolute;
             left: calc(50% - 12px);
-            top: calc(50% - 52px);
+            top: calc(50% - 56px);
         }
 
         .owl-next::before {
             content: '\203A';
             position: absolute;
             right: calc(50% - 12px);
-            top: calc(50% - 52px);
+            top: calc(50% - 56px);
         }
 
         .owl-prev:hover,
@@ -885,6 +888,8 @@ section#our-process {
     padding: 4rem 0rem 5rem 0rem;
     background-color: #FFFFFF;
 
+
+
     .process-bar {
         display: flex;
         flex-flow: column;
@@ -892,7 +897,7 @@ section#our-process {
         position: relative;
 
         /* phần tử con được phép trôi đi */
-        .col {
+        .col-process-bar {
             z-index: 1;
 
             .process-item {
@@ -900,7 +905,11 @@ section#our-process {
                 flex-direction: row;
                 align-items: center;
                 padding: 50px 0;
-                /* justify-content: space-between; */
+                justify-content: space-between;
+
+                @media screen and (max-width: 800px) {
+                    flex-wrap: wrap;
+                }
 
                 .process-step {
                     /* cho the div step number*/
@@ -941,7 +950,7 @@ section#our-process {
             }
         }
 
-        .col:nth-child(2) {
+        .col-process-bar:nth-child(2) {
             .process-item {
                 .process-step {
                     background: #FDF6E6 !important;
@@ -965,7 +974,7 @@ section#our-process {
             }
         }
 
-        .col:nth-child(3) {
+        .col-process-bar:nth-child(3) {
             .process-item {
                 .process-step {
                     background: #FDEBED !important;
@@ -1016,13 +1025,22 @@ section#our-facts {
 
     .our-facts-container {
         height: 100%;
-        display: flex;
-        align-items: center;
+        display: flex !important;
         align-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
 
         .our-fact-item {
             text-align: center;
             padding: 10px;
+            /* background-color: rgba(255, 255, 255, 0.9); */
+            /* border: 1px solid rgba(0, 0, 0, 0.1); */
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-flow: column;
 
             .number-title {
                 font-family: var(--font-family-text);
@@ -1054,26 +1072,64 @@ section#our-facts {
 
 /*  */
 /* Section for FAQs */
+/* Phân tích và Tổng hợp cấu trúc CSS cho mục FAQs */
+/*  
+--Đánh giá
+    CSS cho mục FAQs trong ví dụ này được thiết kế cẩn thận để đảm bảo giao diện 
+trang web thân thiện với người dùng và hấp dẫn. Cấu trúc CSS rõ ràng và dễ hiểu,
+với các lớp được đặt tên một cách hợp lý và sử dụng các biến để đảm bảo tính 
+nhất quán và dễ bảo trì.
+
+    Một số điểm đáng chú ý:
+Sử dụng biến: Việc sử dụng các biến như var(--background-article-color) và 
+var(--four-color) giúp dễ dàng thay đổi giao diện mà không cần chỉnh sửa nhiều 
+đoạn mã.
+    Flexbox: Flexbox được sử dụng hiệu quả để căn chỉnh các phần tử và tạo layout 
+đáp ứng.
+    Hiệu ứng chuyển tiếp: Hiệu ứng chuyển tiếp (transition) được sử dụng để tạo ra
+trải nghiệm mượt mà khi người dùng tương tác với các mục FAQ.
+    Bộ chọn cụ thể: Các bộ chọn được viết cụ thể, giúp giảm thiểu xung đột giữa các 
+lớp CSS khác nhau.
+
+--Kết luận
+    CSS này cung cấp một cách tiếp cận chuyên nghiệp và hiệu quả để định dạng phần 
+FAQ của một trang web. Nó đảm bảo rằng các mục FAQ được hiển thị một cách rõ ràng
+và hấp dẫn, đồng thời cung cấp trải nghiệm người dùng tốt thông qua các hiệu ứng
+chuyển tiếp và căn chỉnh hợp lý.
+
+    Việc sử dụng biến và Flexbox trong CSS không chỉ giúp mã dễ bảo trì mà còn làm 
+cho giao diện linh hoạt và dễ điều chỉnh khi cần thiết. Điều này rất quan trọng 
+trong việc thiết kế các trang web hiện đại, nơi mà tính thẩm mỹ và trải nghiệm 
+người dùng đóng vai trò then chốt.
+
+    Nhìn chung, CSS này là một ví dụ tốt về cách sử dụng các kỹ thuật CSS hiện đại 
+để tạo ra một giao diện web đẹp và chức năng. */
 /*  */
+
 section#faqs {
+    /* Định dạng phần (Section) */
     background-color: #fff;
     padding: 4rem 0rem 2.5rem 0rem;
 
     .faqs-container {
+        /* Định dạng Container */
         gap: 10px;
         padding: 20px;
         flex-direction: column;
 
         .faq-item {
+            /* Định dạng Mục FAQ cột thứ nhất trong cùng một container */
             display: flex;
             flex-direction: column;
             align-items: center;
             background-color: var(--background-article-color);
             color: #000;
             padding: 10px;
+            /* padding chung là 10px. children chiếm ít hơn 10px diện tích */
             border-radius: 15px;
-           
+
             .row-hidden {
+                /* Định dạng hàng ẩn khi click chuột vào một cordion*/
                 width: 100%;
                 display: flex;
                 flex-direction: row;
@@ -1082,37 +1138,49 @@ section#faqs {
                 cursor: pointer;
 
                 .row-title {
+                    /* Định dạng tiêu đề */
 
                     font-size: 1.2rem;
                     font-weight: 600;
                 }
 
                 .row-button {
+                    /* Định dạng nút */
+
                     font-size: 1.1rem;
                     font-weight: 600;
                 }
             }
 
             .row-quote {
+                /* Định dạng hàng trích dẫn câu trả lời của câu hỏi 
+                trong cordion */
+
                 color: #fff;
                 padding: 1rem 2rem 1rem;
             }
         }
 
         .faq-item:hover {
+            /* Hiệu ứng Hover */
+
             background-color: var(--four-color);
             color: #fff;
             transition: all 0.3s ease-in-out;
         }
 
         .faq-analytic {
+            /* Định dạng Phân tích FAQ cột thứ 2 col-md-4*/
+
             padding: 30px;
             background-color: var(--background-article-color);
-            border: 1px solid #E5E7EB;
+            border: 1px solid var(--border-button-color);
             color: #000;
             border-radius: 10px 10px 10px 10px;
 
             span.row-circle {
+                /* Định dạng vòng tròn */
+
                 position: relative;
                 display: block;
                 height: 64px;
@@ -1125,6 +1193,7 @@ section#faqs {
                 padding: 16px;
 
                 i {
+                    /* Định dạng biểu tượng */
                     position: absolute;
                     top: calc(50% - 19px);
                     right: calc(50% - 13px);
@@ -1132,11 +1201,13 @@ section#faqs {
             }
 
             .row-title {
+                /* Định dạng tiêu đề trong Phân tích */
                 font-size: unset;
                 line-height: unset;
                 margin: 0;
 
                 a {
+                    /* Định dạng liên kết tiêu đề */
                     font-size: 24px;
                     line-height: 32px;
                     font-weight: 700;
@@ -1146,6 +1217,8 @@ section#faqs {
                 }
 
                 a:hover {
+                    /* Định dạng Hover của liên kết */
+
                     color: var(--four-color);
                     transition: color 0.3s ease-in-out;
                     cursor: pointer;
@@ -1153,6 +1226,7 @@ section#faqs {
             }
 
             .row-sub-title {
+                /* Định dạng phụ đề trong Phân tích */
                 font-size: 16px;
                 line-height: 26px;
                 font-family: var(--font-family-text);
@@ -1162,11 +1236,267 @@ section#faqs {
             }
 
             .row-link {
+                /* Định dạng liên kết trong Phân tích */
                 display: inline-flex;
                 align-items: center;
                 font-weight: 600;
                 font-size: 16px;
                 color: var(--four-color);
+            }
+        }
+    }
+}
+
+/*  */
+/* Section pricing-plan */
+/*  */
+/* Section Pricing Plan */
+section#pricing-plan {
+    .container {
+        /* Định dạng cho container của section */
+        border: 1px solid #E8EAED;
+        background-color: var(--background-article-color);
+        border-radius: 20px;
+        padding: 20px;
+
+        .monthly {
+            display: none;
+            /* Ẩn phần monthly */
+        }
+
+        .pricing-choosen-container {
+            /* Định dạng cho container lựa chọn giá */
+            text-align: center;
+            margin-bottom: 146px;
+
+            .percentage svg {
+                transform: scaleX(-1);
+                /* Lật ngược hình ảnh phần trăm */
+            }
+
+            .pricing-choosen {
+                /* Định dạng hàng chọn giá */
+                background: #0A1425;
+                border: 1px solid #0A1425;
+                border-radius: 40px;
+                color: #fff;
+                padding: 5px 10px;
+                text-align: center;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+
+                li {
+                    /* Định dạng các mục trong hàng chọn giá */
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin: 10px;
+                    background-color: #0A1425;
+                    width: 100%;
+                    padding: 10px 0;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    transition: background 0.2s ease-in-out;
+                }
+
+                li.active,
+                li:hover {
+                    /* Hiệu ứng khi mục đang chọn hoặc hover */
+                    background-color: var(--button-color);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .pricing-card-container {
+            /* Định dạng cho container các card giá */
+            padding: 0 32px 32px;
+            color: #64728f;
+            transition: color 0.2s ease-in-out;
+
+            .pricing-card:nth-child(1) {
+                border-radius: 15px 0 0 15px;
+                /* Bo góc của card đầu tiên */
+            }
+
+            .pricing-card {
+                /* Định dạng cho từng card giá */
+                position: relative;
+                padding: 32px;
+                font-size: 16px;
+                line-height: 26px;
+                font-family: var(--font-family-text);
+                font-weight: 400;
+                background-color: #fff;
+
+                .pricing-card-detail {
+                    /* Định dạng cho chi tiết card */
+                    display: flex;
+                    flex-flow: column;
+                    align-items: stretch;
+                    justify-content: space-between;
+                }
+
+                .popular {
+                    /* Định dạng cho phần popular */
+                    display: none;
+                    margin-bottom: 31px;
+
+                    .pupular-badge {
+                        /* Định dạng cho badge popular */
+                        border-radius: 22px;
+                        text-transform: uppercase;
+                        background-color: #fff;
+                        color: #000;
+                        padding: 8px 16px;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        font-weight: 500;
+                    }
+                }
+
+                .popular.active {
+                    /* Hiển thị phần popular khi có class active */
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .price-title,
+                .price-value {
+                    /* Định dạng tiêu đề và giá */
+                    color: #000;
+                    transition: color 0.2s ease-in-out;
+                }
+
+                .price-title {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+
+                .price-sub-title {
+                    margin: 8px 0 4px;
+                }
+
+                .price-value {
+                    /* Định dạng giá */
+                    padding-bottom: .5rem;
+                    color: #000;
+
+                    .amount {
+                        font-weight: 700;
+                        color: var(--heading-color-one);
+                        line-height: 1.5;
+                        font-size: 2rem;
+                    }
+
+                    .amount2 {
+                        color: #64728f;
+                    }
+                }
+
+                .price-line-background-hidden {
+                    /* Định dạng hình nền ẩn */
+                    position: absolute;
+                    transform: translate(-100%, -100%);
+                    inset: 0;
+                    height: 100%;
+                }
+
+                .button-container {
+                    /* Định dạng cho container nút */
+                    padding: 0;
+                    flex-direction: column;
+
+                    .btn {
+                        /* Định dạng cho các nút */
+                        text-transform: capitalize;
+                        width: 100%;
+                    }
+
+                    .btn.btn-learn-more {
+                        color: #434D57;
+                        border: 1px solid var(--border-button-color);
+                    }
+                }
+
+                .price-features {
+                    /* Định dạng cho các tính năng giá */
+                    list-style-type: none;
+                    margin: 0 0 30px;
+                    padding: 0;
+
+                    .price-item {
+                        /* Định dạng cho từng mục tính năng */
+                        margin-bottom: 15px;
+
+                        .price-icon {
+                            /* Định dạng cho biểu tượng tính năng */
+                            margin-right: 1rem;
+                            color: var(--background-card-color);
+                        }
+                    }
+                }
+            }
+
+            .pricing-card.selected {
+                margin-top: -71px;
+
+                /* Di chuyển card đã chọn lên trên */
+                @media screen and (max-width: 768px) {
+                    margin-top: 0;
+                }
+            }
+
+            .pricing-card:hover,
+            .pricing-card.selected {
+                /* Hiệu ứng khi hover hoặc chọn card */
+                color: #fff;
+                background-color: var(--background-card-color);
+                border-radius: 15px 15px 0 0;
+                transition: color 0.3s ease-in-out;
+
+                .price-line-background-hidden {
+                    margin-top: 64px;
+                    margin-left: 128px;
+                    transform: translate(0);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .price-title,
+                .price-value,
+                .price-value>.amount,
+                .price-value>.amount2 {
+                    color: #fff !important;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                .button-container {
+                    /* Hiệu ứng hover cho các nút */
+                    background-color: transparent;
+
+                    .btn.btn-get-started {
+                        background-color: #fff;
+                        color: var(--button-color);
+                        transition: background-color 0.3s ease-in-out;
+                    }
+
+                    .btn.btn-learn-more {
+                        background-color: transparent;
+                        color: #fff;
+                        transition: background-color 0.3s ease-in-out;
+                    }
+                }
+
+                .price-features {
+                    .price-item {
+                        .price-icon {
+                            color: #fff;
+                            /* Màu biểu tượng tính năng khi hover hoặc chọn */
+                        }
+                    }
+                }
             }
         }
     }
