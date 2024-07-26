@@ -486,6 +486,11 @@ var pricingData = {
         }
     ],
 }
+
+/**
+ * Tìm các phần tử div tương ứng với các loại kế hoạch (yearly và monthly) 
+ * và gán cho các biến container:
+ * - containers.yearly và containers.monthly chứa các phần tử div*/
 const containers = {
     yearly: document.querySelector('.pricing-card-container.yearly'),
     monthly: document.querySelector('.pricing-card-container.monthly')
@@ -529,12 +534,12 @@ Object.keys(pricingData).forEach(planType => {
                 <span class="price-icon"><i class="${feature.icon}"></i></span>${feature.feature}
             </li>
         `).join('');
+
         /**
          * Thiết lập nội dung HTML cho phần tử div:
          * - Đoạn mã này thiết lập nội dung HTML của phần tử div mới tạo. 
          * Nội dung bao gồm huy hiệu "popular" (nếu có), các chi tiết kế hoạch,
-         * danh sách tính năng, và các nút bấm "Get started" và "Learn More".
-         * */
+         * danh sách tính năng, và các nút bấm "Get started" và "Learn More".*/
         card.innerHTML = `
             ${popularBadge}
             <div class="pricing-card-detail">
@@ -549,7 +554,7 @@ Object.keys(pricingData).forEach(planType => {
                     <button class="btn btn-learn-more">Learn More</button>
                 </div>
             </div>
-            <img class="price-line-background-hidden img-fluid" src="./public/images/mask-line-1.png" />
+            <div class="price-line-background-hidden" />
         `;
         /**
          * Thêm phần tử div vào container tương ứng:
@@ -559,3 +564,44 @@ Object.keys(pricingData).forEach(planType => {
         containers[planType].appendChild(card);
     });
 });
+
+/**
+ * section progress_indicator
+ */
+
+const progressIndicator = document.querySelector('.progress_indicator');
+const progressCircle = document.querySelector('.circle-path');
+const navigationDesktop = document.querySelector('#navigation-bar-desktop');
+const pathLength = progressCircle.getTotalLength();
+// Initial setting of stroke-dasharray and stroke-dashoffset
+progressCircle.style.strokeDasharray = pathLength;
+progressCircle.style.strokeDashoffset = pathLength;
+
+const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+    const drawLength = pathLength * scrollPercent;
+    progressCircle.style.strokeDashoffset = pathLength - drawLength;
+
+    // Show the progress indicator when scrolling
+    if (scrollTop > 100) {
+        progressIndicator.classList.add('active-progress');
+        navigationDesktop.classList.add('sticky_header_area');
+    } else {
+        progressIndicator.classList.remove('active-progress');
+        navigationDesktop.classList.remove('sticky_header_area');
+    }
+};
+
+window.addEventListener('scroll', updateProgress);
+
+// Scroll to top when clicking the progress indicator
+progressIndicator.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+

@@ -112,15 +112,15 @@
     </section>
     <!-- search section -->
     <!-- search container and category search -->
-    <section class="search-container">
+    <section id="search" class="search-container">
         <!-- search container -->
         <div class="container">
             <div class="row">
-                <span id="button-close-container-search" class="icon-close">
-                    <i class="bi bi-x"></i>
-                </span>
                 <!-- form search -->
                 <form>
+                    <span id="button-close-container-search" class="icon-close">
+                        <i class="bi bi-x"></i>
+                    </span>
                     <div class="input-group2">
                         <input class="form-control underline" type="search" placeholder="Enter the keywords"
                             aria-label="Search">
@@ -304,7 +304,7 @@
                                 <span class="title-quote"><i class="bi bi-quote"></i></span>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">We’re building a better
+                                <h5 class="card-title">We're building a better
                                     application now, thanks to NioLand. </h5>
                                 <p class="card-text">
                                     Sed perspiciatis unonis
@@ -560,62 +560,8 @@
                                 standard shipping takes 3-5 business days within the same country, while international
                                 shipping may take between 7-14 business days.
                             </div>
-                        </div>
-                        <div class="col faq-item">
-                            <div class="row-hidden" data-bs-toggle="collapse" data-bs-target="#collapseOne2"
-                                aria-expanded="false" aria-controls="collapseOne2">
-                                <div class="row-title">What payment methods do you accept?</div>
-                                <span class="row-button"><i class="bi bi-arrow-up-circle"></i></span>
-                            </div>
-                            <div class="row-quote accordion-collapse collapse" id="collapseOne2"
-                                aria-labelledby="headingOne2" data-bs-parent="#accordionExample">
-                                However, the payment methods available for online transactions may vary depending on the
-                                website, platform, or merchant you are dealing with. Common payment methods include
-                                credit and debit cards, PayPal, Apple Pay, Google Wallet, and bank transfers.
-                            </div>
-                        </div>
-                        <div class="col faq-item">
-                            <div class="row-hidden" data-bs-toggle="collapse" data-bs-target="#collapseOne3"
-                                aria-expanded="false" aria-controls="collapseOne3">
-                                <div class="row-title">What shipping options do you have?</div>
-                                <span class="row-button"><i class="bi bi-arrow-up-circle"></i></span>
-                            </div>
-                            <div class="row-quote accordion-collapse collapse" id="collapseOne3"
-                                aria-labelledby="headingOne3" data-bs-parent="#accordionExample">
-                                Shipping costs can also vary depending on the chosen option and can sometimes be waived
-                                or discounted based on factors such as the order value, customer loyalty, or promotion
-                                codes. It's always a good idea to review the options and associated costs before making
-                                a purchase to ensure a timely and satisfactory delivery.
-                            </div>
-                        </div>
-                        <div class="col faq-item">
-                            <div class="row-hidden" data-bs-toggle="collapse" data-bs-target="#collapseOn4"
-                                aria-expanded="false" aria-controls="collapseOn4">
-                                <div class="row-title">How do I make changes to an existing order?</div>
-                                <span class="row-button"><i class="bi bi-arrow-up-circle"></i></span>
-                            </div>
-                            <div class="row-quote accordion-collapse collapse" id="collapseOn4"
-                                aria-labelledby="headingOne4" data-bs-parent="#accordionExample">
-                                When contacting the vendor, it's important to have your order number and other relevant
-                                information ready, so that the vendor can locate your order quickly. Depending on the
-                                changes you want to make, you may need to provide additional information or pay
-                                additional fees.
-                            </div>
-                        </div>
-                        <div class="col faq-item">
-                            <div class="row-hidden" data-bs-toggle="collapse" data-bs-target="#collapseOn5"
-                                aria-expanded="false" aria-controls="collapseOn5">
-                                <div class="row-title">When will my order arrive?</div>
-                                <span class="row-button"><i class="bi bi-arrow-up-circle"></i></span>
-                            </div>
-                            <div class="row-quote accordion-collapse collapse" id="collapseOn5"
-                                aria-labelledby="headingOne5" data-bs-parent="#accordionExample">
-                                When contacting the vendor, it's important to have your order number and other relevant
-                                information ready, so that the vendor can locate your order quickly. Depending on the
-                                changes you want to make, you may need to provide additional information or pay
-                                additional fees.
-                            </div>
-                        </div> -->
+                        </div>-->
+
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -650,10 +596,12 @@
                 </p>
             </div>
             <div class="row pricing-choosen-container">
-                <ul class="col-sm-2 pricing-choosen">
-                    <li>Monthly</li>
-                    <li class="active">Yearly</li>
-                </ul>
+                <div class="col-sm-4">
+                    <ul class="pricing-choosen">
+                        <li>Monthly</li>
+                        <li class="active">Yearly</li>
+                    </ul>
+                </div>
                 <div class="percentage">
                     <svg width="62" height="26" viewBox="0 0 62 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -663,13 +611,162 @@
                             d="M5.09394 18.2266C6.26876 18.1734 7.4416 18.1409 8.60959 18.0374C11.7214 17.7619 14.8488 17.1127 17.3726 16.0632C17.5931 15.9711 17.6361 15.7986 17.4704 15.6775C17.3031 15.5561 16.9897 15.5325 16.7697 15.6237C14.3755 16.6206 11.4034 17.2324 8.45101 17.4937C7.11399 17.6119 5.769 17.6357 4.42348 17.7063C4.35641 17.7103 3.77003 17.7312 3.64849 17.7543C3.36487 17.8073 3.30885 17.9289 3.29605 17.987C3.28425 18.0355 3.29122 18.0951 3.34847 18.1616C3.39597 18.2161 3.53025 18.3078 3.75716 18.4094C4.48216 18.736 6.37182 19.3644 6.66215 19.4856C9.99077 20.8747 12.6638 22.4747 15.5546 24.1204C15.7472 24.2292 16.0642 24.2324 16.2626 24.127C16.4609 24.0216 16.4655 23.8474 16.274 23.7382C13.3469 22.0715 10.6358 20.4534 7.2664 19.0476C7.06736 18.9639 5.91853 18.534 5.09394 18.2266Z"
                             fill="#0A1425"></path>
                     </svg>
-                    <span>save 65%</span>
+                    <span class="save-icon">save 65%</span>
                 </div>
             </div>
             <div class="row pricing-card-container yearly"></div>
             <div class="row pricing-card-container monthly"></div>
         </div>
     </section>
+
+    <section id="app-download">
+        <div class="container">
+            <div class="row">
+                <div class="app-download-container">
+                    <div class="app-download-info">
+                        <h2 class="title">
+                            Have Any Project? Let's Talk & Grow your Business
+                        </h2>
+                        <p class="sub-title">We're ready to help you. Our
+                            team of experts is here, just send a
+                            message.
+                        </p>
+                        <div class="image-store-container">
+                            <ul class="image-store-list">
+                                <li class="image-store-item">
+                                    <a><img src="./public/images/app-store.png" alt="app-store"></a>
+                                </li>
+                                <li class="image-store-item">
+                                    <a><img src="./public/images/play-store.png" alt="play-store"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img class="img-fluid guy-image-download" src="./public/images/image-2-2.png" alt="imgage-22">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h1 class="title">Subscribe to our newsletter </h1>
+                    <p class="sub-title">Join the 5000+ people that uses
+                        Softnio products </p>
+                </div>
+                <div class="col-sm-6">
+                    <form method="post" class="form-inline">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <div class="button-container">
+                                <button class="btn btn-primary">Subcribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <ul class="head-title-list">
+                    <li class="col-sm-4 head-title-item">
+                        <div class="logo-container">
+                            <img src="./public/images/logo-2.png" alt="nioland-logo">
+                            <div class="sub-container">
+                                <p class="sub-title">
+                                    Streamline your business operations with our powerful
+                                    suite of solutions. Boost productivity and
+                                    drive growth with NioLand.
+                                </p>
+                            </div>
+                            <div class="social-container">
+                                <ul class="social-list">
+                                    <li class="social-item"><a><span class="bi bi-facebook"></span></a></li>
+                                    <li class="social-item"><a><span class="bi bi-twitter"></span></a></li>
+                                    <li class="social-item"><a><span class="bi bi-skype"></span></a></li>
+                                    <li class="social-item"><a><span class="bi bi-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-sm-6 head-title-item">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h5 class="title">Utility Page</h5>
+                                <ul class="utility-list">
+                                    <li class="utility-item"><a>Sign Up</a></li>
+                                    <li class="utility-item"><a>My Account</a></li>
+                                    <li class="utility-item"><a>Reset Password</a></li>
+                                    <li class="utility-item"><a>404 Not Found</a></li>
+                                    <li class="utility-item"><a>Login</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <h5 class="title">Pages</h5>
+                                <ul class="utility-list">
+                                    <li class="utility-item"><a>Features</a></li>
+                                    <li class="utility-item"><a>Help Center</a></li>
+                                    <li class="utility-item"><a>Blog Post</a></li>
+                                    <li class="utility-item"><a>Careers</a></li>
+                                    <li class="utility-item"><a>Pricing</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <h5 class="title">About</h5>
+                                <ul class="utility-list">
+                                    <li class="utility-item"><a>Blog</a></li>
+                                    <li class="utility-item"><a>Customer Reviews</a></li>
+                                    <li class="utility-item"><a>Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-sm-2 head-title-item">
+                        <h5 class="title">Other Pages</h5>
+                        <ul class="utility-list">
+                            <li class="utility-item"><a>Kids Course Startup</a></li>
+                            <li class="utility-item"><a>Live Chat App Software</a></li>
+                            <li class="utility-item"><a>Business Expense Tracker</a></li>
+                            <li class="utility-item"><a>Project Management</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="row copyright-container">
+                <span class="text-dark">
+                    © 2011 - 2023 <span class="text-primary">Steelthemes</span>. All Rights Reserved.
+                </span>
+
+                <ul class="text-dark copyright-list">
+                    <li><a>All Rights</a></li>
+                    <li><a>Terms & Conditions</a></li>
+                    <li><a>Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Icon giỏ hàng -->
+    <div class="shoping-mini-cart">
+        <span class="bi bi-cart-fill"></span>
+        <span class="pro-count">0</span>
+    </div>
+
+    <!-- icon tiến trình lướt trang -->
+    <div class="progress_indicator active-progress">
+        <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path class="circle-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+
+    <!-- script import online -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

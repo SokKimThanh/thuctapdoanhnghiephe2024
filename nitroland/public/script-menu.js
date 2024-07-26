@@ -373,3 +373,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     createMenu(menuData.menu);
 });
+
