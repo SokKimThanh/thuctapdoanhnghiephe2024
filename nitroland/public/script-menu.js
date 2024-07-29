@@ -375,6 +375,10 @@ document.addEventListener('DOMContentLoaded', function () {
     createMenuDesktop(menuData.menu);
 
     // MENU MOBILE
+    /**
+     *  Điều kiện kiểm tra mới: Khi đóng các menu khác, đảm bảo rằng menu hiện tại hoặc bất kỳ menu nào chứa menu hiện tại (cha) không bị đóng.
+     *  contains() method: Kiểm tra xem menu khác có chứa menu hiện tại không để tránh đóng menu cha khi mở menu con.
+     */
     const menuButtonMobile = document.getElementById('menu-button-mobile');
     menuButtonMobile.addEventListener('click', () => {
         const menuMobileContainer = document.querySelector('.menu-container-visible');
