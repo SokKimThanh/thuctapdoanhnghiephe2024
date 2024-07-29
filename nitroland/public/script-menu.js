@@ -206,7 +206,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const menuContainer = document.getElementById('menu');
 
-    function createMenu(menuItems) {
+
+    function createMenuDesktop(menuItems) {
         /**
          * Tạo menu từ dữ liệu JSON
          * @param {Array} menuItems - Dữ liệu menu JSON
@@ -237,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (item.submenu) {
                 const submenu = document.createElement('ul');
-                submenu.className = 'dropdown-menu row';
+                submenu.className = 'dropdown-menu';
                 submenu.setAttribute('aria-labelledby', item.title.toLowerCase() + 'Link');
 
                 // Xử lý PAGE MENU 2 CỘT
@@ -268,13 +269,13 @@ document.addEventListener('DOMContentLoaded', function () {
                      * */
                     switch (indexMenuItem) {
                         case 0:/**HOME */
-                            submenuItem.className = 'col-sm-2';
+                            submenuItem.className = 'col-xs-4';
                             submenuLink.className = 'dropdown-item';
                             submenuLink.href = subitem.link;
                             break;
                         case 1:/**PAGE */
 
-                            submenuItem.className = 'col-sm-3';
+                            submenuItem.className = 'col-sm-3 col-xs-6';
                             submenuLink.className = 'dropdown-item';
                             submenuLink.href = subitem.link;
                             submenuLink.textContent = subitem.title;
@@ -371,6 +372,72 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    createMenu(menuData.menu);
+    createMenuDesktop(menuData.menu);
+
+    // MENU MOBILE
+    const menuButtonMobile = document.getElementById('menu-button-mobile');
+    menuButtonMobile.addEventListener('click', () => {
+        const menuMobileContainer = document.querySelector('.menu-container-visible');
+        const menuMobile = menuMobileContainer.querySelector('#menu-mobile');
+        const navItems = menuMobile.querySelectorAll('.nav-item');
+
+        navItems.forEach((item) => {
+            const btn = item.querySelector('.dropdown-btn');
+            const currentMenu = item.querySelector('.dropdown-menu-list');
+
+            if (currentMenu === null) return; // Skip nếu không có dropdown menu
+            if (btn === null) return; // Skip nếu không có dropdown-btn
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Ngăn sự kiện click lan truyền
+
+                // Đóng tất cả các dropdown menu khác trước khi mở menu được click
+                navItems.forEach((otherItem) => {
+                    const otherBtn = otherItem.querySelector('.dropdown-btn');
+                    const otherMenu = otherItem.querySelector('.dropdown-menu-list');
+                    if (otherMenu === null) return; // Skip nếu không có dropdown menu
+                    if (otherBtn === null) return; // Skip nếu không có dropdown menu
+
+                    if (otherMenu !== currentMenu && !otherMenu.contains(currentMenu)) {
+                        otherBtn.classList.remove('active');
+                        otherMenu.classList.remove('show');
+                    }
+                });
+
+                currentMenu.classList.toggle('show');
+                btn.classList.toggle('active');
+            });
+        });
+
+        // Xử lý submenu
+        const subNavItems = menuMobile.querySelectorAll('.nav-item .nav-item');
+        subNavItems.forEach((item) => {
+            const subBtn = item.querySelector('.dropdown-btn');
+            const subMenu = item.querySelector('.dropdown-submenu-list');
+
+            if (subBtn === null) return; // Skip nếu không có dropdown-btn
+            if (subMenu === null) return; // Skip nếu không có dropdown menu
+
+            subBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Ngăn sự kiện click lan truyền
+
+                // Đóng tất cả các submenu khác trước khi mở submenu được click
+                subNavItems.forEach((otherItem1) => {
+                    const otherSubMenu = otherItem1.querySelector('.dropdown-submenu-list');
+                    const otherSubBtn = otherItem1.querySelector('.dropdown-btn');
+                    if (otherSubBtn === null) return; // Skip nếu không có subbutton
+                    if (otherSubMenu === null) return; // Skip nếu không có submenu
+
+                    if (otherSubMenu !== subMenu && !otherSubMenu.contains(subMenu)) {
+                        otherSubMenu.classList.remove('show');
+                        otherSubBtn.classList.remove('active');
+                    }
+                });
+
+                subMenu.classList.toggle('show');
+                subBtn.classList.toggle('active');
+            });
+        });
+    });
 });
 

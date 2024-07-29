@@ -30,7 +30,7 @@
                     </ul>
                 </nav>
 
-                <div class="d-flex gap-3">
+                <div class="list-menu-button-icon">
                     <span class="btn btn-search">
                         <i class="bi bi-search"></i>
                     </span>
@@ -38,7 +38,8 @@
                         <i class="bi bi-menu-app"></i>
                     </span>
                     <span class="btn btn-search">
-                        Purschase Now
+                        <span class="text-search">Purschase Now</span>
+                        <i class="bi bi-cash"></i>
                     </span>
                 </div>
             </div>
@@ -58,37 +59,72 @@
                         </span>
                     </div>
                     <!-- menu box mobile: list item -->
-                    <ul class="menu-box">
+                    <ul class="navbar-nav" id="menu-mobile">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown link
-                                <i class="bi bi-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item">Action</a></li>
-                                <li><a class="dropdown-item">Another action</a></li>
-                                <li><a class="dropdown-item">Something else here</a></li>
+                            <div class="item-text-icon">
+                                <a>Home</a>
+                                <span class="dropdown-btn">
+                                    <i class="bi bi-caret-right"></i>
+                                </span>
+                            </div>
+                            <ul class="dropdown-menu-list">
+
+                                <li class="nav-item">
+                                    <div class="item-text-icon">
+                                        <a>Submenu 1</a>
+                                        <span class="dropdown-btn">
+                                            <i class="bi bi-caret-right"></i>
+                                        </span>
+                                    </div>
+                                    <ul class="dropdown-submenu-list">
+                                        <li>content V2</li>
+                                        <li>content V2</li>
+                                        <li>content V2</li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="item-text-icon">
+                                        <a>Submenu 1</a>
+                                        <span class="dropdown-btn">
+                                            <i class="bi bi-caret-right"></i>
+                                        </span>
+                                    </div>
+                                    <ul class="dropdown-submenu-list">
+                                        <li>content V2</li>
+                                        <li>content V2</li>
+                                    </ul>
+                                </li>
+                                <li>content V1</li>
+                                <li>content V1</li>
+                                <li>content V1</li>
+                                <li>
+                                    <img src="./public/images/authour-1.jpeg" alt="giuaky">
+                                </li>
+                                <li class="nav-item">
+                                    <div class="item-text-icon">
+                                        <a>Submenu 1</a>
+                                        <span class="dropdown-btn">
+                                            <i class="bi bi-caret-right"></i>
+                                        </span>
+                                    </div>
+                                    <ul class="dropdown-submenu-list">
+                                        <li>aaa</li>
+                                        <li>aaa</li>
+                                        <li>aaa</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Link</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
+                        <!-- Add more nav-items here -->
                     </ul>
                 </div>
             </nav>
             <button id="menu-button-mobile" class="btn btn-outline-dark menu-button-mobile">
-                <span><i class="fa fa-home"></i></span>menu
+                <span><i class="bi bi-menu-button-fill"></i></span>
             </button>
         </div>
     </section>
+
     <!-- jumbotron -->
     <section id="main-section-jumbotron" class="jumbotron">
         <div class="container">

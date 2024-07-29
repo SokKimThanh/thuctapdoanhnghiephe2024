@@ -5,11 +5,21 @@ const menuButton = document.getElementById('menu-button-mobile');
 const menuContainerVisible = document.querySelector('.menu-container-visible');
 const menuContainer = document.querySelector('.menu-container');
 menuButton.addEventListener('click', () => {
-    menuContainerVisible.classList.toggle('show-menu');
+    menuContainerVisible.classList.add('show-menu');
     // bat tiep su kien thu 2
-    menuContainer.classList.toggle('show-menu-box');
+    menuContainer.classList.add('show-menu-box');
 });
 
+// close button menu mobile
+const closeMenu = document.querySelector('.icon-close');
+
+closeMenu.addEventListener('click', () => {
+    menuContainerVisible.classList.remove('show-menu');
+    // bat tiep su kien thu 2
+    menuContainer.classList.remove('show-menu-box');
+
+});
+ 
 /**
  * su kien cho nut search
  */
